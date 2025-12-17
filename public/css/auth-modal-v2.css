@@ -1,0 +1,216 @@
+/* Authentication Modal Styles - Clean Light Enterprise Theme V2 */
+
+:root {
+    --modal-bg-color: #ffffff;
+    --modal-text-color: #1a1a1a;
+    --modal-input-bg: #f4f6f8;
+    --modal-input-border: #dae1e7;
+    --modal-radius: 4px;
+    --primary-blue: #007aff;
+    /* Official Site Blue */
+}
+
+.auth-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    /* Below Header (Header is likely 10000+) */
+    left: 0;
+    top: 0;
+    /* Cover full screen */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 27, 42, 0.7);
+    /* Dark Navy Overlay (Site Theme) */
+    backdrop-filter: blur(4px);
+    align-items: flex-start;
+    /* Top align for "under menu" feel */
+    justify-content: center;
+    padding-top: 100px;
+    /* Push down below navbar */
+    overflow-y: auto;
+    /* Allow scroll if screen is short */
+}
+
+.auth-modal-content {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 4px;
+    max-width: 650px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease;
+    color: var(--modal-text-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: relative;
+    /* Removed max-height/overflow here to allow body scroll via .auth-modal */
+    margin-bottom: 50px;
+    /* Space at bottom */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.auth-close:hover {
+    color: #333;
+}
+
+.auth-tabs {
+    display: none;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form h2 {
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    text-align: left;
+}
+
+.auth-form p {
+    text-align: left;
+    color: #444;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.auth-form p a {
+    color: var(--primary-blue);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.auth-input-group {
+    margin-bottom: 15px;
+}
+
+.auth-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.auth-input-group input,
+.auth-input-group select {
+    width: 100%;
+    height: 44px;
+    padding: 10px 14px;
+    background: #f4f6f8;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #1a1a1a;
+    transition: all 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+}
+
+/* Custom Arrow for Select - SVG Color changed to Dark Grey #444 */
+.auth-input-group select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 14px;
+    cursor: pointer;
+    padding-right: 40px;
+}
+
+.auth-input-group input:focus,
+.auth-input-group select:focus {
+    outline: none;
+    background: #ffffff;
+    border: 1px solid var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+    /* Blue Glow */
+}
+
+.auth-input-group select option {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 15px;
+}
+
+.auth-btn-primary {
+    background: var(--primary-blue);
+    color: #fff;
+    /* White text on Blue button */
+}
+
+.auth-btn-primary:hover {
+    filter: brightness(0.9);
+    transform: translateY(-1px);
+}
+
+.auth-error {
+    color: #d93025;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+.auth-error:not(:empty) {
+    display: block;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--primary-blue);
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .auth-modal {
+        padding-top: 60px;
+        /* Less space on mobile */
+    }
+
+    .auth-modal-content {
+        padding: 25px 20px;
+        width: 100%;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+}

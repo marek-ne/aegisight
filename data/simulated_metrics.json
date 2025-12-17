@@ -1,0 +1,1730 @@
+[
+  {
+    "timestamp": "2025-12-15T13:06:38.604Z",
+    "cpu_load": 44.31,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:11:38.604Z",
+    "cpu_load": 41.23,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:16:38.604Z",
+    "cpu_load": 46.41,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:21:38.604Z",
+    "cpu_load": 51.61,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:26:38.604Z",
+    "cpu_load": 43.55,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:31:38.604Z",
+    "cpu_load": 42.93,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:36:38.604Z",
+    "cpu_load": 54.17,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:41:38.604Z",
+    "cpu_load": 52.85,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:46:38.604Z",
+    "cpu_load": 43.41,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:51:38.604Z",
+    "cpu_load": 42.91,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T13:56:38.604Z",
+    "cpu_load": 44.24,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:01:38.604Z",
+    "cpu_load": 51.23,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:06:38.604Z",
+    "cpu_load": 42.97,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:11:38.604Z",
+    "cpu_load": 43.45,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:16:38.604Z",
+    "cpu_load": 49.63,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:21:38.604Z",
+    "cpu_load": 50.05,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:26:38.604Z",
+    "cpu_load": 50.09,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:31:38.604Z",
+    "cpu_load": 51.4,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:36:38.604Z",
+    "cpu_load": 48.74,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:41:38.604Z",
+    "cpu_load": 40.72,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:46:38.604Z",
+    "cpu_load": 41.05,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:51:38.604Z",
+    "cpu_load": 51.59,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:56:38.604Z",
+    "cpu_load": 50.67,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:01:38.604Z",
+    "cpu_load": 54,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:06:38.604Z",
+    "cpu_load": 42.94,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:11:38.604Z",
+    "cpu_load": 50.55,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:16:38.604Z",
+    "cpu_load": 46.67,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:21:38.604Z",
+    "cpu_load": 53.53,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:26:38.604Z",
+    "cpu_load": 49.9,
+    "ticket_velocity": 13,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:31:38.604Z",
+    "cpu_load": 47.78,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:36:38.604Z",
+    "cpu_load": 48.97,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:41:38.604Z",
+    "cpu_load": 51.26,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:46:38.604Z",
+    "cpu_load": 48.96,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:51:38.604Z",
+    "cpu_load": 41.93,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T15:56:38.604Z",
+    "cpu_load": 47.62,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:01:38.604Z",
+    "cpu_load": 53.64,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:06:38.604Z",
+    "cpu_load": 45.86,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:11:38.604Z",
+    "cpu_load": 41.04,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:16:38.604Z",
+    "cpu_load": 48.75,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:21:38.604Z",
+    "cpu_load": 50.04,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:26:38.604Z",
+    "cpu_load": 40.15,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:31:38.604Z",
+    "cpu_load": 47.59,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:36:38.604Z",
+    "cpu_load": 49.5,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:41:38.604Z",
+    "cpu_load": 44.09,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:46:38.604Z",
+    "cpu_load": 51.62,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:51:38.604Z",
+    "cpu_load": 54.23,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T16:56:38.604Z",
+    "cpu_load": 52.63,
+    "ticket_velocity": 13,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:01:38.604Z",
+    "cpu_load": 28.61,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:06:38.604Z",
+    "cpu_load": 31.73,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:11:38.604Z",
+    "cpu_load": 30.75,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:16:38.604Z",
+    "cpu_load": 38.02,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:21:38.604Z",
+    "cpu_load": 38.15,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:26:38.604Z",
+    "cpu_load": 30.9,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:31:38.604Z",
+    "cpu_load": 32.46,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:36:38.604Z",
+    "cpu_load": 26.34,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:41:38.604Z",
+    "cpu_load": 38.64,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:46:38.604Z",
+    "cpu_load": 30.5,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:51:38.604Z",
+    "cpu_load": 27.97,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T17:56:38.604Z",
+    "cpu_load": 34.77,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:01:38.604Z",
+    "cpu_load": 32.6,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:06:38.604Z",
+    "cpu_load": 29.22,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:11:38.604Z",
+    "cpu_load": 33.08,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:16:38.604Z",
+    "cpu_load": 34.02,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:21:38.604Z",
+    "cpu_load": 31.8,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:26:38.604Z",
+    "cpu_load": 38.99,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:31:38.604Z",
+    "cpu_load": 31.99,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:36:38.604Z",
+    "cpu_load": 28.24,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:41:38.604Z",
+    "cpu_load": 38.32,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:46:38.604Z",
+    "cpu_load": 34.62,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:51:38.604Z",
+    "cpu_load": 34.78,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T18:56:38.604Z",
+    "cpu_load": 30.97,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:01:38.604Z",
+    "cpu_load": 37.76,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:06:38.604Z",
+    "cpu_load": 26.46,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:11:38.604Z",
+    "cpu_load": 36.85,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:16:38.604Z",
+    "cpu_load": 36.06,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:21:38.604Z",
+    "cpu_load": 32.57,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:26:38.604Z",
+    "cpu_load": 37.04,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:31:38.604Z",
+    "cpu_load": 36.02,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:36:38.604Z",
+    "cpu_load": 37.42,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:41:38.604Z",
+    "cpu_load": 30.23,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:46:38.604Z",
+    "cpu_load": 31.54,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:51:38.604Z",
+    "cpu_load": 34.51,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T19:56:38.604Z",
+    "cpu_load": 31.26,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:01:38.604Z",
+    "cpu_load": 36.53,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:06:38.604Z",
+    "cpu_load": 31.12,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:11:38.604Z",
+    "cpu_load": 36.91,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:16:38.604Z",
+    "cpu_load": 39.27,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:21:38.604Z",
+    "cpu_load": 31.69,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:26:38.604Z",
+    "cpu_load": 26.43,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:31:38.604Z",
+    "cpu_load": 33.94,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:36:38.604Z",
+    "cpu_load": 26.09,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:41:38.604Z",
+    "cpu_load": 31.3,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:46:38.604Z",
+    "cpu_load": 29.54,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:51:38.604Z",
+    "cpu_load": 25.56,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T20:56:38.604Z",
+    "cpu_load": 29.93,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:01:38.604Z",
+    "cpu_load": 34.13,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:06:38.604Z",
+    "cpu_load": 35.59,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:11:38.604Z",
+    "cpu_load": 35.27,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:16:38.604Z",
+    "cpu_load": 29.8,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:21:38.604Z",
+    "cpu_load": 39.24,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:26:38.604Z",
+    "cpu_load": 27.15,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:31:38.604Z",
+    "cpu_load": 31.95,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:36:38.604Z",
+    "cpu_load": 26.89,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:41:38.604Z",
+    "cpu_load": 39.7,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:46:38.604Z",
+    "cpu_load": 36.46,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:51:38.604Z",
+    "cpu_load": 28.03,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T21:56:38.604Z",
+    "cpu_load": 34.28,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:01:38.604Z",
+    "cpu_load": 37,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:06:38.604Z",
+    "cpu_load": 38.72,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:11:38.604Z",
+    "cpu_load": 29.56,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:16:38.604Z",
+    "cpu_load": 28.76,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:21:38.604Z",
+    "cpu_load": 35.63,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:26:38.604Z",
+    "cpu_load": 28.95,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:31:38.604Z",
+    "cpu_load": 38.98,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:36:38.604Z",
+    "cpu_load": 26.18,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:41:38.604Z",
+    "cpu_load": 32.42,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:46:38.604Z",
+    "cpu_load": 26.58,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:51:38.604Z",
+    "cpu_load": 33.97,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T22:56:38.604Z",
+    "cpu_load": 26.65,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:01:38.604Z",
+    "cpu_load": 27.59,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:06:38.604Z",
+    "cpu_load": 37.68,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:11:38.604Z",
+    "cpu_load": 25.52,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:16:38.604Z",
+    "cpu_load": 25.67,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:21:38.604Z",
+    "cpu_load": 36.18,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:26:38.604Z",
+    "cpu_load": 31.93,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:31:38.604Z",
+    "cpu_load": 37.43,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:36:38.604Z",
+    "cpu_load": 34.27,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:41:38.604Z",
+    "cpu_load": 29.36,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:46:38.604Z",
+    "cpu_load": 29.58,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:51:38.604Z",
+    "cpu_load": 27.67,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-15T23:56:38.604Z",
+    "cpu_load": 37.54,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:01:38.604Z",
+    "cpu_load": 31.31,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:06:38.604Z",
+    "cpu_load": 25.92,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:11:38.604Z",
+    "cpu_load": 36.7,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:16:38.604Z",
+    "cpu_load": 30.03,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:21:38.604Z",
+    "cpu_load": 27.95,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:26:38.604Z",
+    "cpu_load": 39.3,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:31:38.604Z",
+    "cpu_load": 38.7,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:36:38.604Z",
+    "cpu_load": 28.66,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:41:38.604Z",
+    "cpu_load": 29.18,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:46:38.604Z",
+    "cpu_load": 29,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:51:38.604Z",
+    "cpu_load": 33.16,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T00:56:38.604Z",
+    "cpu_load": 26.73,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:01:38.604Z",
+    "cpu_load": 34.35,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:06:38.604Z",
+    "cpu_load": 33.71,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:11:38.604Z",
+    "cpu_load": 39.67,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:16:38.604Z",
+    "cpu_load": 28.12,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:21:38.604Z",
+    "cpu_load": 36.83,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:26:38.604Z",
+    "cpu_load": 39.97,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:31:38.604Z",
+    "cpu_load": 32.89,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:36:38.604Z",
+    "cpu_load": 33.68,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:41:38.604Z",
+    "cpu_load": 32.91,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:46:38.604Z",
+    "cpu_load": 27.2,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:51:38.604Z",
+    "cpu_load": 39.64,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T01:56:38.604Z",
+    "cpu_load": 33.69,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:01:38.604Z",
+    "cpu_load": 29.94,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:06:38.604Z",
+    "cpu_load": 27.75,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:11:38.604Z",
+    "cpu_load": 32.49,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:16:38.604Z",
+    "cpu_load": 35.17,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:21:38.604Z",
+    "cpu_load": 34.86,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:26:38.604Z",
+    "cpu_load": 39.98,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:31:38.604Z",
+    "cpu_load": 36.86,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:36:38.604Z",
+    "cpu_load": 32.36,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:41:38.604Z",
+    "cpu_load": 32.89,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:46:38.604Z",
+    "cpu_load": 37.2,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:51:38.604Z",
+    "cpu_load": 39.95,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T02:56:38.604Z",
+    "cpu_load": 28.48,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:01:38.604Z",
+    "cpu_load": 34.22,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:06:38.604Z",
+    "cpu_load": 39.12,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:11:38.604Z",
+    "cpu_load": 28.32,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:16:38.604Z",
+    "cpu_load": 35.09,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:21:38.604Z",
+    "cpu_load": 28.11,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:26:38.604Z",
+    "cpu_load": 36.23,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:31:38.604Z",
+    "cpu_load": 27.41,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:36:38.604Z",
+    "cpu_load": 30.38,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:41:38.604Z",
+    "cpu_load": 29.89,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:46:38.604Z",
+    "cpu_load": 28.02,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:51:38.604Z",
+    "cpu_load": 33.08,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T03:56:38.604Z",
+    "cpu_load": 31.68,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:01:38.604Z",
+    "cpu_load": 38.12,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:06:38.604Z",
+    "cpu_load": 30.94,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:11:38.604Z",
+    "cpu_load": 28.49,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:16:38.604Z",
+    "cpu_load": 27.26,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:21:38.604Z",
+    "cpu_load": 38.81,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:26:38.604Z",
+    "cpu_load": 38.48,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:31:38.604Z",
+    "cpu_load": 25.72,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:36:38.604Z",
+    "cpu_load": 27.76,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:41:38.604Z",
+    "cpu_load": 39.73,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:46:38.604Z",
+    "cpu_load": 25.09,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:51:38.604Z",
+    "cpu_load": 37.15,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T04:56:38.604Z",
+    "cpu_load": 31.64,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:01:38.604Z",
+    "cpu_load": 27.4,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:06:38.604Z",
+    "cpu_load": 38.06,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:11:38.604Z",
+    "cpu_load": 35.48,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:16:38.604Z",
+    "cpu_load": 33.96,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:21:38.604Z",
+    "cpu_load": 34.54,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:26:38.604Z",
+    "cpu_load": 26.33,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:31:38.604Z",
+    "cpu_load": 35.57,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:36:38.604Z",
+    "cpu_load": 30.23,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:41:38.604Z",
+    "cpu_load": 28.45,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:46:38.604Z",
+    "cpu_load": 36.43,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:51:38.604Z",
+    "cpu_load": 39.57,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T05:56:38.604Z",
+    "cpu_load": 35.08,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:01:38.604Z",
+    "cpu_load": 29.87,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:06:38.604Z",
+    "cpu_load": 28.75,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:11:38.604Z",
+    "cpu_load": 25.39,
+    "ticket_velocity": 3,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:16:38.604Z",
+    "cpu_load": 37.21,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:21:38.604Z",
+    "cpu_load": 38.66,
+    "ticket_velocity": 5,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:26:38.604Z",
+    "cpu_load": 30.15,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:31:38.604Z",
+    "cpu_load": 34.15,
+    "ticket_velocity": 6,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:36:38.604Z",
+    "cpu_load": 36.58,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:41:38.604Z",
+    "cpu_load": 28.88,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:46:38.604Z",
+    "cpu_load": 33.09,
+    "ticket_velocity": 7,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:51:38.604Z",
+    "cpu_load": 25.04,
+    "ticket_velocity": 4,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T06:56:38.604Z",
+    "cpu_load": 25.8,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T07:01:38.604Z",
+    "cpu_load": 35.28,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T07:06:38.604Z",
+    "cpu_load": 31.27,
+    "ticket_velocity": 7,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:11:38.604Z",
+    "cpu_load": 48.66,
+    "ticket_velocity": 10,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:16:38.604Z",
+    "cpu_load": 48.77,
+    "ticket_velocity": 14,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:21:38.604Z",
+    "cpu_load": 53.93,
+    "ticket_velocity": 11,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:26:38.604Z",
+    "cpu_load": 56.77,
+    "ticket_velocity": 17,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:31:38.604Z",
+    "cpu_load": 57.63,
+    "ticket_velocity": 16,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:36:38.604Z",
+    "cpu_load": 62.56,
+    "ticket_velocity": 19,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:41:38.604Z",
+    "cpu_load": 59.32,
+    "ticket_velocity": 20,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:46:38.604Z",
+    "cpu_load": 62.03,
+    "ticket_velocity": 19,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:51:38.604Z",
+    "cpu_load": 68.65,
+    "ticket_velocity": 22,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T07:56:38.604Z",
+    "cpu_load": 74.13,
+    "ticket_velocity": 24,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:01:38.604Z",
+    "cpu_load": 100,
+    "ticket_velocity": 30,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:06:38.604Z",
+    "cpu_load": 100,
+    "ticket_velocity": 34,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:11:38.604Z",
+    "cpu_load": 100,
+    "ticket_velocity": 34,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:16:38.604Z",
+    "cpu_load": 85.12,
+    "ticket_velocity": 31,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:21:38.604Z",
+    "cpu_load": 81.1,
+    "ticket_velocity": 25,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:26:38.604Z",
+    "cpu_load": 79.84,
+    "ticket_velocity": 24,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:31:38.604Z",
+    "cpu_load": 75.8,
+    "ticket_velocity": 27,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:36:38.604Z",
+    "cpu_load": 67.81,
+    "ticket_velocity": 25,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:41:38.604Z",
+    "cpu_load": 65.57,
+    "ticket_velocity": 21,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:46:38.604Z",
+    "cpu_load": 66.7,
+    "ticket_velocity": 22,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:51:38.604Z",
+    "cpu_load": 59.56,
+    "ticket_velocity": 20,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T08:56:38.604Z",
+    "cpu_load": 59.04,
+    "ticket_velocity": 15,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T09:01:38.604Z",
+    "cpu_load": 50.76,
+    "ticket_velocity": 12,
+    "is_anomaly": 1
+  },
+  {
+    "timestamp": "2025-12-16T09:06:38.604Z",
+    "cpu_load": 41.01,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:11:38.604Z",
+    "cpu_load": 42.57,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:16:38.604Z",
+    "cpu_load": 41.52,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:21:38.604Z",
+    "cpu_load": 45.43,
+    "ticket_velocity": 13,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:26:38.604Z",
+    "cpu_load": 50.11,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:31:38.604Z",
+    "cpu_load": 53.23,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:36:38.604Z",
+    "cpu_load": 43.08,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:41:38.604Z",
+    "cpu_load": 40.3,
+    "ticket_velocity": 13,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:46:38.604Z",
+    "cpu_load": 49.93,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:51:38.604Z",
+    "cpu_load": 45.34,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T09:56:38.604Z",
+    "cpu_load": 54.81,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:01:38.604Z",
+    "cpu_load": 52.23,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:06:38.604Z",
+    "cpu_load": 53.12,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:11:38.604Z",
+    "cpu_load": 45.6,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:16:38.604Z",
+    "cpu_load": 51.66,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:21:38.604Z",
+    "cpu_load": 54.68,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:26:38.604Z",
+    "cpu_load": 50.23,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:31:38.604Z",
+    "cpu_load": 51.59,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:36:38.604Z",
+    "cpu_load": 52.26,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:41:38.604Z",
+    "cpu_load": 48.85,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:46:38.604Z",
+    "cpu_load": 52.06,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:51:38.604Z",
+    "cpu_load": 52.46,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T10:56:38.604Z",
+    "cpu_load": 45.72,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:01:38.604Z",
+    "cpu_load": 52.39,
+    "ticket_velocity": 13,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:06:38.604Z",
+    "cpu_load": 44.88,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:11:38.604Z",
+    "cpu_load": 40.73,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:16:38.604Z",
+    "cpu_load": 54.97,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:21:38.604Z",
+    "cpu_load": 42.93,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:26:38.604Z",
+    "cpu_load": 44.72,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:31:38.604Z",
+    "cpu_load": 40.86,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:36:38.604Z",
+    "cpu_load": 45.53,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:41:38.604Z",
+    "cpu_load": 44.2,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:46:38.604Z",
+    "cpu_load": 41.86,
+    "ticket_velocity": 13,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:51:38.604Z",
+    "cpu_load": 44.2,
+    "ticket_velocity": 9,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T11:56:38.604Z",
+    "cpu_load": 42.95,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:01:38.604Z",
+    "cpu_load": 51.89,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:06:38.604Z",
+    "cpu_load": 43.46,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:11:38.604Z",
+    "cpu_load": 50.24,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:16:38.604Z",
+    "cpu_load": 47.35,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:21:38.604Z",
+    "cpu_load": 54.51,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:26:38.604Z",
+    "cpu_load": 45.29,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:31:38.604Z",
+    "cpu_load": 52.6,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:36:38.604Z",
+    "cpu_load": 47.94,
+    "ticket_velocity": 11,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:41:38.604Z",
+    "cpu_load": 45.56,
+    "ticket_velocity": 8,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:46:38.604Z",
+    "cpu_load": 51.79,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:51:38.604Z",
+    "cpu_load": 40.22,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T12:56:38.604Z",
+    "cpu_load": 52.87,
+    "ticket_velocity": 12,
+    "is_anomaly": 0
+  },
+  {
+    "timestamp": "2025-12-16T13:01:38.604Z",
+    "cpu_load": 48.1,
+    "ticket_velocity": 10,
+    "is_anomaly": 0
+  }
+]

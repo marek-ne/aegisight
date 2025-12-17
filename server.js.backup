@@ -1,0 +1,192 @@
+const express = require('express');
+const helmet = require('helmet');
+const path = require('path');
+const compression = require('compression');
+const nodemailer = require('nodemailer');
+
+// Authentication requires
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('./config/passport');
+const authRoutes = require('./routes/auth');
+const dashboardRoutes = require('./routes/dashboard');
+
+// Load environment variables from .env file
+require('dotenv').config();
+
+const app = express();
+const PORT = process.env.PORT || 3003;
+
+// Security headers with CSP configured for analytics
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: [
+                "'self'",
+                "'unsafe-inline'", // Required for GTM inline script
+                "https://www.googletagmanager.com",
+                "https://www.google-analytics.com",
+                "https://*.clarity.ms",
+                "https://www.google.com/recaptcha/",
+                "https://accounts.google.com",
+                "https://www.gstatic.com/recaptcha/",
+                "https://accounts.google.com"
+            ],
+            imgSrc: ["'self'", "data:", "https:", "https://*.google-analytics.com", "https://*.googletagmanager.com"],
+            connectSrc: [
+                "'self'",
+                "https://*.google-analytics.com",
+                "https://*.analytics.google.com",
+                "https://*.googletagmanager.com",
+                "https://*.clarity.ms"
+            ],
+            frameSrc: ["https://www.googletagmanager.com", "https://www.google.com/recaptcha/",
+                "https://accounts.google.com"],
+            styleSrc: ["'self'", "https:", "'unsafe-inline'"]
+        }
+    },
+    crossOriginResourcePolicy: { policy: "cross-origin" }
+}));
+
+// Gzip/Brotli compression
+app.use(compression());
+
+// Parse JSON and URL-encoded bodies
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Authentication middleware
+app.use(cookieParser());
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'fallback-secret',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000
+    }
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Mount authentication routes
+app.use('/api/auth', authRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+
+// Dashboard page route
+app.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'dashboard.html'));
+});
+
+// Serve static files from public directory with caching
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: '0', // Disable cache for debugging
+    etag: false
+}));
+
+// Route for the home page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'about.html'));
+});
+
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'contact.html'));
+});
+
+app.get('/privacy', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'privacy.html'));
+});
+
+// Middleware to parse JSON bodies
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Email Configuration using Gmail SMTP with environment variables
+const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || "smtp.gmail.com",
+    port: parseInt(process.env.SMTP_PORT) || 587,
+    secure: false, // true for 465, false for other ports (587 uses TLS)
+    auth: {
+        user: process.env.SMTP_USER, // Your Gmail address from .env
+        pass: process.env.SMTP_PASS, // Your App Password from .env
+    },
+    // For development/mocking without real creds, we can use a stream transport or just log
+    // But since user asked for it, we'll set it up. If it fails, we catch it.
+});
+
+app.post('/api/contact', async (req, res) => {
+    const { firstName, lastName, email, phone, requirement, pillars, 'g-recaptcha-response': recaptchaToken } = req.body;
+
+    // Verify reCAPTCHA
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    if (secretKey) {
+        try {
+            const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
+            const verifyResponse = await fetch(verifyUrl, { method: 'POST' });
+            const verifyData = await verifyResponse.json();
+
+            if (!verifyData.success) {
+                console.error('reCAPTCHA verification failed:', verifyData);
+                return res.status(400).json({ error: 'reCAPTCHA verification failed. Please try again.' });
+            }
+        } catch (error) {
+            console.error('reCAPTCHA error:', error);
+            return res.status(500).json({ error: 'Error verifying reCAPTCHA' });
+        }
+    } else {
+        console.warn('WARNING: RECAPTCHA_SECRET_KEY is not set in .env. reCAPTCHA verification is SKIPPED.');
+    }
+
+    console.log('Received Contact Form Submission:', req.body);
+
+    // Handle pillars as an array
+    const pillarList = Array.isArray(pillars) ? pillars.join(', ') : (pillars || 'None selected');
+
+    const mailOptions = {
+        from: '"Aegisight AI Contact Form" <sales@aegisight.ai>', // sender address (your sales email)
+        replyTo: `"${firstName} ${lastName}" <${email}>`, // Reply to customer's email
+        to: "sales@aegisight.ai", // list of receivers
+        subject: `New Contact Request: ${pillarList} - ${firstName} ${lastName}`, // Subject line
+        text: `
+            Name: ${firstName} ${lastName}
+            Email: ${email}
+            Phone: ${phone}
+            Pillars of Interest: ${pillarList}
+            
+            Requirement:
+            ${requirement}
+        `, // plain text body
+        html: `
+            <h3>New Contact Request</h3>
+            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Pillars of Interest:</strong> ${pillarList}</p>
+            <br>
+            <p><strong>Requirement:</strong></p>
+            <p>${requirement}</p>
+        `, // html body
+    };
+
+    try {
+        // Send email using Gmail SMTP
+        await transporter.sendMail(mailOptions);
+
+        console.log(`Email sent successfully to sales@aegisight.ai from ${firstName} ${lastName}`);
+
+        res.status(200).json({ message: 'Message sent successfully!' });
+    } catch (error) {
+        console.error("Error sending email:", error);
+        res.status(500).json({ message: 'Failed to send message.' });
+    }
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});

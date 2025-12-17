@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Aegisight AI</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --color-primary-blue: #0076D7;
+            --color-bg-light: #ffffff;
+            --color-surface: #ffffff;
+            --color-text-main: #111827;
+            --color-text-muted: #64748b;
+            --color-border: #e2e8f0;
+            --color-error: #ef4444;
+            --color-input-bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* Layout */
+        .auth-container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* Left Side - Form */
+        .auth-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Changed from center to flex-start to prevent overlap */
+            align-items: center;
+            padding: 2rem;
+            background-color: var(--color-bg-light);
+            position: relative;
+            /* Allow scrolling for long form */
+            overflow-y: auto;
+            max-height: 100vh;
+        }
+
+        .auth-header {
+            position: relative;
+            /* Changed from absolute */
+            width: 100%;
+            margin-bottom: 2rem;
+            z-index: 10;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+        }
+
+        .text-blue {
+            color: var(--color-primary-blue);
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 600px;
+            /* Wider for signup form */
+            background: var(--color-surface);
+            padding: 2rem 0;
+            /* Reduced padding for cleaner look */
+            margin: auto;
+            /* Vertically center safely in available space */
+        }
+
+        .login-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-main);
+            letter-spacing: -0.025em;
+        }
+
+        .login-subtitle {
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .login-subtitle a {
+            color: var(--color-primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-subtitle a:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid Layout for Form */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .form-full {
+            grid-column: 1 / -1;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 0;
+            /* Handled by grid gap */
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 0.85rem;
+            background: var(--color-input-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text-main);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--color-primary-blue);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(0, 118, 215, 0.1);
+        }
+
+        .error-msg {
+            color: var(--color-error);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            gap: 0.75rem;
+        }
+
+        .checkbox-group input {
+            margin-top: 0.2rem;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-primary-blue);
+            border-color: var(--color-border);
+        }
+
+        .checkbox-group label {
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #0f172a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #1e293b;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-links {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            width: 100%;
+        }
+
+        .footer-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary-blue);
+            text-decoration: underline;
+        }
+
+        /* Right Side - Trust Panel */
+        .auth-side {
+            flex: 1;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            /* Sticky functionality for side panel when main scrolls */
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .auth-side::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .trust-content {
+            max-width: 500px;
+            z-index: 1;
+        }
+
+        .trust-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            color: #60a5fa;
+            margin-right: 1.5rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.1);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .feature-text h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .auth-side {
+                display: none;
+            }
+
+            .auth-main {
+                padding: 1.5rem;
+                overflow-y: visible;
+                max-height: none;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <!-- Left Side: Signup Form -->
+        <div class="auth-main">
+            <header class="auth-header">
+                <a href="/" class="logo-link">
+                    <img src="/pics/as-2-icon.png" alt="Aegisight AI Logo" width="40" height="40">
+                    <span class="logo-text">Aegisight <span class="text-blue">AI</span></span>
+                </a>
+            </header>
+
+            <div class="login-card">
+                <h1 class="login-title">Create your Aegisight ID</h1>
+                <p class="login-subtitle">Already have an account? <a href="/account">Sign in</a></p>
+
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-grid">
+
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" id="firstName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" id="lastName" class="form-input" required>
+                        </div>
+
+                        <!-- Email (Full Width) -->
+                        <div class="form-group form-full">
+                            <label for="email" class="form-label">Work Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="name@company.com" required>
+                        </div>
+
+                        <!-- Company & Phone -->
+                        <div class="form-group">
+                            <label for="companyName" class="form-label">Company Name</label>
+                            <input type="text" id="companyName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Business Phone</label>
+                            <input type="tel" id="phone" class="form-input" required>
+                        </div>
+
+                        <!-- Job Level -->
+                        <div class="form-group form-full">
+                            <label for="jobLevel" class="form-label">Job Level</label>
+                            <select id="jobLevel" class="form-select" required>
+                                <option value="" disabled selected>Select Level</option>
+                                <option value="C-Suite">C-Suite / Executive</option>
+                                <option value="VP">VP / Director</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Individual Contributor">Individual Contributor</option>
+                                <option value="Student">Student / Intern</option>
+                            </select>
+                        </div>
+
+                        <!-- Department -->
+                        <div class="form-group form-full">
+                            <label for="department" class="form-label">Department</label>
+                            <select id="department" class="form-select" required>
+                                <option value="" disabled selected>Select Department</option>
+                                <option value="IT">IT / Engineering</option>
+                                <option value="Product">Product Management</option>
+                                <option value="Security">Security / Compliance</option>
+                                <option value="Operations">Operations</option>
+                                <option value="Sales">Sales / Marketing</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Function & Country -->
+                        <div class="form-group">
+                            <label for="jobFunction" class="form-label">Job Function</label>
+                            <select id="jobFunction" class="form-select" required>
+                                <option value="" disabled selected>Select Function</option>
+                                <option value="DevOps">DevOps</option>
+                                <option value="Cloud Arch">Cloud Architecture</option>
+                                <option value="Security">Cyber Security</option>
+                                <option value="Data">Data Science</option>
+                                <option value="Management">Management</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="country" class="form-label">Country</label>
+                            <select id="country" class="form-select" required>
+                                <option value="" disabled selected>Select Country</option>
+                                <option value="USA">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Password (Full Width) -->
+                        <div class="form-group form-full">
+                            <label for="password" class="form-label">Create Password</label>
+                            <input type="password" id="password" class="form-input" required minlength="6">
+                        </div>
+
+                    </div> <!-- End Grid -->
+
+                    <!-- Terms -->
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            I have read and agree to the <a href="/terms"
+                                style="color: var(--color-primary-blue); text-decoration: none;">Terms of Use</a>
+                            and understand that my personal information is processed in accordance with the
+                            <a href="/privacy" style="color: var(--color-primary-blue); text-decoration: none;">Privacy
+                                Statement</a>.
+                        </label>
+                    </div>
+
+                    <div class="error-msg" id="globalError" style="margin-bottom: 1rem; text-align: center;"></div>
+
+                    <button type="submit" class="submit-btn">
+                        Create Account <div class="spinner" id="signupSpinner"></div>
+                    </button>
+                </form>
+
+                <div class="footer-links">
+                    <a href="/privacy">Privacy Policy</a> •
+                    <a href="/terms">Terms of Use</a> •
+                    <a href="/contact">Help</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Trust & Value Prop -->
+        <div class="auth-side">
+            <div class="trust-content">
+                <h2 class="trust-title">Join the predictive intelligence network</h2>
+
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Instant Access</h4>
+                            <p>Get immediate access to our core telemetry engine and begin monitoring your assets in
+                                real-time.</p>
+                        </div>
+                    </li>
+
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users-viewfinder"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Enterprise Community</h4>
+                            <p>Join thousands of risk professionals sharing threat intelligence and mitigation
+                                strategies.</p>
+                        </div>
+                    </li>
+
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Compliance Ready</h4>
+                            <p>All data handling meets global enterprise standards including GDPR, SOC2, and ISO 27001
+                                requirements.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function handleSignup(event) {
+            event.preventDefault();
+
+            // Gather Data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                companyName: document.getElementById('companyName').value,
+                businessPhone: document.getElementById('phone').value,
+                jobLevel: document.getElementById('jobLevel').value,
+                department: document.getElementById('department').value,
+                jobFunction: document.getElementById('jobFunction').value,
+                country: document.getElementById('country').value,
+                password: document.getElementById('password').value
+            };
+
+            const btn = document.querySelector('button[type="submit"]');
+            const spinner = document.getElementById('signupSpinner');
+            const globalError = document.getElementById('globalError');
+
+            // Reset UI
+            globalError.style.display = 'none';
+            btn.disabled = true;
+            spinner.style.display = 'inline-block';
+            btn.innerHTML = 'Creating Account... <div class="spinner" style="display:inline-block"></div>';
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Registration failed');
+                }
+
+                // Success
+                alert('Account created successfully!');
+                window.location.href = '/';
+
+            } catch (err) {
+                console.error(err);
+                globalError.textContent = err.message;
+                globalError.style.display = 'flex';
+                globalError.style.justifyContent = 'center';
+                btn.disabled = false;
+                btn.innerHTML = 'Create Account <div class="spinner" id="signupSpinner"></div>';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Audit - Aegisight AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .audit-container {
+            max-width: 600px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .audit-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .audit-header p {
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .upload-area:hover {
+            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .upload-area input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #6366f1;
+            margin-bottom: 15px;
+        }
+
+        .upload-btn {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 20px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .upload-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #status-message {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            height: 20px;
+        }
+
+        .success {
+            color: #4ade80;
+        }
+
+        .error {
+            color: #f87171;
+        }
+
+        /* Nav override for standalone page if needed, but assuming style.css handles nav */
+    </style>
+</head>
+
+<body class="dark-theme">
+    <!-- Navigation (Simplified) -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/"><img src="/aegisight-logo.png" alt="Aegisight AI" height="40"></a>
+        </div>
+        <div class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/account">My Profile</a>
+        </div>
+    </nav>
+
+    <div class="audit-container">
+        <div class="audit-header">
+            <h1>Risk Audit</h1>
+            <p>Upload a CSV using your incident logs to generate an immediate retrospective risk assessment.</p>
+        </div>
+
+        <div class="guidelines-card"
+            style="text-align: left; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+            <h3 style="margin-top:0; color: #a5b4fc;">Data Format Requirements</h3>
+            <p style="font-size: 0.9rem; color: #cbd5e1;">To verify the Risk Engine's accuracy against your historical
+                incidents, your CSV must contain the following columns:</p>
+            <ul style="font-size: 0.9rem; color: #cbd5e1; list-style-position: inside; padding-left: 0;">
+                <li><code>timestamp</code> - ISO 8601 format (e.g., 2025-12-15T14:30:00Z)</li>
+                <li><code>cpu_load</code> - Float (0-100) representing CPU utilization</li>
+                <li><code>ticket_velocity</code> - Integer count of new tickets in that hour</li>
+                <li><code>is_anomaly</code> - 0 (Normal) or 1 (Known Issue) for ground truth verification</li>
+            </ul>
+            <div style="margin-top: 15px;">
+                <a href="/simulated_metrics.csv" download
+                    style="color: #818cf8; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fas fa-file-csv"></i> Download Sample Template
+                </a>
+            </div>
+        </div>
+
+        <form id="uploadForm">
+            <div class="upload-area" id="dropZone">
+                <div class="upload-icon">📂</div>
+                <p id="fileName">Drag & drop your CSV here, or click to select</p>
+                <input type="file" name="csvFile" id="csvFile" accept=".csv" required>
+            </div>
+
+            <button type="button" id="uploadBtn" class="upload-btn">Run Risk Audit & Verify Accuracy</button>
+        </form>
+
+        <div id="status-message"></div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('csvFile');
+        const fileNameDisplay = document.getElementById('fileName');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const statusMsg = document.getElementById('status-message');
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                fileNameDisplay.textContent = e.target.files[0].name;
+            } else {
+                fileNameDisplay.textContent = "Drag & drop your CSV here, or click to select";
+            }
+        });
+
+        uploadBtn.addEventListener('click', async () => {
+            if (!fileInput.files[0]) {
+                statusMsg.textContent = "Please select a file first.";
+                statusMsg.className = "error";
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('csvFile', fileInput.files[0]);
+
+            uploadBtn.disabled = true;
+            uploadBtn.textContent = "Analyzing...";
+            statusMsg.textContent = "";
+
+            try {
+                const response = await fetch('/api/upload-csv', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    let accuracyMsg = "Upload Successful!";
+                    let urlCount = `/dashboard?source=csv`;
+
+                    // Defensive check for metrics (in case server didn't restart)
+                    if (result.meta.metrics && typeof result.meta.metrics.accuracy === 'number') {
+                        accuracyMsg += " Verified Accuracy: " + (result.meta.metrics.accuracy * 100).toFixed(1) + "%";
+                        urlCount += `&accuracy=${result.meta.metrics.accuracy}&fpr=${result.meta.metrics.fpr}`;
+                    }
+
+                    statusMsg.textContent = accuracyMsg;
+                    statusMsg.className = "success";
+
+                    // Redirect with metrics
+                    setTimeout(() => {
+                        window.location.href = urlCount;
+                    }, 1500);
+                } else {
+                    throw new Error(result.error || 'Upload failed');
+                }
+            } catch (error) {
+                console.error(error);
+                statusMsg.textContent = error.message;
+                statusMsg.className = "error";
+                uploadBtn.disabled = false;
+                uploadBtn.textContent = "Run Audit";
+            }
+        });
+    </script>
+</body>
+
+</html>

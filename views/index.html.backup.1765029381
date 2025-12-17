@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegisight AI - Predictive Risk Intelligence</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Aegisight AI provides predictive risk intelligence for enterprises. Forecast IT outages, supply chain disruptions, and financial fraud with our AI plugins.">
+    <meta name="keywords"
+        content="AI, Risk Intelligence, Predictive Analytics, ServiceNow, SAP, Enterprise Risk Management">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aegisight.ai/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M8NJXR2D');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aegisight.ai/">
+    <meta property="og:title" content="Aegisight AI - Predictive Risk Intelligence">
+    <meta property="og:description"
+        content="Incubating a culture of innovation & creativity. Predict and prevent enterprise risks before they happen.">
+    <meta property="og:image" content="https://aegisight.ai/pics/social-share.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aegisight.ai/">
+    <meta property="twitter:title" content="Aegisight AI - Predictive Risk Intelligence">
+    <meta property="twitter:description"
+        content="Incubating a culture of innovation & creativity. Predict and prevent enterprise risks before they happen.">
+    <meta property="twitter:image" content="https://aegisight.ai/pics/social-share.jpg">
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="DySu-QwBufNthLXZTe7q7-zvXdFE0ABQG6eVYauhmFI" />
+
+    <!-- Schema.org Markup for Logo -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://aegisight.ai",
+      "logo": "https://aegisight.ai/favicon.png"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Replaced Roboto with Inter for a cleaner, modern B2B feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=10">
+    <script src="js/main.js?v=3" defer></script>
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8NJXR2D" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <div class="header-left">
+            <a href="/" class="hero-logo-container" style="text-decoration: none;">
+                <img src="pics/as-2-icon.png" alt="Aegisight AI Logo" class="nav-icon" width="48" height="48">
+                <span class="logo-text">Aegisight <span class="text-blue">AI</span></span>
+            </a>
+            <nav>
+                <div class="solutions-dropdown">
+                    <button class="solutions-trigger">Capabilities</button>
+                    <!-- NEW MEGA-MENU STRUCTURE -->
+                    <div class="dropdown-content mega-menu">
+                        <!-- NEW: Menu Header -->
+                        <div class="mega-menu-header">
+                            <h3>Our Solutions</h3>
+                            <p>Full-spectrum predictive defense across your digital, physical, and human infrastructure.
+                            </p>
+                        </div>
+
+                        <!-- Grid Wrapper -->
+                        <div class="mega-menu-grid">
+                            <!-- Column 1: Navigation (3 Pillars) -->
+                            <div class="mega-menu-nav no-scrollbar">
+                                <div class="nav-category">Core Capabilities</div>
+                                <button class="mega-menu-item active" data-target="panel-digital">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <strong>Digital Protection</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-physical">
+                                    <i class="fas fa-truck-loading"></i>
+                                    <strong>Physical Protection</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-human">
+                                    <i class="fas fa-user-shield"></i>
+                                    <strong>Human Protection</strong>
+                                </button>
+                            </div>
+
+                            <!-- Column 2: Content (Text Grid) -->
+                            <div class="mega-menu-panels">
+                                <!-- Digital Panel -->
+                                <div class="mega-menu-panel active" id="panel-digital">
+                                    <h4>Digital Protection Solutions</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>IT Risk Intelligence</h5>
+                                            <p>Predict major outages, identify servers at risk of failure, and
+                                                forecast project delays with 98% accuracy.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Financial Fraud Sentinel</h5>
+                                            <p>Detect anomalies in financial transactions in real-time, preventing fraud
+                                                before it impacts your bottom line.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Physical Panel -->
+                                <div class="mega-menu-panel" id="panel-physical">
+                                    <h4>Physical Protection Solutions</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Supply Chain Guardian</h5>
+                                            <p>Monitor global logistics in real-time. Predict delays caused by weather,
+                                                geopolitics, or strikes weeks in advance.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Infrastructure Integrity</h5>
+                                            <p>Analyze sensor data from physical assets (pipelines, fleets, machinery)
+                                                to predict maintenance needs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Human Panel -->
+                                <div class="mega-menu-panel" id="panel-human">
+                                    <h4>Human Protection Solutions</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Insider Threat Detection</h5>
+                                            <p>Identify behavioral anomalies that indicate potential data theft or
+                                                sabotage before a breach occurs.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Workforce Safety AI</h5>
+                                            <p>Predict potential safety incidents in high-risk environments by analyzing
+                                                patterns in operational data.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Call to Action -->
+                            <div class="mega-menu-promo">
+                                <h4>Get Started</h4>
+                                <p>Take the next step in securing your infrastructure.</p>
+
+                                <a href="/contact" class="promo-card">
+                                    <div class="promo-icon">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <div class="promo-text">
+                                        <strong>Deploy the Core Engine</strong>
+                                        <small>Identify hidden vulnerabilities in your stack.</small>
+                                    </div>
+                                </a>
+
+                                <a href="#login" class="promo-card">
+                                    <div class="promo-icon">
+                                        <i class="fas fa-sign-in-alt"></i>
+                                    </div>
+                                    <div class="promo-text">
+                                        <strong>Client Login</strong>
+                                        <small>Access your live predictive dashboard and real-time threat
+                                            intelligence.</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">Industries</a>
+                <a href="/about" class="nav-link">About Us</a>
+                <a href="/contact" class="nav-link" onclick="window.location.href='/contact'; return false;">Contact
+                    Us</a>
+                <a href="#" class="nav-link">Blogs</a>
+                <a href="#login" class="nav-link client-login-btn">Client Login</a>
+            </nav>
+        </div>
+        <a href="/contact" class="cta-button" onclick="window.location.href='/contact'; return false;">Contact Us</a>
+    </header>
+
+    <main>
+        <section class="hero" id="top">
+            <div class="container">
+                <div class="hero-layout">
+                    <div class="hero-logo-container">
+                        <!-- UPDATED: New Transparent Logo -->
+                        <img src="pics/as-1-logo.webp" alt="Aegisight AI Logo" class="hero-logo" width="1029"
+                            height="726">
+                    </div>
+                    <div class="hero-text-container">
+                        <!-- Removed "Aegisight AI:" from h1 -->
+                        <h1>One Platform. Zero Surprises.</h1>
+                        <p class="sub-headline">
+                            From Reactive Measures to Predictive Intelligence
+                        </p>
+                        <!-- Removed sub-headline as it is embedded in the logo image -->
+                        <p class="hero-description">
+                            We find the critical "fingerprints" of failure in your data—from IT outages and financial
+                            fraud to supply chain disruption and health risks—so you can act before it's too late.
+                        </p>
+                        <a href="/contact" class="cta-button">Assess Your Risk Exposure</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST & COMPLIANCE STRIP -->
+        <section class="trust-strip">
+            <div class="container trust-container">
+                <div class="trust-label">Enterprise-Grade Security & Compliance</div>
+                <div class="trust-badges">
+                    <div class="trust-badge" title="SOC2 Type II Certified">
+                        <i class="fas fa-shield-alt"></i> <span>SOC2 Type II</span>
+                    </div>
+                    <div class="trust-badge" title="ISO 27001 Certified">
+                        <i class="fas fa-lock"></i> <span>ISO 27001</span>
+                    </div>
+                    <div class="trust-badge" title="GDPR Compliant">
+                        <i class="fas fa-user-shield"></i> <span>GDPR</span>
+                    </div>
+                    <div class="trust-badge" title="HIPAA Compliant">
+                        <i class="fas fa-notes-medical"></i> <span>HIPAA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem">
+            <div class="container">
+                <h2 style="text-align: center;">Siloed Data Conceals Systemic Risk.</h2>
+                <p style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center;">
+                    Reactive measures are a failure of foresight. We reject generic buffers. The Aegisight Core Engine
+                    identifies the specific 'fingerprints' of failure across your digital, physical, and human
+                    assets—allowing for surgical intervention before a crisis occurs.
+                </p>
+            </div>
+        </section>
+
+        <section class="solution" id="telemetry">
+            <div class="container" style="text-align: center;">
+                <h2>Universal Telemetry Pipeline</h2>
+                <p class="solid-data-subheadline">Non-Invasive Integration Architecture</p>
+                <p style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center; color: #666;">
+                    The Aegisight Core Engine operates on a data-agnostic Universal API framework. It is designed to
+                    ingest, normalize, and correlate disparate time-series data streams without disrupting existing
+                    operational workflows or requiring infrastructure refactoring.
+                </p>
+
+                <div class="how-it-works-grid">
+                    <div class="how-it-works-step">
+                        <div class="step-icon"
+                            style="font-size: 2.5rem; color: var(--color-primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>01. Digital Asset Ingestion</h3>
+                        <div class="tech-spec">
+                            <p style="margin-bottom: 0.5rem;"><strong>Protocol:</strong> REST API & Webhooks</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Integration Targets:</strong> Native connectors
+                                for ServiceNow, Jira, SAP, and Oracle.</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Data Payload:</strong> Ingests ticket velocity,
+                                system logs, CPU variance, and transaction metadata in real-time to detect
+                                "fingerprints" of IT failure.</p>
+                            <p style="margin-bottom: 0;"><strong>Security:</strong> OAuth 2.0 & TLS 1.3 Encryption.</p>
+                        </div>
+                    </div>
+                    <div class="how-it-works-step">
+                        <div class="step-icon"
+                            style="font-size: 2.5rem; color: var(--color-primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>02. Physical Asset Ingestion</h3>
+                        <div class="tech-spec">
+                            <p style="margin-bottom: 0.5rem;"><strong>Protocol:</strong> MQTT & SCADA Bridges</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Integration Targets:</strong> Logistics ERPs,
+                                Environmental/Weather APIs, and Industrial Control Systems.</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Data Payload:</strong> Tracks shipping manifests,
+                                raw material throughput, and ambient facility conditions to predict supply chain
+                                disruption.</p>
+                            <p style="margin-bottom: 0;"><strong>Latency:</strong> Sub-second telemetry for sensor
+                                arrays.</p>
+                        </div>
+                    </div>
+                    <div class="how-it-works-step">
+                        <div class="step-icon"
+                            style="font-size: 2.5rem; color: var(--color-primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>03. Human Asset Ingestion</h3>
+                        <div class="tech-spec">
+                            <p style="margin-bottom: 0.5rem;"><strong>Protocol:</strong> Secure Biometric Gateways</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Integration Targets:</strong> Industrial Wearables
+                                & Bio-Safety Monitors.</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Data Payload:</strong> Processes anonymized
+                                physiological markers (HRV, Fatigue) to predict safety risks while maintaining strict
+                                HIPAA/GDPR compliance.</p>
+                            <p style="margin-bottom: 0;"><strong>Privacy:</strong> End-to-End Encryption (E2EE) with
+                                zero PII storage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Security Section -->
+        <section class="security">
+            <div class="container">
+                <h2 style="text-align: center;">Your Data, Your Domain, Our Secure Engine</h2>
+                <div class="security-grid">
+                    <div class="security-col">
+                        <h3>AI That Speaks Your Language</h3>
+                        <div class="security-feature">
+                            <!-- SVG Icon: Brain/Chip --><svg class="security-icon" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12 8V4.8c0-1.2.9-2.2 2.2-2.2h.1c1.2 0 2.2.9 2.2 2.2V8M12 8c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2h-4zM8 12v4c0 1.1-.9 2-2 2h-.1c-1.2 0-2.2-.9-2.2-2.2V12c0-1.1.9-2 2-2H6c1.1 0 2 .9 2 2zM4.8 12H8m4-4V4.8M16 12h3.2M8 12V8m-3.2 4H8m4 4v3.2M16 12v4m0 0v3.2" />
+                            </svg>
+                            <div>
+                                <h4>Domain-Specific Training</h4>
+                                <p>We train our models on your data, your workflows, and your KPIs. The insights are
+                                    100% relevant to your specific business challenges.</p>
+                            </div>
+                        </div>
+                        <div class="security-feature">
+                            <!-- SVG Icon: Tuning/Settings --><svg class="security-icon"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.08a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                            <div>
+                                <h4>Precision-Tuned</h4>
+                                <p>Our engine is optimized for your industry, from IT risk to supply chain logistics,
+                                    ensuring maximum accuracy and actionable results.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="security-col">
+                        <h3>Leverage AI Without Compromise</h3>
+                        <div class="security-feature">
+                            <!-- SVG Icon: Shield/Lock --><svg class="security-icon" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <path d="M12 11v.01" />
+                                <path d="M12 14a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2z" />
+                            </svg>
+                            <div>
+                                <h4>Secure & Private by Design</h4>
+                                <p>Your data never leaves your environment. Our platform operates within your private
+                                    cloud or on-premise, ensuring no third-party data sharing, ever.</p>
+                            </div>
+                        </div>
+                        <div class="security-feature">
+                            <!-- SVG Icon: Database/Governance --><svg class="security-icon"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                            </svg>
+                            <div>
+                                <h4>Data Governance & Isolation</h4>
+                                <p>We help you isolate, protect, and govern sensitive data throughout its lifecycle,
+                                    ensuring compliance with HIPAA, GDPR, and other regulations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Bento Box Section -->
+        <section class="bento-section">
+            <div class="container">
+                <div class="bento-header">
+                    <h2>Reactive Measures Are Obsolete.</h2>
+                    <p>
+                        From Blind Spots to Boardroom Clarity. See how the Core Engine identified specific
+                        "fingerprints"
+                        of failure across digital, physical, and human assets—allowing our partners to intervene before
+                        the crisis occurred.
+                    </p>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Tile 1: Large (Digital) -->
+                    <div class="bento-tile tile-large">
+                        <div class="tile-visual">
+                            <!-- Icon for IT Risk -->
+                            <img src="pics/icon_digital_risk.png" alt="IT Risk Icon" width="512" height="512"
+                                loading="lazy">
+                        </div>
+                        <div class="tile-content">
+                            <span class="tile-tag">Digital Pillar</span>
+                            <h3>IT Risk Intercepted</h3>
+                            <p>Predicted a Tier-1 Service Outage 48 hours in advance by correlating ticket volume with
+                                CPU variance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tile 2: Medium (Physical) -->
+                    <div class="bento-tile tile-medium">
+                        <div class="tile-visual">
+                            <!-- Icon for Supply Chain -->
+                            <img src="pics/icon_logistics.png" alt="Supply Chain Icon" width="512" height="512"
+                                loading="lazy">
+                        </div>
+                        <div class="tile-content">
+                            <span class="tile-tag">Physical Pillar</span>
+                            <h3>Logistics Bottleneck</h3>
+                            <p>Forecasted a 14-day raw material delay, allowing for automated vendor rerouting via SAP
+                                integration.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tile 3: Medium (Human) -->
+                    <div class="bento-tile tile-medium">
+                        <div class="tile-visual">
+                            <!-- Icon for Bio-Safety -->
+                            <img src="pics/icon_human_safety.png" alt="Bio-Safety Icon" width="512" height="512"
+                                loading="lazy">
+                        </div>
+                        <div class="tile-content">
+                            <span class="tile-tag">Human Pillar</span>
+                            <h3>Bio-Safety Alert</h3>
+                            <p>Flagged critical fatigue markers in shift operators, preventing potential injury and
+                                ensuring compliance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tile 4: Small (Correlation) -->
+                    <div class="bento-tile tile-small">
+                        <div class="tile-visual">
+                            <!-- Icon for Correlation -->
+                            <img src="pics/icon_correlation.png" alt="Cross-Domain Correlation Icon" width="512"
+                                height="512" loading="lazy">
+                        </div>
+                        <div class="tile-content">
+                            <span class="tile-tag">The "Aha!" Moment</span>
+                            <h3>Cross-Domain Correlation</h3>
+                            <p>The "Single Pane of Glass". Connecting a logistics delay directly to financial liquidity
+                                risk.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#archive" class="cta-button">View the Crisis Prevention Archive</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-family" id="solutions"> <!-- Added ID for scrolling -->
+            <div class="container">
+                <h2 style="text-align: center;">One Core Engine. A Family of Solutions.</h2>
+                <p style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center;">
+                    The true power of our platform is its scalability. We build the core engine once and deploy it
+                    across your entire business as a family of targeted solutions.
+                </p>
+                <div class="product-family-layout">
+                    <nav class="pf-nav">
+                        <div class="pf-nav-item active" data-target="pf-digital">Digital Protection</div>
+                        <div class="pf-nav-item" data-target="pf-physical">Physical Protection</div>
+                        <div class="pf-nav-item" data-target="pf-human">Human Protection</div>
+                    </nav>
+                    <div class="pf-content">
+                        <!-- Digital Panel -->
+                        <div class="pf-content-panel active" id="pf-digital">
+                            <div class="pf-panel-grid">
+                                <div class="pf-text-content">
+                                    <div style="margin-bottom: 2rem;">
+                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">IT Risk
+                                            Intelligence</h3>
+                                        <p>Integrates with ServiceNow and Jira to analyze ticket velocity and system
+                                            logs. We predict major P1 outages and identify servers at risk of failure
+                                            before they impact operations.</p>
+                                    </div>
+                                    <div>
+                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Financial
+                                            Fraud Sentinel</h3>
+                                        <p>Connects to your ERP to monitor transactions in real-time. Our engine detects
+                                            the subtle "fingerprints" of fraudulent activity and compliance breaches
+                                            before settlement.</p>
+                                    </div>
+                                </div>
+                                <div class="chart-visual-container">
+                                    <div class="chart-bar-container"
+                                        title="Chart showing a high 'Predicted' risk bar next to a low 'Mitigated' risk bar.">
+                                        <div class="bar-label">
+                                            <div class="chart-bar" style="height: 180px;">
+                                                <div class="bar-fill" style="height: 100%;"></div>
+                                            </div>
+                                            Predicted Risk
+                                        </div>
+                                        <div class="bar-label">
+                                            <div class="chart-bar" style="height: 40px;">
+                                                <div class="bar-fill" style="height: 100%;"></div>
+                                            </div>
+                                            Mitigated Risk
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Physical Panel -->
+                        <div class="pf-content-panel" id="pf-physical">
+                            <div class="pf-panel-grid">
+                                <div class="pf-text-content">
+                                    <div style="margin-bottom: 2rem;">
+                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Supply
+                                            Chain Forecaster</h3>
+                                        <p>Integrates with SAP to analyze logistics and inventory levels. We forecast
+                                            supplier failures and shipping delays, allowing you to re-route shipments
+                                            with precision.</p>
+                                    </div>
+                                    <div>
+                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Project
+                                            Timeline Risk</h3>
+                                        <p>Analyzes critical path data to forecast delays in complex engineering
+                                            projects. Identify bottlenecks weeks in advance to ensure on-time delivery.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="chart-visual-container">
+                                    <div class="chart-flow-container"
+                                        title="Flow diagram showing 'Supplier' -> 'Aegisight AI' -> 'Risk Alert'.">
+                                        <div class="flow-node">Supplier</div>
+                                        <div class="flow-arrow">→</div>
+                                        <div class="flow-node" style="border-color: var(--color-primary-blue);">
+                                            Aegisight AI</div>
+                                        <div class="flow-arrow">→</div>
+                                        <div class="flow-node alert">Alert</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Human Panel -->
+                        <div class="pf-content-panel" id="pf-human">
+                            <div class="pf-panel-grid">
+                                <div class="pf-text-content">
+                                    <div style="margin-bottom: 2rem;">
+                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Industrial
+                                            Bio-Safety</h3>
+                                        <p>Uses data from industrial wearables to monitor worker safety in real-time.
+                                            Predict potential accidents and ensure compliance with safety regulations
+                                            without compromising privacy.</p>
+                                    </div>
+                                    <div>
+                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Pension
+                                            Solvency Risk</h3>
+                                        <p>Analyzes actuarial data and market trends to forecast funding needs. Move
+                                            beyond reactive recalculations to proactively identify solvency issues.</p>
+                                    </div>
+                                </div>
+                                <div class="chart-visual-container">
+                                    <div class="chart-pulse-container" title="A heart-rate style 'pulse' line graph.">
+                                        <svg class="pulse-line" viewBox="0 0 100 50">
+                                            <path
+                                                d="M 0 25 H 20 L 25 15 L 30 35 L 35 25 H 65 L 70 10 L 75 40 L 80 25 H 100">
+                                            </path>
+                                        </svg>
+                                        <div class="pulse-overlay"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>See Your Predictive Advantage</h2>
+                <p style="max-width: 700px; margin: 0 auto 2rem auto;">
+                    Let's discuss how our Aegisight AI platform can be tailored to your specific operational risks.
+                    Schedule a no-obligation discovery call with our team.
+                </p>
+                <a href="https://aegisight.ai/contact" class="cta-button"
+                    style="padding: 1rem 2rem; font-size: 1.25rem;">
+                    Assess Your Risk Exposure
+                </a>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM SECTION -->
+        <section class="contact-page" id="contact" style="padding: 6rem 0; margin: 0;">
+            <div class="contact-header">
+                <h1>Connect with us <span class="text-white">to bring your vision to life.</span></h1>
+                <a href="mailto:sales@aegisight.ai" class="contact-email">sales@aegisight.ai</a>
+
+                <div class="trust-badges-row">
+                    <div class="trust-badge"><i class="fas fa-file-contract"></i> NDA-Secured Confidentiality</div>
+                    <div class="trust-badge"><i class="fas fa-user-check"></i> Free consultation</div>
+                    <div class="trust-badge"><i class="fas fa-handshake"></i> Zero Obligation Meeting</div>
+                    <div class="trust-badge"><i class="fas fa-shield-alt"></i> Tailored Strategy Discussion</div>
+                </div>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-left">
+                    <img src="pics/form-logo.png" alt="Real People. Real Solutions." class="contact-hero-img">
+                    <div class="contact-hero-text">
+                        <h2>Real People.<br>Real Solutions.</h2>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <form id="contactFormMain" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstNameMain">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstNameMain" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastNameMain">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastNameMain" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailMain">Email <span class="required">*</span></label>
+                            <input type="email" id="emailMain" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneMain">Phone</label>
+                            <input type="tel" id="phoneMain" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="requirementMain">Tell us a bit about your requirement <span
+                                    class="required">*</span></label>
+                            <textarea id="requirementMain" name="requirement" rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pillar of Interest</label>
+                            <div class="pillar-checkboxes">
+                                <label class="pillar-checkbox">
+                                    <input type="checkbox" name="pillars" value="Digital Protection">
+                                    <span class="checkbox-label">Digital Protection</span>
+                                </label>
+                                <label class="pillar-checkbox">
+                                    <input type="checkbox" name="pillars" value="Physical Protection">
+                                    <span class="checkbox-label">Physical Protection</span>
+                                </label>
+                                <label class="pillar-checkbox">
+                                    <input type="checkbox" name="pillars" value="Human Protection">
+                                    <span class="checkbox-label">Human Protection</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group captcha-group">
+                            <div class="g-recaptcha" data-sitekey="6Lfk9RUsAAAAAGAR5zgFA348xiF_9om0tKwugnMh"></div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                        <p class="form-footer">By clicking 'Submit', you agree to our <a href="/privacy" target="_blank"
+                                style="color: var(--color-primary-blue); text-decoration: underline;">Privacy Policy</a>
+                            and consent to receive marketing emails.</p>
+                    </form>
+                    <div id="formSuccessMain" class="form-success" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out. We'll get back to you shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Aegisight AI. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- COOKIE CONSENT BANNER -->
+        <div id="cookie-banner" class="cookie-banner">
+            <div class="cookie-content">
+                <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze
+                    our
+                    traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+                <div class="cookie-buttons">
+                    <button id="cookie-customize" class="cookie-btn outline">Customize</button>
+                    <button id="cookie-reject" class="cookie-btn outline">Reject All</button>
+                    <button id="cookie-accept" class="cookie-btn primary">Accept All</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COOKIE PREFERENCES MODAL -->
+        <div id="cookie-modal" class="cookie-modal">
+            <div class="cookie-modal-content">
+                <div class="cookie-modal-header">
+                    <h3>Customise Consent Preferences</h3>
+                    <button id="cookie-close" class="cookie-close">&times;</button>
+                </div>
+                <div class="cookie-modal-body">
+                    <p class="cookie-intro">
+                        We use cookies to help you navigate efficiently and perform certain functions. You will find
+                        detailed
+                        information about all cookies under each consent category below.
+                        The cookies that are categorised as "Necessary" are stored on your browser as they are essential
+                        for
+                        enabling the basic functionalities of the site.
+                    </p>
+
+                    <!-- Category: Necessary -->
+                    <div class="cookie-category">
+                        <div class="cookie-cat-header">
+                            <span class="cat-toggle expanded">›</span>
+                            <span class="cat-name">Necessary</span>
+                            <span class="cat-status active">Always Active</span>
+                        </div>
+                        <div class="cookie-cat-desc">
+                            Necessary cookies are required to enable the basic features of this site, such as providing
+                            secure log-in or adjusting your consent preferences. These cookies do not store any
+                            personally
+                            identifiable data.
+                        </div>
+                    </div>
+
+                    <!-- Category: Functional -->
+                    <div class="cookie-category">
+                        <div class="cookie-cat-header">
+                            <span class="cat-toggle">›</span>
+                            <span class="cat-name">Functional</span>
+                            <label class="switch">
+                                <input type="checkbox" id="consent-functional">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="cookie-cat-desc hidden">
+                            Functional cookies help perform certain functionalities like sharing the content of the
+                            website
+                            on social media platforms, collecting feedback, and other third-party features.
+                        </div>
+                    </div>
+
+                    <!-- Category: Analytics -->
+                    <div class="cookie-category">
+                        <div class="cookie-cat-header">
+                            <span class="cat-toggle">›</span>
+                            <span class="cat-name">Analytics</span>
+                            <label class="switch">
+                                <input type="checkbox" id="consent-analytics">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="cookie-cat-desc hidden">
+                            Analytical cookies are used to understand how visitors interact with the website. These
+                            cookies
+                            help provide information on metrics such as the number of visitors, bounce rate, traffic
+                            source,
+                            etc.
+                        </div>
+                    </div>
+
+                    <!-- Category: Performance -->
+                    <div class="cookie-category">
+                        <div class="cookie-cat-header">
+                            <span class="cat-toggle">›</span>
+                            <span class="cat-name">Performance</span>
+                            <label class="switch">
+                                <input type="checkbox" id="consent-performance">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="cookie-cat-desc hidden">
+                            Performance cookies are used to understand and analyse the key performance indexes of the
+                            website which helps in delivering a better user experience for the visitors.
+                        </div>
+                    </div>
+                </div>
+                <div class="cookie-modal-footer">
+                    <button id="cookie-modal-reject" class="cookie-btn primary blue-btn">Reject All</button>
+                    <button id="cookie-modal-save" class="cookie-btn primary blue-btn">Save My Preferences</button>
+                    <button id="cookie-modal-accept" class="cookie-btn primary blue-btn">Accept All</button>
+                </div>
+                <div class="cookie-powered">
+                    Powered by <strong>CookieYes</strong>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/main.js"></script>
+
+        <script>
+            // Contact Form Submission for Homepage
+            document.getElementById('contactFormMain').addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                const submitBtn = this.querySelector('.submit-btn');
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (response.ok) {
+                        this.style.display = 'none';
+                        document.getElementById('formSuccessMain').style.display = 'block';
+                    } else {
+                        alert('Failed to send message. Please try again.');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit';
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit';
+                }
+            });
+        </script>
+
+</body>
+
+</html>
