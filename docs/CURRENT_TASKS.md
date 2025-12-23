@@ -1,0 +1,38 @@
+# Task: Sentinel Onboarding Integration
+
+- [ ] **Preparation**
+    - [x] Analyze Sentinel codebase and dependencies
+    - [x] Analyze main Aegisight app structure
+    - [ ] Create implementation plan
+- [ ] **Sentinel App Setup**
+    - [x] Install dependencies in `downloads/sentinel` <!-- id: 1 -->
+    - [x] Update `vite.config.ts` to set `base: '/onboarding/'` <!-- id: 2 -->
+    - [x] Configure `GEMINI_API_KEY` handling (ask user or use placeholder) <!-- id: 3 -->
+    - [x] Build Sentinel app (`npm run build`) <!-- id: 4 -->
+- [ ] **Integration**
+    - [x] Copy `dist` output to `/var/www/aegisight.a/public/onboarding` <!-- id: 5 -->
+    - [x] Update `server.js` to serve the onboarding app correctly <!-- id: 6 -->
+- [ ] **Verification**
+    - [x] Verify `/onboarding` loads the Sentinel app
+    - [x] Verify Gemini API integration (if key provided)
+- [ ] **Bug Fixes**
+    - [x] Create Tailwind config and CSS files <!-- id: 7 -->
+    - [x] Import CSS in `index.tsx` <!-- id: 8 -->
+    - [x] Rebuild and update deployment <!-- id: 9 -->
+    - [x] Update `server.js` CSP to allow `generativelanguage.googleapis.com` <!-- id: 10 -->
+    - [x] Check and remove Tailwind CDN from `index.html` <!-- id: 11 -->
+    - [x] Implement standalone/mock mode for demo <!-- id: 12 -->
+    - [x] Update Tailwind config with brand colors/fonts <!-- id: 13 -->
+    - [x] Update `index.html` and `index.css` for fonts <!-- id: 14 -->
+    - [x] Update Logo in `App.tsx` <!-- id: 15 -->
+    - [x] Refine `Step2Analysis` with "AI Fingerprint" terminology <!-- id: 16 -->
+    - [x] Refine `Step3Report` with "Verified Signature" UI enhancement <!-- id: 17 -->
+    - [x] Add "Secure Session" badge to `App.tsx` header <!-- id: 18 -->
+    - [x] Cleanup project structure (move/organize files) <!-- id: 19 -->
+    - [x] Git commit and sync <!-- id: 20 -->
+- [ ] **Frontend Enhancement**
+    - [ ] Plan and Scope Pages <!-- id: 21 -->
+    - [ ] Enhance Landing Page (`views/index.html`) <!-- id: 22 -->
+    - [ ] Enhance Login/Signup Pages (`views/login.html`, `views/signup.html`) <!-- id: 23 -->
+    - [ ] Enhance Dashboard (`views/dashboard_mvp.html`) <!-- id: 24 -->
+    - [ ] Align Global Styles (`public/css/style.css`) <!-- id: 25 -->
