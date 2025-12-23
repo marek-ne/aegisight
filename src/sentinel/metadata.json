@@ -1,0 +1,5 @@
+{
+  "name": "Sentinel Risk Engine",
+  "description": "An interactive enterprise security platform simulator that uses AI to assess operational risk, correlate log telemetry, and calculate predictive ROI for large-scale IT infrastructures.",
+  "requestFramePermissions": []
+}

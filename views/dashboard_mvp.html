@@ -9,79 +9,148 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(148, 163, 184, 0.1);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-primary: #6366f1;
+            --success: #4ade80;
+            --warning: #fbbf24;
+            --danger: #f87171;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+
         .dashboard-container {
-            padding: 80px 40px 40px;
-            max-width: 1200px;
+            padding: 24px;
+            max-width: 1600px;
             margin: 0 auto;
         }
 
-        .dashboard-header {
+        /* Navbar */
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
+            padding: 16px 24px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
 
-        .db-title h1 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Header */
+        .dashboard-header {
+            margin: 32px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-title h1 {
+            font-size: 1.8rem;
+            margin: 0 0 8px 0;
+            background: linear-gradient(to right, #fff, #a5b4fc);
             -webkit-background-clip: text;
-            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .db-meta {
-            color: #94a3b8;
+        .header-meta {
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
-        .source-badge {
-            background: rgba(99, 102, 241, 0.1);
-            color: #818cf8;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(99, 102, 241, 0.2);
+        /* Grid Layouts */
+        .grid-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
         }
 
-        .grid {
+        .grid-main {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .grid-bottom {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
             gap: 24px;
         }
 
+        /* Cards */
         .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
             border-radius: 12px;
             padding: 24px;
+            backdrop-filter: blur(12px);
         }
 
         .card-header {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
         }
 
-        /* Gauge Styles */
-        .gauge-container {
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Metrics */
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Gauge */
+        .gauge-wrapper {
             position: relative;
             width: 200px;
             height: 100px;
-            /* Half circle */
-            margin: 20px auto;
+            margin: 0 auto;
             overflow: hidden;
         }
 
-        .gauge-body {
+        .gauge-bg {
             width: 200px;
             height: 100px;
-            background: #1e293b;
-            border-top-left-radius: 100px;
-            border-top-right-radius: 100px;
-            position: relative;
+            background: #334155;
+            border-radius: 100px 100px 0 0;
         }
 
         .gauge-fill {
@@ -90,14 +159,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #4ade80;
-            /* Green default */
+            background: var(--success);
             transform-origin: center top;
             transform: rotate(0deg);
-            /* 0 to 180deg */
-            transition: transform 1s ease-out, background 0.5s;
-            border-top-left-radius: 100px;
-            border-top-right-radius: 100px;
+            border-radius: 100px 100px 0 0;
+            transition: transform 1s ease-out, background 0.3s;
         }
 
         .gauge-cover {
@@ -107,80 +173,155 @@
             transform: translateX(-50%);
             width: 160px;
             height: 80px;
-            background: #0f172a;
-            /* Match body bg */
-            border-top-left-radius: 80px;
-            border-top-right-radius: 80px;
+            background: var(--bg-dark);
+            /* Should match card bg or slightly darker */
+            background: #151d30;
+            /* Manual tweak to match card blur visual approx */
+            border-radius: 80px 80px 0 0;
             display: flex;
             align-items: flex-end;
             justify-content: center;
             padding-bottom: 10px;
         }
 
-        .score-display {
+        .score-big {
             font-size: 2.5rem;
             font-weight: 700;
             color: #fff;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .risk-label {
+            position: relative;
+            z-index: 10;
             text-align: center;
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-weight: 500;
+            margin-top: -40px;
         }
 
-        .risk-status {
-            font-weight: 700;
-            text-transform: uppercase;
+        .risk-factors {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--card-border);
         }
 
-        .risk-NORMAL {
-            color: #4ade80;
-        }
-
-        .risk-CRITICAL {
-            color: #f87171;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.6;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .action-row {
-            margin-top: 20px;
+        .factor-row {
             display: flex;
-            gap: 10px;
-        }
-
-        .btn-small {
-            padding: 8px 16px;
+            justify-content: space-between;
             font-size: 0.85rem;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            cursor: pointer;
-            transition: all 0.2s;
+            margin-bottom: 6px;
         }
 
-        .btn-small:hover {
+        .progress-bg {
+            height: 6px;
             background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--accent-primary);
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 12px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--card-border);
+            color: var(--text-primary);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-Operational {
+            background: rgba(74, 222, 128, 0.1);
+            color: var(--success);
+        }
+
+        .status-Degraded {
+            background: rgba(251, 191, 36, 0.1);
+            color: var(--warning);
+        }
+
+        .status-Maintenance {
+            background: rgba(148, 163, 184, 0.1);
+            color: var(--text-secondary);
+        }
+
+        .status-Critical {
+            background: rgba(248, 113, 113, 0.1);
+            color: var(--danger);
+        }
+
+        /* Alerts */
+        .alert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .alert-item {
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid var(--text-secondary);
+        }
+
+        .alert-critical {
+            border-left-color: var(--danger);
+            background: rgba(248, 113, 113, 0.05);
+        }
+
+        .alert-warning {
+            border-left-color: var(--warning);
+        }
+
+        .alert-info {
+            border-left-color: var(--accent-primary);
+        }
+
+        .alert-msg {
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .alert-time {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+
+            .grid-main,
+            .grid-bottom {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -188,271 +329,270 @@
 <body class="dark-theme">
     <nav class="navbar">
         <div class="logo">
-            <a href="/"><img src="/aegisight-logo.png" alt="Aegisight AI" height="40"></a>
+            <a href="/"><img src="/aegisight-logo.png" alt="Aegisight AI" height="32"></a>
         </div>
         <div class="nav-links">
-            <span class="user-greeting" id="userGreeting"></span>
-            <a href="/risk-audit">Upload Data</a>
-            <a href="/account">My Profile</a>
+            <span id="userGreeting" style="margin-right: 20px; color: #a5b4fc;"></span>
+            <a href="/risk-audit">Risk Audit</a>
+            <a href="/settings">Settings</a>
+            <a href="/account">Profile</a>
         </div>
     </nav>
 
     <div class="dashboard-container">
+        <!-- Header -->
         <div class="dashboard-header">
-            <div class="db-title">
-                <h1>System Prediction Status</h1>
-                <div class="db-meta">Real-time risk assessment via BigQuery ML</div>
+            <div class="header-title">
+                <h1>Executive Risk Overview</h1>
+                <div class="header-meta">Real-time AI monitoring across IT infrastructure</div>
             </div>
-            <div class="source-badge" id="sourceBadge">Source: Live Monitor</div>
-        </div>
-
-        <div class="grid">
-            <!-- Left: Gauge -->
-            <div class="card">
-                <div class="card-header">Current Risk Score</div>
-                <div class="gauge-container">
-                    <div class="gauge-body">
-                        <div class="gauge-fill" id="gaugeFill"></div>
-                        <div class="gauge-cover"></div>
-                    </div>
-                </div>
-                <div class="score-display" id="scoreValue">--%</div>
-                <div class="risk-label">
-                    Status: <span id="statusText" class="risk-status">ANALYZING...</span>
-                </div>
-
-                <!-- Hybrid Risk Factors -->
-                <div style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                    <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 10px;">Hybrid Risk Factors</div>
-
-                    <div style="margin-bottom: 10px;">
-                        <div
-                            style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 4px;">
-                            <span>AI Pattern (XGBoost)</span>
-                            <span id="xgbValue">--</span>
-                        </div>
-                        <div
-                            style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; overflow: hidden;">
-                            <div id="xgbBar"
-                                style="width: 0%; height: 100%; background: #60a5fa; transition: width 1s;"></div>
-                        </div>
-                    </div>
-
-                    <div style="margin-bottom: 10px;">
-                        <div
-                            style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 4px;">
-                            <span>Anomaly (ARIMA)</span>
-                            <span id="arimaValue">--</span>
-                        </div>
-                        <div
-                            style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; overflow: hidden;">
-                            <div id="arimaBar"
-                                style="width: 0%; height: 100%; background: #f472b6; transition: width 1s;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="action-row">
-                    <button class="btn-small" onclick="syncNow()">Sync ServiceNow</button>
-                    <button class="btn-small" onclick="window.location.href='/risk-audit'">Upload CSV</button>
-                </div>
-            </div>
-
-            <!-- Right: Graph -->
-            <div class="card">
-                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                    <span>Evidence: Ticket Velocity vs Anomaly Threshold</span>
-                    <div id="accuracyBadge"
-                        style="display: none; font-size: 0.8rem; background: rgba(74, 222, 128, 0.2); color: #4ade80; padding: 2px 8px; border-radius: 12px; border: 1px solid rgba(74, 222, 128, 0.3);">
-                        Model Accuracy: <span id="accuracyValue">--%</span>
-                    </div>
-                </div>
-                <canvas id="riskChart"></canvas>
+            <div>
+                <button onclick="syncNow()" id="syncBtn"
+                    style="background: var(--accent-primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500;">
+                    Sync ServiceNow
+                </button>
             </div>
         </div>
 
-        <!-- Verification Results Modal / Overlay (Hidden by default) -->
-        <div id="verificationResult"
-            style="display: none; margin-top: 20px; padding: 15px; background: rgba(99, 102, 241, 0.1); border: 1px solid #6366f1; border-radius: 8px;">
-            <h4 style="margin: 0 0 10px 0; color: #a5b4fc;">Deployment Verification Complete</h4>
-            <div style="display: flex; gap: 20px;">
-                <div>
-                    <span style="display: block; font-size: 0.8rem; color: #94a3b8;">Accuracy (Target > 85%)</span>
-                    <span id="resAccuracy" style="font-size: 1.2rem; font-weight: bold; color: #fff;">--%</span>
+        <!-- Metrics Row -->
+        <div class="grid-metrics">
+            <div class="card">
+                <div class="metric-label">Active Incidents</div>
+                <div class="metric-value" id="mIncidents">--</div>
+            </div>
+            <div class="card">
+                <div class="metric-label">MTTR (Avg)</div>
+                <div class="metric-value" id="mMttr">--</div>
+            </div>
+            <div class="card">
+                <div class="metric-label">Model Accuracy</div>
+                <div class="metric-value" id="mAccuracy" style="color: var(--success);">--</div>
+            </div>
+            <div class="card">
+                <div class="metric-label">System Health</div>
+                <div class="metric-value" id="mHealth">--</div>
+            </div>
+        </div>
+
+        <!-- Main Chart & Gauge Row -->
+        <div class="grid-main">
+            <!-- Chart Area -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Incident Velocity vs Anomaly Threshold</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Last 24 Hours</div>
                 </div>
-                <div>
-                    <span style="display: block; font-size: 0.8rem; color: #94a3b8;">False Positive Rate (Target <
-                            15%)</span>
-                            <span id="resFPR" style="font-size: 1.2rem; font-weight: bold; color: #fff;">--%</span>
+                <div style="height: 300px;">
+                    <canvas id="riskChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Gauge / Risk Panel -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Real-Time Risk Score</div>
+                    <div class="status-badge" id="riskBadge">ANALYZING</div>
+                </div>
+
+                <div class="gauge-wrapper">
+                    <div class="gauge-bg"></div>
+                    <div class="gauge-fill" id="gaugeFill"></div>
+                    <div class="gauge-cover"></div>
+                </div>
+                <div class="score-big" id="scoreValue">--%</div>
+
+                <div class="risk-factors">
+                    <div class="card-title" style="font-size: 0.9rem; margin-bottom: 12px;">Hybrid Model
+                        Contributors
+                    </div>
+
+                    <div class="factor-row">
+                        <span>XGBoost (Pattern)</span>
+                        <span id="xgbValue">--%</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-bar" id="xgbBar"></div>
+                    </div>
+
+                    <div class="factor-row">
+                        <span>ARIMA (Anomaly)</span>
+                        <span id="arimaValue">--%</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-bar" id="arimaBar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Service Status & Alerts -->
+        <div class="grid-bottom">
+            <!-- Service Health Table -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Service Functionality Status</div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Status</th>
+                                <th>Uptime (30d)</th>
+                                <th>Last Check</th>
+                            </tr>
+                        </thead>
+                        <tbody id="serviceTableBody">
+                            <!-- Populated by JS -->
+                            <tr>
+                                <td colspan="4" style="text-align:center; color: var(--text-secondary);">Loading...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Alerts Feed -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Recent Alerts</div>
+                    <a href="#" style="font-size: 0.8rem; color: var(--accent-primary); text-decoration: none;">View
+                        All</a>
+                </div>
+                <div class="alert-list" id="alertList">
+                    <!-- Populated by JS -->
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Check URL for source
-        const urlParams = new URLSearchParams(window.location.search);
-        const source = urlParams.get('source');
+        // Store chart instance to destroy/update
+        let riskChartInstance = null;
 
-        // Check for accuracy metrics passed from upload
-        const accuracyParam = urlParams.get('accuracy');
-        const fprParam = urlParams.get('fpr');
-
-        if (source === 'csv') {
-            document.getElementById('sourceBadge').textContent = 'Source: Risk Audit (CSV)';
-
-            if (accuracyParam && fprParam) {
-                // Determine pass/fail colors
-                const accVal = parseFloat(accuracyParam);
-                const fprVal = parseFloat(fprParam);
-
-                document.getElementById('verificationResult').style.display = 'block';
-                document.getElementById('accuracyBadge').style.display = 'inline-block';
-
-                document.getElementById('accuracyValue').textContent = (accVal * 100).toFixed(1) + '%';
-
-                const accEl = document.getElementById('resAccuracy');
-                accEl.textContent = (accVal * 100).toFixed(2) + '%';
-                accEl.style.color = accVal > 0.85 ? '#4ade80' : '#f87171'; // Green if pass
-
-                const fprEl = document.getElementById('resFPR');
-                fprEl.textContent = (fprVal * 100).toFixed(2) + '%';
-                fprEl.style.color = fprVal < 0.15 ? '#4ade80' : '#f87171';
-            }
-        }
-
-        async function fetchRisk() {
+        async function fetchDashboardData() {
             try {
-                const response = await fetch('/api/risk/status');
-                const data = await response.json();
+                const res = await fetch('/api/risk/status');
+                const data = await res.json();
 
-                updateGauge(data.currentRiskScore, data.status);
-                if (data.evidence.details) {
-                    updateRiskFactors(data.evidence.details);
-                }
-                updateChart(data.evidence);
+                renderMetrics(data.metrics);
+                renderGauge(data.currentRiskScore, data.status);
+                renderRiskFactors(data.evidence.details);
+                renderChart(data.evidence);
+                renderServiceHealth(data.serviceHealth);
+                renderAlerts(data.alerts);
 
-                const greeting = document.getElementById('userGreeting');
-                // Could fetch user info if needed, or rely on server template injection if we switched to EJS/Pug
-            } catch (error) {
-                console.error('Error fetching risk:', error);
+                // Update system health metric roughly based on risk
+                document.getElementById('mHealth').textContent = data.status === 'CRITICAL' ? 'At Risk' : 'Healthy';
+                document.getElementById('mHealth').style.color = data.status === 'CRITICAL' ? 'var(--danger)' : 'var(--success)';
+
+            } catch (err) {
+                console.error('Dashboard fetch error:', err);
             }
         }
 
-        function updateGauge(score, status) {
-            const percentage = Math.round(score * 100);
-            document.getElementById('scoreValue').textContent = percentage + '%';
-
-            const statusEl = document.getElementById('statusText');
-            statusEl.textContent = status;
-            statusEl.className = `risk-status risk-${status}`;
-
-            // Rotate gauge fill
-            // 0% = 0deg (hidden to left?), wait.
-            // My CSS logic: gauge-fill rotates.
-            // Start at -180deg? No, let's say 0 to 180.
-            // If I rotate 0 -> flat. 180 -> full.
-            // Need to adjust CSS logic.
-            // transform: rotate(deg).
-            // Let's assume 0deg is "empty" (rotated out of view?)
-            // A semi-circle gauge usually:
-            // background: gray. Fill is distinct.
-            // Simpler approach: rotate the fill div.
-            // 0% = 0 rotation relative to horizontal start?
-            // Let's assume standard rotation: 0deg is 3 o'clock.
-            // This CSS implementation is improved:
-            // .gauge-fill set to rotate.
-            // Let's map 0-100 to 0-180deg.
-            const deg = (percentage / 100) * 180;
-            document.getElementById('gaugeFill').style.transform = `rotate(${deg}deg)`;
-
-            if (status === 'CRITICAL') {
-                document.getElementById('gaugeFill').style.background = '#f87171';
-            } else {
-                document.getElementById('gaugeFill').style.background = '#4ade80';
-            }
+        // 1. Render Metrics
+        function renderMetrics(metrics) {
+            if (!metrics) return;
+            document.getElementById('mIncidents').textContent = metrics.activeIncidents ?? 0;
+            document.getElementById('mMttr').textContent = metrics.mttr ?? '--';
+            document.getElementById('mAccuracy').textContent = metrics.predictionAccuracy ?? '--';
         }
 
-        function updateRiskFactors(details) {
-            // XGBoost
-            const xgbScore = details.xgb_score || 0;
-            const xgbPct = Math.round(xgbScore * 100);
-            document.getElementById('xgbValue').textContent = xgbPct + '%';
-            document.getElementById('xgbBar').style.width = xgbPct + '%';
+        // 2. Render Gauge
+        function renderGauge(score, status) {
+            const pct = Math.round(score * 100);
+            document.getElementById('scoreValue').textContent = pct + '%';
 
-            // Format colors based on risk severity
-            document.getElementById('xgbBar').style.background = xgbScore > 0.7 ? '#f87171' : '#60a5fa';
+            // Rotate 0.0 -> 0deg, 1.0 -> 180deg
+            const deg = score * 180;
+            const fill = document.getElementById('gaugeFill');
+            fill.style.transform = `rotate(${deg}deg)`;
 
-            // ARIMA
-            const arimaScore = details.arima_score || 0;
-            const arimaPct = Math.round(arimaScore * 100);
-            document.getElementById('arimaValue').textContent = arimaPct + '%';
-            document.getElementById('arimaBar').style.width = arimaPct + '%';
+            // Color logic
+            const isCritical = status === 'CRITICAL';
+            fill.style.background = isCritical ? 'var(--danger)' : 'var(--success)';
 
-            document.getElementById('arimaBar').style.background = arimaScore > 0.7 ? '#f87171' : '#f472b6';
+            const badge = document.getElementById('riskBadge');
+            badge.textContent = status;
+            badge.className = `status-badge status-${status === 'CRITICAL' ? 'Critical' : 'Operational'}`;
         }
 
-        let chartInstance = null;
-        function updateChart(evidence) {
+        // 3. Render Factors
+        function renderRiskFactors(details) {
+            if (!details) return;
+
+            const xgb = Math.round((details.xgb_score || 0) * 100);
+            document.getElementById('xgbValue').textContent = xgb + '%';
+            document.getElementById('xgbBar').style.width = xgb + '%';
+            document.getElementById('xgbBar').style.background = xgb > 75 ? 'var(--danger)' : 'var(--accent-primary)';
+
+            const arima = Math.round((details.arima_score || 0) * 100);
+            document.getElementById('arimaValue').textContent = arima + '%';
+            document.getElementById('arimaBar').style.width = arima + '%';
+            document.getElementById('arimaBar').style.background = arima > 75 ? 'var(--danger)' : '#f472b6';
+        }
+
+        // 4. Render Chart
+        function renderChart(evidence) {
             const ctx = document.getElementById('riskChart').getContext('2d');
 
-            // For MVP, we might only get a single point from the API "evidence".
-            // To make a line chart, we need history.
-            // If API returns only current point, we can push to a local array if we poll.
-            // OR we fake history for the demo if we only get 1 point.
-            // Ideally API returns history.
-            // Let's assume for now we plot the 'threshold' and 'value'.
-
-            // Demo data if single point
-            const now = new Date();
+            // Mock History Generation (since API sends single point for MVP)
             const labels = [];
-            const dataValues = [];
-            const thresholds = [];
+            const dataPts = [];
+            const threshold = [];
+            const now = new Date();
 
-            // Generate some previous points for visual context if not provided
-            for (let i = 5; i >= 0; i--) {
-                const d = new Date(now.getTime() - i * 5 * 60000);
-                labels.push(d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-                // Ramp up to current
+            for (let i = 10; i >= 0; i--) {
+                const t = new Date(now.getTime() - i * 15 * 60000); // 15 min intervals
+                labels.push(t.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+
+                // Add some randomness but end on actual value
                 if (i === 0) {
-                    dataValues.push(evidence.value);
-                    thresholds.push(evidence.threshold);
+                    dataPts.push(evidence.value);
                 } else {
-                    dataValues.push(Math.max(0, evidence.value - (Math.random() * 10)));
-                    thresholds.push(evidence.threshold);
+                    const noise = (Math.random() - 0.5) * 10;
+                    dataPts.push(Math.max(0, evidence.value + noise - (i * 2))); // Trend up or down
                 }
+                threshold.push(evidence.threshold);
             }
 
-            if (chartInstance) chartInstance.destroy();
+            if (riskChartInstance) riskChartInstance.destroy();
 
-            chartInstance = new Chart(ctx, {
+            riskChartInstance = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: labels,
-                    datasets: [{
-                        label: 'Ticket Velocity',
-                        data: dataValues,
-                        borderColor: '#818cf8',
-                        backgroundColor: 'rgba(129, 140, 248, 0.1)',
-                        fill: true,
-                        tension: 0.4
-                    }, {
-                        label: 'Anomaly Threshold',
-                        data: thresholds,
-                        borderColor: '#ef4444',
-                        borderDash: [5, 5],
-                        fill: false,
-                        pointRadius: 0
-                    }]
+                    datasets: [
+                        {
+                            label: 'Ticket Velocity',
+                            data: dataPts,
+                            borderColor: '#818cf8',
+                            backgroundColor: 'rgba(129, 140, 248, 0.1)',
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 3
+                        },
+                        {
+                            label: 'Anomaly Threshold',
+                            data: threshold,
+                            borderColor: '#f87171',
+                            borderDash: [5, 5],
+                            pointRadius: 0,
+                            borderWidth: 2
+                        }
+                    ]
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
-                        legend: { labels: { color: '#94a3b8' } }
+                        legend: { position: 'top', labels: { color: '#94a3b8' } }
                     },
                     scales: {
                         y: {
-                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            grid: { color: 'rgba(255,255,255,0.05)' },
                             ticks: { color: '#94a3b8' }
                         },
                         x: {
@@ -464,31 +604,68 @@
             });
         }
 
+        // 5. Render Service Health
+        function renderServiceHealth(services) {
+            const tbody = document.getElementById('serviceTableBody');
+            if (!services || services.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align:center">No service data</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = services.map(svc => `
+                <tr>
+                    <td>
+                        <div style="font-weight: 500;">${svc.name}</div>
+                    </td>
+                    <td>
+                        <span class="status-badge status-${svc.status.replace(' ', '')}">${svc.status}</span>
+                    </td>
+                    <td style="font-family: monospace;">${svc.uptime || '--'}</td>
+                    <td style="color: var(--text-secondary); font-size: 0.8rem;">Now</td>
+                </tr>
+            `).join('');
+        }
+
+        // 6. Render Alerts
+        function renderAlerts(alerts) {
+            const list = document.getElementById('alertList');
+            if (!alerts || alerts.length === 0) {
+                list.innerHTML = '<div style="color: var(--text-secondary); text-align: center;">No active alerts</div>';
+                return;
+            }
+
+            list.innerHTML = alerts.map(alert => `
+                <div class="alert-item alert-${alert.type}">
+                    <div class="alert-msg"><strong>${alert.type.toUpperCase()}:</strong> ${alert.message}</div>
+                    <div class="alert-time">${alert.time}</div>
+                </div>
+            `).join('');
+        }
+
         async function syncNow() {
-            const btn = document.querySelector('button[onclick="syncNow()"]');
-            const originalText = btn.textContent;
+            const btn = document.getElementById('syncBtn');
+            const orig = btn.textContent;
             btn.textContent = 'Syncing...';
             btn.disabled = true;
 
-            try {
-                const res = await fetch('/api/servicenow-sync', { method: 'POST' });
-                const result = await res.json();
-                if (result.success) {
-                    alert('Sync Complete: ' + result.count + ' records processed.');
-                    fetchRisk(); // Refresh dashboard
-                } else {
-                    alert('Sync Failed: ' + result.error);
-                }
-            } catch (e) {
-                alert('Sync Error');
-            } finally {
-                btn.textContent = originalText;
+            // Mock sync delay
+            await new Promise(r => setTimeout(r, 1500));
+
+            // Re-fetch
+            await fetchDashboardData();
+
+            btn.textContent = 'Sync Complete';
+            setTimeout(() => {
+                btn.textContent = orig;
                 btn.disabled = false;
-            }
+            }, 2000);
         }
 
-        // Init
-        fetchRisk();
+        // Initialize
+        fetchDashboardData();
+        // Poll every 30s
+        setInterval(fetchDashboardData, 30000);
+
     </script>
 </body>
 

@@ -12,6 +12,7 @@ const fs = require('fs');
 const bigquery = new BigQuery();
 
 async function getRiskStatus() {
+    console.log('[DEBUG] getRiskStatus called');
     // MOCK MODE: If no credentials expected, return simulated data
     if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
         console.log('No Google Cloud credentials found. Returning MOCK risk data (Hybrid).');
@@ -98,6 +99,20 @@ async function getRiskStatus() {
                     xgb_score: xgbScore,
                     arima_score: arimaScore
                 }
+            },
+            // Mocked for MVP until BQ tables are updated
+            serviceHealth: [
+                { name: 'Payment Gateway', status: isCritical ? 'Degraded' : 'Operational', uptime: '99.9%' },
+                { name: 'Auth Service', status: 'Operational', uptime: '99.99%' },
+                { name: 'Inventory DB', status: 'Operational', uptime: '99.95%' }
+            ],
+            alerts: isCritical ?
+                [{ id: 1, type: 'critical', message: 'Anomaly detected in transaction velocity', time: 'Now' }] :
+                [{ id: 1, type: 'info', message: 'System operating normally', time: 'Now' }],
+            metrics: {
+                activeIncidents: isCritical ? 1 : 0,
+                mttr: '12m',
+                predictionAccuracy: '94.2%'
             }
         };
 
@@ -139,6 +154,20 @@ function generateMockRisk() {
                             xgb_score: xgbScore,
                             arima_score: arimaScore
                         }
+                    },
+                    serviceHealth: [
+                        { name: 'Payment Gateway', status: combinedRisk > 0.75 ? 'Degraded' : 'Operational', uptime: '99.9%' },
+                        { name: 'Auth Service', status: 'Operational', uptime: '99.99%' },
+                        { name: 'Inventory DB', status: 'Operational', uptime: '99.95%' },
+                        { name: 'Notification Service', status: 'Maintenance', uptime: '98.5%' }
+                    ],
+                    alerts: combinedRisk > 0.75 ?
+                        [{ id: 1, type: 'critical', message: 'Anomaly detected in transaction velocity', time: 'Now' }] :
+                        [{ id: 1, type: 'info', message: 'System operating normally', time: 'Now' }],
+                    metrics: {
+                        activeIncidents: combinedRisk > 0.75 ? 3 : 0,
+                        mttr: '14m',
+                        predictionAccuracy: '94.2%'
                     }
                 };
             }
@@ -149,7 +178,7 @@ function generateMockRisk() {
 
     // Fallback Mock
     const isRisk = Math.random() > 0.7;
-    return {
+    const result = {
         currentRiskScore: isRisk ? 0.88 : 0.12,
         status: isRisk ? 'CRITICAL' : 'NORMAL',
         evidence: {
@@ -161,8 +190,26 @@ function generateMockRisk() {
                 xgb_score: isRisk ? 0.9 : 0.1,
                 arima_score: isRisk ? 0.85 : 0.15
             }
+        },
+        serviceHealth: [
+            { name: 'Payment Gateway', status: isRisk ? 'Degraded' : 'Operational', uptime: '99.9%' },
+            { name: 'Auth Service', status: 'Operational', uptime: '99.99%' },
+            { name: 'Inventory DB', status: 'Operational', uptime: '99.95%' },
+            { name: 'Notification Service', status: 'Maintenance', uptime: '98.5%' }
+        ],
+        alerts: [
+            { id: 1, type: 'critical', message: 'High latency in region us-east-1', time: '2m ago' },
+            { id: 2, type: 'warning', message: 'CPU utilization > 80% on db-primary', time: '15m ago' },
+            { id: 3, type: 'info', message: 'Daily backup completed', time: '1h ago' }
+        ],
+        metrics: {
+            activeIncidents: isRisk ? 3 : 0,
+            mttr: '14m',
+            predictionAccuracy: '94.2%'
         }
     };
+    console.log('[DEBUG] generateMockRisk returning (fallback):', JSON.stringify(result));
+    return result;
 }
 
 /**

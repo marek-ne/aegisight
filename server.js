@@ -42,7 +42,8 @@ app.use(helmet({
                 "https://*.google-analytics.com",
                 "https://*.analytics.google.com",
                 "https://*.googletagmanager.com",
-                "https://*.clarity.ms"
+                "https://*.clarity.ms",
+                "https://generativelanguage.googleapis.com"
             ],
             frameSrc: ["https://www.googletagmanager.com", "https://www.google.com/recaptcha/", "https://accounts.google.com"],
             styleSrc: ["'self'", "https:", "'unsafe-inline'"],
@@ -84,6 +85,12 @@ app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/risk', riskRoutes);
 app.use('/api', require('./routes/api'));
+
+// Serve Sentinel Onboarding App
+app.use('/onboarding', express.static(path.join(__dirname, 'public', 'onboarding')));
+app.get('/onboarding/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'onboarding', 'index.html'));
+});
 
 // Dashboard route
 app.get('/dashboard', (req, res) => {

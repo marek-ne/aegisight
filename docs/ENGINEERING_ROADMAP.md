@@ -3,21 +3,20 @@
 This document translates the **Unicorn Strategy** into a concrete list of **Pull Requests (PRs)**.
 Use this as your checklist for "What code do I write and push next?"
 
-## GOAL A: The Foundation & Core Engine
-**Focus:** Build the "One Platform" architecture using IT Risk as the primary training data.
+## GOAL A: Foundation & Market Entry (Aggressive Execution)
+**Focus:** Build the Core Engine AND Launch Products 1 & 2 immediately.
 
-*   **[ ] PR #1: Unified Ingestion Tests (IT Data)**
+*   **[x] PR #1: Unified Ingestion Tests (IT Data)**
     *   **File:** `tests/api_ingest.test.js`
     *   **Logic:** Automated tests ensuring `POST /api/ingest` correctly handles IT Ticket/CPU payloads.
     *   **Goal:** Ensure the foundation is solid before adding other verticals.
-*   **[ ] PR #2: Hybrid Engine Optimization**
+*   **[ ] PR #2: Hybrid Engine Optimization (IP & TCO)**
     *   **File:** `src/models/risk_engine_hybrid.sql`
-    *   **Logic:** Tune the XGBoost hyperparameters specifically for "IT Incident Prediction" (Accuracy > 85%).
-    *   **Goal:** Hit the specific metric defined in Goal A strategy.
-
-## GOAL B: Market Entry (The "Walk" Phase)
-**Focus:** Dual-Deployment & Supply Chain Expansion.
-
+    *   **Logic:**
+        1. Tune XGBoost for **Accuracy > 85%**.
+        2. Verify **False Positive Rate < 15%** (Goal B Requirement).
+        3. Benchmark Query Costs (Ensure <$500 annualized run-rate).
+    *   **Goal:** Hit the specific metrics defined in `docs/VALIDATION_STRATEGY.md`.
 *   **[ ] PR #3: Supply Chain Plugin (The "Physical" Pillar)**
     *   **File:** `scripts/simulate_supply_chain.js`
     *   **Logic:** Generate `shipment_delay` and `supplier_health` metrics.
@@ -35,7 +34,7 @@ Use this as your checklist for "What code do I write and push next?"
     *   **Logic:** Add a "Download PDF Report" button after the CSV scoring is done.
     *   **Goal:** The "Lead Magnet" feature.
 
-## GOAL C: Strategic Expansion (The "Run" Phase)
+## GOAL B: Strategic Expansion (The "Run" Phase)
 **Focus:** Privacy & Automation.
 
 *   **[ ] PR #7: PII Anonymizer Service**

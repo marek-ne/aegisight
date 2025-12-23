@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-brand-dark text-white font-inter;
+        background-image:
+            radial-gradient(circle at 15% 50%, rgba(0, 122, 255, 0.08) 0%, transparent 25%),
+            radial-gradient(circle at 85% 30%, rgba(0, 169, 157, 0.08) 0%, transparent 25%);
+        background-attachment: fixed;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-montserrat;
+    }
+}
+
+/* Custom Scrollbar for dark theme components */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    /* slate-900/50 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(51, 65, 85, 0.8);
+    /* slate-700/80 */
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(71, 85, 105, 1);
+    /* slate-600 */
+}
+
+/* Scan line animation for the visualizer */
+.scan-line {
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(6, 182, 212, 0.1) 40%,
+            /* cyan-500/10 */
+            rgba(6, 182, 212, 0.3) 50%,
+            /* cyan-500/30 */
+            rgba(6, 182, 212, 0.1) 60%,
+            transparent 100%);
+    height: 100%;
+    width: 100%;
+    animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}

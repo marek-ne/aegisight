@@ -10,31 +10,23 @@ We do not sell seven different tools; we sell one **Core Prediction Engine** tha
 
 ---
 
-## Execution Roadmap: The "Crawl, Walk, Run" Approach
+## Execution Roadmap: The "Crawl, Walk, Run" Approach (Aggressive)
 
-### GOAL A: The Foundation (Crawl Phase)
-**Objective**: Develop, Test, and Validate the Core AI Engine & Platform Architecture.
-**Focus**: Build the single, data-agnostic "Core AI Engine." Ingest historical data to train "failure pattern" recognition without live integration.
+### GOAL A: Foundation & Market Entry (Crawl + Walk Phase)
+**Objective**: Build the Core Engine AND Launch Products 1 & 2 immediately.
+**Focus**: Prove ROI by validating the engine on both IT and Supply Chain data concurrently.
 
-*   **Key Metric**: Model Prediction Accuracy > 85% on historical data.
+*   **Key Metrics (Success Signals)**:
+    1.  **Viability**: Model Prediction Accuracy **>85%**.
+    2.  **Fidelity**: False Positive Rate **<15%** (Alert Fidelity).
+    3.  **Efficiency**: Training TCO **<$500** annualized.
 *   **Technical Implementation**:
     *   **Engine**: `risk_engine_hybrid.sql` (ARIMA + XGBoost).
-    *   **Ingestion**: `POST /api/ingest` (Universal JSON Receiver).
-    *   **Validation**: Simulator Scripts (`simulate_data.js`).
+    *   **Products**: IT Risk Plug-in (ServiceNow) & Supply Chain Plug-in (`simulate_supply_chain.js`).
+    *   **Dual-Deployment**: "Downloadable Brain" (Docker/DuckDB) for on-prem compliance.
+    *   **Self-Service**: "Risk Grader" CSV Upload for lead-gen.
 
-### GOAL B: The Market Entry (Walk Phase)
-**Objective**: Successfully Launch and Secure our Beachhead Market.
-**Focus**: Prove ROI by launching the first two commercial modules.
-1.  **Product 1: IT Risk Plug-in (Digital)**: Connects to ServiceNow.
-2.  **Product 2: Supply Chain Plug-in (Physical)**: Connects to ERP/Logistics.
-*   **Reasoning**: Structured, high-volume data allows fast validation.
-*   **Key Metric**: Reduction in downtime/disruption for pilot customers.
-*   **Technical Implementation**:
-    *   **ServiceNow Connector**: `src/services/servicenow.js`.
-    *   **Self-Service Grader**: The "Risk Audit" CSV Upload feature for lead-gen.
-    *   **Dual-Deployment**: "Downloadable Brain" (Containerized Model) for on-prem compliance.
-
-### GOAL C: The Strategic Expansion (Run Phase)
+### GOAL B: Strategic Expansion (Run Phase)
 **Objective**: Expansion into Future Verticals (Human & Financial).
 **Focus**: Leverage the proven platform to enter high-regulation markets requiring high trust (GDPR/HIPAA).
 *   **Target Sectors**: Industrial Bio-Safety, Pension Solvency.

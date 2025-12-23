@@ -1,3 +1,32 @@
 nohup: ignoring input
-[dotenv@17.2.3] injecting env (21) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
-Server is running on http://localhost:3002
+[dotenv@17.2.3] injecting env (21) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Server is running on http://localhost:3006
+[DEBUG] getRiskStatus called
+BigQuery Error: Not found: Model aegisight-ai:aegisight_mvp.incident_classifier_xgb
+✓ Database connected
+Executed query {
+  text: 'SELECT id, email, first_name, last_name, avatar_url, auth_provider, created_at, last_login\n' +
+    '             FROM users WHERE id = $1',
+  duration: 30,
+  rows: 1
+}
+Executed query {
+  text: 'SELECT id, email, first_name, last_name, avatar_url, auth_provider, created_at, last_login\n' +
+    '             FROM users WHERE id = $1',
+  duration: 2,
+  rows: 1
+}
+[DEBUG] getRiskStatus called
+BigQuery Error: Not found: Model aegisight-ai:aegisight_mvp.incident_classifier_xgb
+[DEBUG] getRiskStatus called
+BigQuery Error: Not found: Model aegisight-ai:aegisight_mvp.incident_classifier_xgb
+[DEBUG] getRiskStatus called
+BigQuery Error: Not found: Model aegisight-ai:aegisight_mvp.incident_classifier_xgb
+[DEBUG] getRiskStatus called
+BigQuery Error: Not found: Model aegisight-ai:aegisight_mvp.incident_classifier_xgb
+[DEBUG] getRiskStatus called
+BigQuery Error: Not found: Model aegisight-ai:aegisight_mvp.incident_classifier_xgb
+[DEBUG] getRiskStatus called
+BigQuery Error: Not found: Model aegisight-ai:aegisight_mvp.incident_classifier_xgb
+[DEBUG] getRiskStatus called
+BigQuery Error: Not found: Model aegisight-ai:aegisight_mvp.incident_classifier_xgb
