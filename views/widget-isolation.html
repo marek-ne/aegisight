@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Isolation Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            }
+        }
+    </script>
+    <script src="/js/aegisight-widget.js" type="module"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #050505;
+            color: white;
+        }
+
+        .widget-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-wrapper">
+        <aegisight-experience></aegisight-experience>
+    </div>
+</body>
+
+</html>

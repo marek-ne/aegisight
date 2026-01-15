@@ -1,0 +1,724 @@
+/* BLOG POST SPECIFIC STYLES */
+
+:root {
+    --bp-bg: #ffffff;
+    --bp-text: #1a2b44;
+    --bp-heading: #0f172a;
+    --bp-meta: #64748b;
+    --bp-border: #e2e8f0;
+    --bp-toc-bg: transparent;
+    --bp-toc-hover: #f1f5f9;
+    --bp-toc-active: #007aff;
+    --bp-tag-bg: #f3f4f6;
+    --bp-tag-text: #374151;
+    --bp-bio-bg: #f8fafc;
+}
+
+body.dark-mode {
+    --bp-bg: #0f172a;
+    --bp-text: #cbd5e1;
+    --bp-heading: #f8fafc;
+    --bp-meta: #94a3b8;
+    --bp-border: #334155;
+    --bp-toc-active: #60a5fa;
+    --bp-tag-bg: #1e293b;
+    --bp-tag-text: #e2e8f0;
+    --bp-bio-bg: #1e293b;
+    background-color: var(--bp-bg);
+}
+
+body {
+    background-color: var(--bp-bg);
+    color: var(--bp-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* HEADER OVERRIDES (Match Main Page Dark/Glass) */
+.main-header {
+    background: rgba(13, 27, 42, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(12px);
+}
+
+/* Ensure Nav Items are Light */
+.main-header .logo-text,
+.main-header .nav-link,
+.main-header .solutions-trigger {
+    color: #ffffff !important;
+}
+
+.main-header .nav-icon {
+    border-radius: 50%;
+}
+
+/* NEW: Pill Toggle Switch (Dark/Light) */
+.toggle-switch-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-switch-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--bp-meta);
+}
+
+.theme-toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: #0f172a;
+    /* Dark track */
+    border-radius: 30px;
+    cursor: pointer;
+    border: 1px solid var(--bp-border);
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+.theme-toggle-knob {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    /* Start position */
+    transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-knob i {
+    font-size: 12px;
+    color: #0f172a;
+    transition: transform 0.3s;
+}
+
+/* Active State (Dark Mode) */
+body.dark-mode .theme-toggle-switch {
+    background: #e2e8f0;
+    /* Light track for contrast against dark sidebar? Or keep dark? */
+    /* Actually, user image shows black pill with white knob. Let's stick to that but invert for visibility if needed. */
+    background: #000;
+    border-color: #fff;
+}
+
+body.dark-mode .theme-toggle-knob {
+    left: 32px;
+    /* End position (60 - 24 - 4) */
+    background: #fff;
+}
+
+/* FLOATING ACTION BUTTON */
+.fab-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.fab-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #007aff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.4);
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    transition: transform 0.2s, background 0.2s;
+    text-decoration: none;
+}
+
+.fab-btn:hover {
+    transform: translateY(-3px);
+    background: #0062cc;
+}
+
+.fab-label {
+    position: absolute;
+    right: 60px;
+    background: rgba(15, 23, 42, 0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.fab-btn:hover+.fab-label {
+    opacity: 1;
+}
+
+/* HERO SECTION */
+.post-hero {
+    padding: 8rem 0 3rem;
+    /* Increase top padding for fixed header */
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.post-meta {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--bp-meta);
+    font-weight: 500;
+}
+
+.meta-category {
+    color: var(--bp-toc-active);
+    margin-left: 10px;
+}
+
+.post-hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--bp-heading);
+}
+
+.post-author-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.author-avatar-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#authorNameSmall {
+    font-weight: 600;
+    color: var(--bp-heading);
+}
+
+/* LAYOUT GRID */
+.post-wrapper {
+    display: grid;
+    grid-template-columns: 350px 1fr 100px;
+    /* Fixed width for consistency */
+    gap: 3rem;
+    padding-bottom: 5rem;
+    align-items: start;
+    /* Changed from stretch to start */
+}
+
+/* LEFT SIDEBAR: Single Sticky Unit (Bio + ToC + Tags) */
+.post-sidebar-left {
+    position: sticky !important;
+    top: 20px !important;
+    /* User Spec: Entire sidebar moves as one */
+    z-index: 10;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    /* CRITICAL: Prevent horizontal scroll */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    /* Fill the grid cell */
+
+    /* Scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--bp-accent) transparent;
+}
+
+/* Author Bio Styling */
+.author-bio-sidebar {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    overflow: hidden;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* ToC Container: NO individual sticky, part of the flow */
+#toc-container {
+    position: relative !important;
+    /* Changed from sticky */
+    top: auto !important;
+
+    /* Card Aesthetics */
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    display: block !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+#toc-container h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e293b;
+    margin-top: 0;
+}
+
+/* List Styles */
+#toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#toc-list li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Accordion Logic: Collapsed by Default */
+#toc-list ol {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    /* User Spec: 0.4s */
+    margin-left: 1rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+/* Expanded State */
+#toc-list li.is-expanded>ol {
+    max-height: 1000px;
+    opacity: 1;
+    margin-bottom: 10px;
+}
+
+/* Links */
+.toc-link {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--bp-meta);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    transition: color 0.2s;
+
+    /* Ellipsis Safety */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.toc-link:hover {
+    color: var(--bp-heading);
+}
+
+/* Active Link: Purple */
+.active-link {
+    color: #7c4fff !important;
+    font-weight: bold !important;
+}
+
+/* Tags & Category Cards */
+.sidebar-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    overflow: hidden;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* TAGS & CATEGORY PILLS */
+.tags-list,
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-pill,
+.category-pill {
+    display: inline-block;
+    background: #f3e8ff;
+    /* Light Purple */
+    color: #6b21a8;
+    /* Dark Purple */
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.tag-pill:hover,
+.category-pill:hover {
+    background: #e9d5ff;
+}
+
+/* Scoped Dark Mode ToC + Cards Override */
+.post-wrapper.dark-theme .toc-container,
+.post-wrapper.dark-theme .sidebar-card {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+/* Scoped Dark Mode (Example-based) */
+.post-wrapper.dark-theme .article-content,
+.post-wrapper.dark-theme .bio-info-simple,
+.post-wrapper.dark-theme h1,
+.post-wrapper.dark-theme h2,
+.post-wrapper.dark-theme h3,
+.post-wrapper.dark-theme h4,
+.post-wrapper.dark-theme p,
+.post-wrapper.dark-theme li {
+    color: #cbd5e1 !important;
+}
+
+.post-wrapper.dark-theme .toc-container h3,
+.post-wrapper.dark-theme .sidebar-tags-section h3 {
+    color: #94a3b8 !important;
+}
+
+.post-wrapper.dark-theme .active-link {
+    color: #60a5fa !important;
+    border-left-color: #60a5fa !important;
+}
+
+/* Ensure background changes if needed, or just text? 
+   User example changes text colors. 
+   I will flip the body background too if they want full dark mode, 
+   but user said "Isolate". 
+   Let's toggle the class on BODY to handle background, but usage of 'blog-theme' is correct.
+*/
+
+/* author bio sidebar */
+.author-bio-sidebar {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--bp-border);
+}
+
+.bio-header-simple {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#authorImgLarge {
+    width: 60px;
+    height: 60px;
+    /* Overriding previous 80px if needed, or keep 80 */
+}
+
+.bio-info-simple h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: var(--bp-heading);
+}
+
+.bio-info-simple span {
+    font-size: 0.9rem;
+    color: var(--bp-meta);
+}
+
+.bio-socials-sidebar a {
+    color: var(--bp-meta);
+    margin-right: 15px;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.bio-socials-sidebar a:hover {
+    color: var(--bp-toc-active);
+}
+
+.toc-container h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--bp-meta);
+}
+
+#tableOfContents ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tableOfContents li {
+    margin-bottom: 0.5rem;
+}
+
+#tableOfContents a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--bp-meta);
+    display: block;
+    padding: 4px 0;
+    transition: color 0.2s;
+    border-left: 2px solid transparent;
+    padding-left: 10px;
+}
+
+#tableOfContents a:hover,
+#tableOfContents a.active {
+    color: var(--bp-toc-active);
+    border-left-color: var(--bp-toc-active);
+}
+
+/* TOC Sub-levels */
+#tableOfContents ul ul {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+/* MAIN CONTENT */
+.post-content {
+    max-width: 800px;
+}
+
+.article-typography {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--bp-text);
+}
+
+.article-typography h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: var(--bp-heading);
+}
+
+.article-typography h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    color: var(--bp-heading);
+}
+
+.article-typography p {
+    margin-bottom: 1.5rem;
+}
+
+.article-typography ul {
+    margin-bottom: 1.5rem;
+    padding-left: 20px;
+}
+
+.article-typography li {
+    margin-bottom: 0.5rem;
+}
+
+/* CONTACT SECTION (Force Dark) */
+#contact {
+    background-color: #0f172a !important;
+    /* Dark Slate 900 */
+    color: #f8fafc !important;
+    /* Slate 50 */
+}
+
+#contact h1,
+#contact h2,
+#contact h3,
+#contact .contact-header,
+#contact a {
+    color: #f8fafc !important;
+}
+
+#contact .contact-email {
+    color: #3b82f6 !important;
+    /* Blue 500 */
+}
+
+#contact .form-group label {
+    color: #cbd5e1 !important;
+    /* Slate 300 */
+}
+
+#contact .contact-form {
+    background-color: #1e293b !important;
+    /* Slate 800 */
+    border: 1px solid #334155;
+}
+
+#contact input,
+#contact textarea {
+    background-color: #0f172a !important;
+    border-color: #334155 !important;
+    color: #fff !important;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #3b82f6 !important;
+}
+
+/* HEADER OVERRIDES (Match Main Page Dark/Glass) */
+.main-header {
+    background: rgba(13, 27, 42, 0.8) !important;
+    /* Adjusted to 0.8 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(12px);
+}
+
+/* SIDEBAR LAYOUT */
+.sidebar-toc-wrapper {
+    /* Acts as the track for the sticky ToC */
+    margin-bottom: 2rem;
+}
+
+.toc-container {
+    position: sticky;
+    top: 50vh;
+    /* Center vertically */
+    transform: translateY(-50%);
+    align-self: start;
+    max-height: 70vh;
+    /* slightly less to avoid overlap if small screen */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.toc-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-container::-webkit-scrollbar-thumb {
+    background-color: var(--bp-border);
+    border-radius: 4px;
+}
+
+/* Static Tags Section (At bottom of sidebar) */
+.sidebar-tags-section {
+    position: relative;
+    z-index: 2;
+    background: var(--bp-bg);
+    /* Ensure no transparency issues */
+    padding-top: 2rem;
+    border-top: 1px solid var(--bp-border);
+    margin-top: auto;
+    /* Push to bottom if flex spacing allows */
+}
+
+/* TAGS */
+.post-tags-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--bp-border);
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: var(--bp-tag-bg);
+    color: var(--bp-tag-text);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* MOBILE AUTHOR BIO */
+.author-bio-box-mobile {
+    display: none;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--bp-bio-bg);
+    border-radius: 12px;
+}
+
+#authorImgMobile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+@media (max-width: 1024px) {
+    .author-bio-box-mobile {
+        display: block;
+    }
+}
+
+/* DARK MODE TOGGLE (Sidebar) */
+.theme-toggle-btn-sidebar {
+    background: transparent;
+    border: 1px solid var(--bp-border);
+    color: var(--bp-text);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.theme-toggle-btn-sidebar:hover {
+    background: var(--bp-border);
+    color: var(--bp-heading);
+}
+
+/* Original Header Toggle (Removed, but keeping CSS if needed or deleting) */
+.theme-toggle-btn {
+    display: none;
+    /* Hide old class just in case */
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .post-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .post-sidebar-left {
+        display: none;
+    }
+
+    .post-sidebar-right {
+        display: none;
+    }
+
+    .author-bio-box-mobile {
+        display: block;
+    }
+}

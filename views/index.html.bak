@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegisight AI - Predictive Risk Intelligence</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Aegisight AI provides predictive risk intelligence for enterprises. Forecast IT outages, supply chain disruptions, and financial fraud with our AI plugins.">
+    <meta name="keywords"
+        content="AI, Risk Intelligence, Predictive Analytics, ServiceNow, SAP, Enterprise Risk Management">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aegisight.ai/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M8NJXR2D');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aegisight.ai/">
+    <meta property="og:title" content="Aegisight AI - Predictive Risk Intelligence">
+    <meta property="og:description"
+        content="Incubating a culture of innovation & creativity. Predict and prevent enterprise risks before they happen.">
+    <meta property="og:image" content="https://aegisight.ai/pics/social-share.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aegisight.ai/">
+    <meta property="twitter:title" content="Aegisight AI - Predictive Risk Intelligence">
+    <meta property="twitter:description"
+        content="Incubating a culture of innovation & creativity. Predict and prevent enterprise risks before they happen.">
+    <meta property="twitter:image" content="https://aegisight.ai/pics/social-share.jpg">
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="DySu-QwBufNthLXZTe7q7-zvXdFE0ABQG6eVYauhmFI" />
+
+    <!-- Schema.org Markup for Logo -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://aegisight.ai",
+      "logo": "https://aegisight.ai/favicon.png"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Replaced Roboto with Inter for a cleaner, modern B2B feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/css/style.css?v=51">
+    <script src="js/main.js?v=44" defer></script>
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="/css/auth-modal-v2.css">
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8NJXR2D" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <div class="header-left">
+            <a href="/" class="hero-logo-container" style="text-decoration: none;">
+                <img src="pics/as-2-icon.png" alt="Aegisight AI Logo" class="nav-icon" width="48" height="48">
+                <span class="logo-text">Aegisight <span class="text-blue">AI</span></span>
+            </a>
+            <nav>
+                <div class="solutions-dropdown">
+                    <button class="solutions-trigger">Capabilities</button>
+                    <!-- NEW MEGA-MENU STRUCTURE -->
+                    <div class="dropdown-content mega-menu">
+                        <!-- NEW: Menu Header -->
+                        <div class="mega-menu-header">
+                            <h3>Our Solutions</h3>
+                            <p>Full-spectrum predictive defense across your digital, physical, and human infrastructure.
+                            </p>
+                        </div>
+
+                        <!-- Grid Wrapper -->
+                        <div class="mega-menu-grid">
+                            <!-- Column 1: Navigation (3 Pillars) -->
+                            <div class="mega-menu-nav no-scrollbar">
+                                <div class="nav-category">Core Capabilities</div>
+                                <button class="mega-menu-item active" data-target="panel-digital">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <strong>Digital Protection</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-physical">
+                                    <i class="fas fa-truck-loading"></i>
+                                    <strong>Physical Protection</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-human">
+                                    <i class="fas fa-user-shield"></i>
+                                    <strong>Human Protection</strong>
+                                </button>
+                            </div>
+
+                            <!-- Column 2: Content (Text Grid) -->
+                            <div class="mega-menu-panels">
+                                <!-- Digital Panel -->
+                                <div class="mega-menu-panel active" id="panel-digital">
+                                    <h4>Digital Protection Solutions</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>IT Risk Intelligence</h5>
+                                            <p>Predict major outages, identify servers at risk of failure, and
+                                                forecast project delays with 98% accuracy.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Financial Fraud Sentinel</h5>
+                                            <p>Detect anomalies in financial transactions in real-time, preventing fraud
+                                                before it impacts your bottom line.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Physical Panel -->
+                                <div class="mega-menu-panel" id="panel-physical">
+                                    <h4>Physical Protection Solutions</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Supply Chain Guardian</h5>
+                                            <p>Monitor global logistics in real-time. Predict delays caused by weather,
+                                                geopolitics, or strikes weeks in advance.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Infrastructure Integrity</h5>
+                                            <p>Analyze sensor data from physical assets (pipelines, fleets, machinery)
+                                                to predict maintenance needs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Human Panel -->
+                                <div class="mega-menu-panel" id="panel-human">
+                                    <h4>Human Protection Solutions</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Insider Threat Detection</h5>
+                                            <p>Identify behavioral anomalies that indicate potential data theft or
+                                                sabotage before a breach occurs.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Workforce Safety AI</h5>
+                                            <p>Predict potential safety incidents in high-risk environments by analyzing
+                                                patterns in operational data.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Call to Action -->
+                            <div class="mega-menu-promo">
+                                <h4>Get Started</h4>
+                                <p>Take the next step in securing your infrastructure.</p>
+
+                                <a href="/contact" class="promo-card">
+                                    <div class="promo-icon">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <div class="promo-text">
+                                        <strong>Deploy the Core Engine</strong>
+                                        <small>Identify hidden vulnerabilities in your stack.</small>
+                                    </div>
+                                </a>
+
+                                <a href="/account" class="promo-card">
+                                    <div class="promo-icon">
+                                        <i class="fas fa-sign-in-alt"></i>
+                                    </div>
+                                    <div class="promo-text">
+                                        <strong>Client Login</strong>
+                                        <small>Access your live predictive dashboard and real-time threat
+                                            intelligence.</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="solutions-dropdown">
+                    <button class="solutions-trigger">Industries</button>
+                    <!-- INDUSTRIES MEGA MENU -->
+                    <div class="dropdown-content mega-menu" style="min-width: 900px;">
+                        <!-- Menu Header -->
+                        <div class="mega-menu-header">
+                            <h3>Industry-Specific Intelligence</h3>
+                            <p>Precise solutions tailored to the unique failure signatures of your sector.</p>
+                        </div>
+
+                        <!-- Grid Wrapper -->
+                        <div class="mega-menu-grid">
+                            <!-- Column 1: Navigation -->
+                            <div class="mega-menu-nav no-scrollbar">
+                                <div class="nav-category">Industries</div>
+                                <button class="mega-menu-item active" data-target="panel-finance">
+                                    <i class="fas fa-landmark"></i>
+                                    <strong>Financial Services</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-telecom">
+                                    <i class="fas fa-signal"></i>
+                                    <strong>Telecommunications</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-saas">
+                                    <i class="fas fa-cloud"></i>
+                                    <strong>Enterprise SaaS</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-health">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <strong>Healthcare</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-gov">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <strong>Government</strong>
+                                </button>
+                            </div>
+
+                            <!-- Column 2: Content -->
+                            <div class="mega-menu-panels">
+                                <!-- Finance -->
+                                <div class="mega-menu-panel active" id="panel-finance">
+                                    <h4>Financial Services</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Predictive Transaction Integrity</h5>
+                                            <p>Detect micro-latencies and database locks in payment gateways to prevent
+                                                high-stakes transaction failures.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>High-Frequency Infrastructure Forensics</h5>
+                                            <p>Ensure zero-latency operations for trading platforms by correlating
+                                                network jitter with server performance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Telecom -->
+                                <div class="mega-menu-panel" id="panel-telecom">
+                                    <h4>Telecommunications</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Infrastructure State Forensics</h5>
+                                            <p>Correlate subtle configuration drift with network performance metrics to
+                                                isolate changes that will cause outages.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>5G Network Resilience</h5>
+                                            <p>Predictive monitoring of edge compute locations to prevent silent packet
+                                                drops and ensure SLA compliance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SaaS -->
+                                <div class="mega-menu-panel" id="panel-saas">
+                                    <h4>Enterprise SaaS & Cloud</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Microservice Cascade Prevention</h5>
+                                            <p>Identify resource exhaustion patterns across interdependent microservices
+                                                to stop domino-effect crashes.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Platform Availability Prediction</h5>
+                                            <p>Move from reactive 99.99% SLA monitoring to proactive failure prevention
+                                                by detecting pre-incident signatures.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Health -->
+                                <div class="mega-menu-panel" id="panel-health">
+                                    <h4>Digital Healthcare</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Data Pipeline Integrity</h5>
+                                            <p>Predict integration failures between legacy EHR and cloud systems by
+                                                detecting schema drift.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Interoperability Risk Management</h5>
+                                            <p>Ensure critical patient data flow by forensically monitoring the health
+                                                of HL7 and FHIR interface engines.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Gov -->
+                                <div class="mega-menu-panel" id="panel-gov">
+                                    <h4>Government & Defense</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Sovereign Air-Gapped Intelligence</h5>
+                                            <p>Deploy forensic AI within secure, disconnected environments. Zero data
+                                                egress, total operational sovereignty.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Legacy System Modernization</h5>
+                                            <p>Protect aging critical IT infrastructure by wrapping it in a predictive
+                                                forensic layer.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Call to Action (Dynamic based on Industry?) or Static -->
+                            <div class="mega-menu-promo">
+                                <h4>Industry Solutions</h4>
+                                <p>See how Aegisight protects your specific sector.</p>
+
+                                <a href="/contact?industry=finance" class="promo-card">
+                                    <div class="promo-icon">
+                                        <i class="fas fa-chart-pie"></i>
+                                    </div>
+                                    <div class="promo-text">
+                                        <strong>Get a Demo</strong>
+                                        <small>Tailored for your industry.</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/about" class="nav-link">About Us</a>
+
+                <a href="/blogs" class="nav-link">Blogs</a>
+                <a href="/account" class="nav-link client-login-btn">Client Login</a>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <a href="/contact" class="cta-button" onclick="window.location.href='/contact'; return false;">Contact
+                Us</a>
+
+            <!-- Profile Dropdown (Hidden by default) -->
+            <div class="profile-dropdown" id="profileDropdown" style="display: none;">
+                <div class="profile-trigger">
+                    <div class="avatar-circle" id="navAvatar">MN</div>
+                </div>
+                <div class="profile-menu">
+                    <div class="profile-header">
+                        <div class="avatar-circle large" id="menuAvatar">MN</div>
+                        <div class="profile-info">
+                            <span class="profile-name" id="menuName">Marek Nerko</span>
+                            <span class="profile-email" id="menuEmail">marek.nerko@gmail.com</span>
+                        </div>
+                    </div>
+                    <ul class="profile-actions">
+                        <li><a href="/dashboard"><i class="far fa-user-circle"></i> My profile and settings</a></li>
+                        <li><a href="/contact"><i class="far fa-question-circle"></i> Help & support</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="top">
+            <div class="container">
+                <div class="hero-layout">
+                    <div class="hero-logo-container">
+                        <!-- UPDATED: New Transparent Logo -->
+                        <img src="pics/as-1-logo.webp" alt="Aegisight AI Logo" class="hero-logo" width="1029"
+                            height="726">
+                    </div>
+                    <div class="hero-text-container">
+                        <!-- Removed "Aegisight AI:" from h1 -->
+                        <h1>One Platform. Zero Surprises.</h1>
+                        <p class="sub-headline">
+                            From Reactive Measures to Predictive Intelligence
+                        </p>
+                        <!-- Removed sub-headline as it is embedded in the logo image -->
+                        <p class="hero-description">
+                            We find the critical <strong>"AI Fingerprints"</strong> of failure hidden in your digital
+                            noise—isolating fraud, outages, and data breaches with forensic precision—so you can act
+                            before it's too late.
+                        </p>
+                        <a href="/contact" class="cta-button">Assess Your Risk Exposure</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="problem-agitation-section">
+            <div class="container">
+                <!-- Part 1: The Cost of Inaction -->
+                <h2 class="problem-headline"><span class="weight-light">Blind Spots.</span> <br>Fragmented Data.
+                    Inevitable Failure.</h2>
+
+                <div class="problem-grid-layout">
+                    <!-- Quadrant 1: Visual (Distributed System Sprawl) -->
+                    <div class="problem-quadrant q-1-visual">
+                        <div class="problem-visual standalone">
+                            <div class="visual-icons">
+                                <span class="p-icon"><i class="fas fa-project-diagram"></i></span>
+                                <span class="p-icon"><i class="fas fa-cloud"></i></span>
+                                <span class="p-icon active"><i class="fas fa-eye-slash"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quadrant 2: Text (Distributed System Sprawl) -->
+                    <div class="problem-quadrant q-1-text">
+                        <div class="problem-text">
+                            <h3>Distributed System Sprawl</h3>
+                            <p>Legacy infrastructure and microservices create opaque complexity. Root causes remain
+                                hidden in a web of dependencies.</p>
+                        </div>
+                    </div>
+
+                    <!-- Quadrant 3: Complete Item (Reactive Chaos) -->
+                    <div class="problem-quadrant q-2">
+                        <div class="problem-content-wrapper">
+                            <div class="problem-text">
+                                <h3>Reactive Chaos</h3>
+                                <p>Overwhelmed by false positives. Teams waste critical cycles chasing noise instead of
+                                    preventing outages.</p>
+                            </div>
+                            <div class="problem-visual mini">
+                                <div class="visual-chain">
+                                    <span class="chain-node alert"><i class="fas fa-bell"></i></span>
+                                    <span class="chain-line"></span>
+                                    <span class="chain-node unknown"><i class="fas fa-search"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quadrant 4: Complete Item (Physical Blind Spots) -->
+                    <div class="problem-quadrant q-3">
+                        <div class="problem-content-wrapper">
+                            <div class="problem-text">
+                                <h3>Physical Blind Spots</h3>
+                                <p>Millions of unanalyzed sensor events. Physical security breaches go undetected
+                                    without
+                                    real-time intelligence.</p>
+                            </div>
+                            <!-- Optional Visual for symmetry if needed -->
+                            <div class="problem-visual mini">
+                                <div class="visual-icons">
+                                    <span class="p-icon active"><i class="fas fa-video-slash"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part 2: What Others Get Wrong -->
+                <div class="others-wrong-container">
+                    <h3 class="wrong-headline">What Others <span class="text-highlight-red">Get Wrong</span></h3>
+                    <div class="wrong-cards-grid">
+                        <!-- Card 1 -->
+                        <div class="wrong-card">
+                            <div class="wrong-icon"><i class="fas fa-robot"></i></div>
+                            <h4>Generic Wrappers</h4>
+                            <p>Off-the-shelf AI models that hallucinate on proprietary data and lack domain-specific
+                                forensic context.</p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="wrong-card">
+                            <div class="wrong-icon"><i class="fas fa-bell-slash"></i></div>
+                            <h4>Black Box Alerts</h4>
+                            <p>Systems that flag "anomalies" without explaining <em>why</em>, leaving your analysts
+                                guessing at the root cause.</p>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="wrong-card">
+                            <div class="wrong-icon"><i class="fas fa-layer-group"></i></div>
+                            <h4>Point Solutions</h4>
+                            <p>Fragmented tools that monitor isolated layers. They miss the hidden connections between
+                                digital anomalies and physical risks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Security Section (RapidInnovation Style) -->
+        <section class="bento-secure-section">
+            <div class="container">
+                <div class="bento-grid-layout">
+
+                    <!-- row 1 -->
+                    <!-- 1. AI Card (Left) -->
+                    <div class="bento-card bento-white-card">
+                        <h3>AI That Speaks Your Language</h3>
+                        <p>We don't train on generic internet noise. Your model learns exclusively from your historical
+                            incident data, workflows, and KPIs.</p>
+                    </div>
+
+                    <!-- 2. Cube Image (Center) -->
+                    <div class="bento-card bento-dark-image-card" style="background-image: url('/pics/yourdata4.png');">
+                        <div class="bento-overlay"></div>
+                    </div>
+
+                    <!-- 3. Headline (Right) -->
+                    <div class="bento-text-block">
+                        <h2 class="bento-headline">Your Data. Your Domain.<br><span class="text-blue">Our Secure
+                                Engine.</span></h2>
+                        <a href="#contact" class="cta-button bento-cta"
+                            style="margin-top: 1.5rem; display: inline-block;">Secure Your Engine</a>
+                    </div>
+
+                    <!-- row 2 -->
+                    <!-- 4. Vertical Image (Left) -->
+                    <div class="bento-card bento-vertical-image-card"
+                        style="background-image: url('/pics/yourdata2.png');">
+                        <div class="bento-overlay"></div>
+                    </div>
+
+                    <!-- 5. Enterprise (Center) -->
+                    <div class="bento-card bento-white-card">
+                        <div class="bento-content-center">
+                            <h3>Enterprise Ready</h3>
+                            <p>Built for scale with industry-standard security and compliance.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Exfil (Right) -->
+                    <div class="bento-card bento-white-card wide-card">
+                        <h3>Zero-Exfiltration</h3>
+                        <p>Raw data never leaves your VPC. Passive integration via vTaps.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- OLD_CONTENT_TO_DELETE -->
+        <!-- HOW IT WORKS SECTION (Redesigned Pipeline) -->
+        <section class="how-it-works-section" id="telemetry">
+            <div class="container">
+                <div class="stack-intro">
+                    <h2>Universal Forensic Pipeline</h2>
+                    <p class="solid-data-subheadline">The Engine of Predictive Truth</p>
+                </div>
+
+                <div class="timeline-container">
+
+                    <!-- Step 1: Ingestion -->
+                    <div class="timeline-step">
+                        <div class="timeline-content unified-card pro-card">
+                            <div class="giant-number">01</div>
+                            <div class="card-content-left">
+                                <div class="pro-header">
+                                    <h3>Non-Invasive Integration</h3>
+                                    <div class="badge-row">
+                                        <span class="tech-badge badge-latency">Ingest: Passive Mode</span>
+                                    </div>
+                                </div>
+                                <p>We utilize vTaps and Port Mirroring to create a lossless reflection of enterprise
+                                    data—Digital, Financial, and Physical—without adding a millisecond of latency to
+                                    your production environment.</p>
+                            </div>
+                            <div class="card-image-right">
+                                <img src="/pics/pipeline_01.png" alt="Data Ingestion Interface">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Processing -->
+                    <div class="timeline-step">
+                        <div class="timeline-content unified-card pro-card">
+                            <div class="giant-number">02</div>
+                            <div class="card-content-left">
+                                <div class="pro-header">
+                                    <h3>Vector Normalization</h3>
+                                    <div class="badge-row">
+                                        <span class="tech-badge badge-tensor">Processing: Format Tensor</span>
+                                    </div>
+                                </div>
+                                <p>Raw, disparate telemetry is stripped of noise and converted into high-dimensional
+                                    time-series tensors. This aligns chaotic logs into a unified mathematical language.
+                                </p>
+                            </div>
+                            <div class="card-image-right">
+                                <img src="/pics/pipeline_02.png" alt="Vector Normalization">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Action -->
+                    <div class="timeline-step">
+                        <div class="timeline-content unified-card pro-card">
+                            <div class="giant-number">03</div>
+                            <div class="card-content-left">
+                                <div class="pro-header">
+                                    <h3>Validated Risk Signature</h3>
+                                    <div class="badge-row">
+                                        <span class="tech-badge badge-confidence">Action: <span
+                                                class="text-blue-accent">Verified Signatures</span></span>
+                                    </div>
+                                </div>
+                                <p>Vectors are matched against the Global Fingerprint Library. You define the logic and
+                                    sensitivity—set your own confidence thresholds (e.g., >99%) to precisely trigger
+                                    automated remediation.
+                                </p>
+                            </div>
+                            <div class="card-image-right">
+                                <img src="/pics/pipeline_03.png" alt="Validated Action">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+
+        <section class="product-family" id="solutions"> <!-- Added ID for scrolling -->
+            <div class="intro-container"> <!-- Spacer for scale effect -->
+                <div class="inner-black">
+                    <div class="container">
+                        <h2 style="text-align: center; color: #fff;">One Core Engine. <span
+                                style="color: var(--color-primary-blue);">Infinite
+                                Signatures.</span></h2>
+                        <p style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center; color: #94a3b8;">
+                            We don't just "monitor" data. The <strong>Universal Forensic Pipeline</strong> constantly
+                            scans for
+                            micro-deviations—<strong>"AI Fingerprints"</strong>—and matches them against our global
+                            library of
+                            <strong>Verified Signatures</strong> to predict failure with mathematical certainty.
+                        </p>
+                        <div class="product-family-layout">
+                            <nav class="pf-nav">
+                                <div class="pf-nav-item active" data-target="pf-digital">
+                                    <i class="fas fa-server" style="margin-right: 0.5rem;"></i> Digital Asset Protection
+                                </div>
+                                <div class="pf-nav-item" data-target="pf-physical">
+                                    <i class="fas fa-truck-fast" style="margin-right: 0.5rem;"></i> Physical Asset
+                                    Protection
+                                </div>
+                                <div class="pf-nav-item" data-target="pf-human">
+                                    <i class="fas fa-user-shield" style="margin-right: 0.5rem;"></i> Human Asset
+                                    Protection
+                                </div>
+                            </nav>
+                            <div class="pf-content">
+                                <!-- Digital Panel -->
+                                <div class="pf-content-panel active" id="pf-digital">
+                                    <div class="panel-header">
+                                        <h3>Digital Asset Intelligence</h3>
+                                        <p>Real-time correlation of IT logs and transaction data to predict system
+                                            failures.</p>
+                                    </div>
+                                    <div class="risk-report-container">
+                                        <table class="risk-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fingerprint Type</th>
+                                                    <th>Probability</th>
+                                                    <th>Verified Signature</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="risk-row high">
+                                                    <td>
+                                                        <div class="fp-name">Silent Strain</div>
+                                                        <div class="fp-meta">CPU Heat vs. Ticket Vol</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-red">94.2%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-red" style="width: 94.2%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Silent Strain Signature"
+                                                            data-xai-desc="Correlation detected between hardware anomalies and service request latency."
+                                                            data-xai-factors='["CPU Temp > 85°C (Weight: 0.8)", "Ticket Vol < 10/hr (Weight: 0.6)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-SER-85EF1B89
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge alert">CRITICAL</span></td>
+                                                </tr>
+                                                <tr class="risk-row medium">
+                                                    <td>
+                                                        <div class="fp-name">Memory Leak (Slow)</div>
+                                                        <div class="fp-meta">Heap Dump Pattern B</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-orange">78.5%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-orange" style="width: 78.5%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Memory Pattern B"
+                                                            data-xai-desc="Slow, linear increase in heap usage matching known 'Garbage Collection Failure' pattern."
+                                                            data-xai-factors='["Heap Usage > 80% (0.9)", "GC Freq < 20ms (0.4)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-MEM-77AF2C01
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge warning">WARNING</span></td>
+                                                </tr>
+                                                <tr class="risk-row low">
+                                                    <td>
+                                                        <div class="fp-name">Auth Spike</div>
+                                                        <div class="fp-meta">Geo-IP Variance</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-blue">12.0%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-blue" style="width: 12%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Geo-IP Variance"
+                                                            data-xai-desc="Login attempts from >3 distinct countries within 1 hour."
+                                                            data-xai-factors='["Distinct IPs: 4 (0.7)", "Time Window: 60m (0.3)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-SEC-009D4E22
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge safe">MONITORING</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Physical Panel -->
+                                <div class="pf-content-panel" id="pf-physical">
+                                    <div class="panel-header">
+                                        <h3>Physical Supply Chain</h3>
+                                        <p>Predictive analysis of logistics, inventory, and vendor solvency data.</p>
+                                    </div>
+                                    <div class="risk-report-container">
+                                        <table class="risk-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fingerprint Type</th>
+                                                    <th>Probability</th>
+                                                    <th>Verified Signature</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="risk-row high">
+                                                    <td>
+                                                        <div class="fp-name">Supply Fracture</div>
+                                                        <div class="fp-meta">Shipment Delay Cycle</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-red">89.8%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-red" style="width: 89.8%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Supply Chain Fracture"
+                                                            data-xai-desc="Vendor displaying 'death spiral' metrics: delayed shipments + early payment requests."
+                                                            data-xai-factors='["Shipment Delay > 5 Days (0.85)", "Payment Terms Change (0.5)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-SUP-92CA2D11
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge alert">CRITICAL</span></td>
+                                                </tr>
+                                                <tr class="risk-row medium">
+                                                    <td>
+                                                        <div class="fp-name">Vendor Insolvency</div>
+                                                        <div class="fp-meta">Credit/Payment drift</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-orange">65.3%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-orange" style="width: 65.3%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Insolvency Risk"
+                                                            data-xai-desc="Public credit score drop correlated with AP divergence."
+                                                            data-xai-factors='["Credit Score < 600 (0.6)", "AP Variance > 15% (0.5)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-VEN-33BA1F55
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge warning">review</span></td>
+                                                </tr>
+                                                <tr class="risk-row low">
+                                                    <td>
+                                                        <div class="fp-name">Route Congestion</div>
+                                                        <div class="fp-meta">Weather/Traffic API</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-blue">24.1%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-blue" style="width: 24.1%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Logistics Delay"
+                                                            data-xai-desc="Projected 4h delay due to severe weather event in transit corridor."
+                                                            data-xai-factors='["Storm Severity: High (0.4)", "Route Redundance: Low (0.2)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-LOG-11EE5B77
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge safe">OPTIMIZED</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Human Panel -->
+                                <div class="pf-content-panel" id="pf-human">
+                                    <div class="panel-header">
+                                        <h3>Human Bio-Safety</h3>
+                                        <p>Biometric monitoring for industrial safety and compliance (GDPR Compliant).
+                                        </p>
+                                    </div>
+                                    <div class="risk-report-container">
+                                        <table class="risk-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fingerprint Type</th>
+                                                    <th>Probability</th>
+                                                    <th>Verified Signature</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="risk-row high">
+                                                    <td>
+                                                        <div class="fp-name">Cognitive Drift</div>
+                                                        <div class="fp-meta">Micro-movement variance</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-red">91.5%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-red" style="width: 91.5%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Cognitive Fatigue"
+                                                            data-xai-desc="Operator biometrics showing loss of focus patterns."
+                                                            data-xai-factors='["Eye Movement Lag > 200ms (0.9)", "Postural Sway (0.7)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-BIO-44AB7C90
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge alert">Safety Stop</span></td>
+                                                </tr>
+                                                <tr class="risk-row medium">
+                                                    <td>
+                                                        <div class="fp-name">Heat Stress</div>
+                                                        <div class="fp-meta">Core Temp / HR rate</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-orange">72.0%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-orange" style="width: 72%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Thermal Stress"
+                                                            data-xai-desc="Elevated heart rate combined with high ambient temperature."
+                                                            data-xai-factors='["Heart Rate > 110bpm (0.6)", "Ambient Temp > 35°C (0.5)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-HET-22CD9E88
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge warning">Cool Down</span></td>
+                                                </tr>
+                                                <tr class="risk-row low">
+                                                    <td>
+                                                        <div class="fp-name">Shift Compliance</div>
+                                                        <div class="fp-meta">Hours/Break ratio</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-blue">0.0%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-blue" style="width: 1%;"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Shift Adherence"
+                                                            data-xai-desc="Worker is fully compliant with mandatory break schedules."
+                                                            data-xai-factors='["Break Time: 15m (1.0)", "Shift Length: 4h (1.0)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-SFT-66FA1A33
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge safe">Verified</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- TRUST & COMPLIANCE STRIP (Moved) -->
+        <section class="trust-strip">
+            <div class="container trust-container">
+                <div class="trust-label">Built for Enterprise Compliance</div>
+                <div class="trust-badges">
+                    <div class="trust-badge" title="SOC2 Ready Architecture">
+                        <i class="fas fa-shield-alt"></i> <span>SOC2 Ready Architecture</span>
+                    </div>
+                    <div class="trust-badge" title="ISO 27001 Aligned">
+                        <i class="fas fa-lock"></i> <span>ISO Aligned</span>
+                    </div>
+                    <div class="trust-badge" title="GDPR Ready">
+                        <i class="fas fa-user-shield"></i> <span>GDPR Ready</span>
+                    </div>
+                    <div class="trust-badge" title="HIPAA Ready">
+                        <i class="fas fa-notes-medical"></i> <span>HIPAA Ready</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED BY SECTION (Moved) -->
+        <section class="trusted-by">
+            <div class="container" style="text-align: center;">
+                <p class="trusted-label">SEAMLESS INTEGRATIONS WITH</p>
+                <div class="marquee-container">
+                    <div class="marquee-track">
+                        <!-- Set 1 -->
+                        <div class="integration-pill"><i class="fas fa-ticket"></i> ServiceNow</div>
+                        <div class="integration-pill"><i class="fas fa-cubes"></i> SAP</div>
+                        <div class="integration-pill"><i class="fab fa-jira"></i> Jira</div>
+                        <div class="integration-pill"><i class="fas fa-database"></i> Oracle</div>
+                        <div class="integration-pill"><i class="fab fa-salesforce"></i> Salesforce</div>
+                        <div class="integration-pill"><i class="fab fa-aws"></i> AWS</div>
+                        <div class="integration-pill"><i class="fab fa-google"></i> Google Cloud</div>
+                        <div class="integration-pill"><i class="fab fa-microsoft"></i> Azure</div>
+
+                        <!-- Set 2 (Duplicate for Loop) -->
+                        <div class="integration-pill"><i class="fas fa-ticket"></i> ServiceNow</div>
+                        <div class="integration-pill"><i class="fas fa-cubes"></i> SAP</div>
+                        <div class="integration-pill"><i class="fab fa-jira"></i> Jira</div>
+                        <div class="integration-pill"><i class="fas fa-database"></i> Oracle</div>
+                        <div class="integration-pill"><i class="fab fa-salesforce"></i> Salesforce</div>
+                        <div class="integration-pill"><i class="fab fa-aws"></i> AWS</div>
+                        <div class="integration-pill"><i class="fab fa-google"></i> Google Cloud</div>
+                        <div class="integration-pill"><i class="fab fa-microsoft"></i> Azure</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>See Your Predictive Advantage</h2>
+                <p style="max-width: 700px; margin: 0 auto 2rem auto;">
+                    Let's discuss how our Aegisight AI platform can be tailored to your specific operational risks.
+                    Schedule a no-obligation discovery call with our team.
+                </p>
+                <a href="https://aegisight.ai/contact" class="cta-button"
+                    style="padding: 1rem 2rem; font-size: 1.25rem;">
+                    Assess Your Risk Exposure
+                </a>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM SECTION -->
+        <section class="contact-page" id="contact" style="padding: 6rem 0; margin: 0;">
+            <div class="contact-header">
+                <h1>Connect with us <span class="text-white">to bring your vision to life.</span></h1>
+                <a href="mailto:sales@aegisight.ai" class="contact-email">sales@aegisight.ai</a>
+
+                <div class="trust-badges-row">
+                    <div class="trust-badge"><i class="fas fa-file-contract"></i> NDA-Secured Confidentiality</div>
+                    <div class="trust-badge"><i class="fas fa-user-check"></i> Free consultation</div>
+                    <div class="trust-badge"><i class="fas fa-handshake"></i> Zero Obligation Meeting</div>
+                    <div class="trust-badge"><i class="fas fa-shield-alt"></i> Tailored Strategy Discussion</div>
+                </div>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-left">
+                    <img src="pics/form-logo.png" alt="Real People. Real Solutions." class="contact-hero-img">
+                    <div class="contact-hero-text">
+                        <h2>Real People.<br>Real Solutions.</h2>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="requirement">Tell us a bit about your requirement <span
+                                    class="required">*</span></label>
+                            <textarea id="requirement" name="requirement" rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pillar of Interest</label>
+                            <div class="pillar-checkboxes">
+                                <label class="pillar-checkbox">
+                                    <input type="checkbox" name="pillars" value="Digital Protection">
+                                    <span class="checkbox-label">Digital Protection</span>
+                                </label>
+                                <label class="pillar-checkbox">
+                                    <input type="checkbox" name="pillars" value="Physical Protection">
+                                    <span class="checkbox-label">Physical Protection</span>
+                                </label>
+                                <label class="pillar-checkbox">
+                                    <input type="checkbox" name="pillars" value="Human Protection">
+                                    <span class="checkbox-label">Human Protection</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group captcha-group">
+                            <div class="g-recaptcha" data-sitekey="6Lf0ahYsAAAAAJFUapiAPPYFCIOeoCy4PqwmsKmm"
+                                data-theme="dark"></div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                        <p class="form-footer">By clicking 'Submit', you agree to our <a href="/privacy" target="_blank"
+                                style="color: var(--color-primary-blue); text-decoration: underline;">Privacy Policy</a>
+                            and consent to receive marketing emails.</p>
+                    </form>
+                    <div id="formSuccess" class="form-success" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out. We'll get back to you shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Aegisight AI. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- COOKIE CONSENT BANNER -->
+        <div id="cookie-banner" class="cookie-banner">
+            <div class="cookie-content">
+                <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze
+                    our
+                    traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+                <div class="cookie-buttons">
+                    <button id="cookie-customize" class="cookie-btn outline">Customize</button>
+                    <button id="cookie-reject" class="cookie-btn outline">Reject All</button>
+                    <button id="cookie-accept" class="cookie-btn primary">Accept All</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COOKIE PREFERENCES MODAL -->
+        <div id="cookie-modal" class="cookie-modal">
+            <div class="cookie-modal-content">
+                <div class="cookie-modal-header">
+                    <h3>Customise Consent Preferences</h3>
+                    <button id="cookie-close" class="cookie-close">&times;</button>
+                </div>
+                <div class="cookie-modal-body">
+                    <p class="cookie-intro">
+                        We use cookies to help you navigate efficiently and perform certain functions. You will find
+                        detailed
+                        information about all cookies under each consent category below.
+                        The cookies that are categorised as "Necessary" are stored on your browser as they are essential
+                        for
+                        enabling the basic functionalities of the site.
+                    </p>
+
+                    <!-- Category: Necessary -->
+                    <div class="cookie-category">
+                        <div class="cookie-cat-header">
+                            <span class="cat-toggle expanded">›</span>
+                            <span class="cat-name">Necessary</span>
+                            <span class="cat-status active">Always Active</span>
+                        </div>
+                        <div class="cookie-cat-desc">
+                            Necessary cookies are required to enable the basic features of this site, such as providing
+                            secure log-in or adjusting your consent preferences. These cookies do not store any
+                            personally
+                            identifiable data.
+                        </div>
+                    </div>
+
+                    <!-- Category: Functional -->
+                    <div class="cookie-category">
+                        <div class="cookie-cat-header">
+                            <span class="cat-toggle">›</span>
+                            <span class="cat-name">Functional</span>
+                            <label class="switch">
+                                <input type="checkbox" id="consent-functional">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="cookie-cat-desc hidden">
+                            Functional cookies help perform certain functionalities like sharing the content of the
+                            website
+                            on social media platforms, collecting feedback, and other third-party features.
+                        </div>
+                    </div>
+
+                    <!-- Category: Analytics -->
+                    <div class="cookie-category">
+                        <div class="cookie-cat-header">
+                            <span class="cat-toggle">›</span>
+                            <span class="cat-name">Analytics</span>
+                            <label class="switch">
+                                <input type="checkbox" id="consent-analytics">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="cookie-cat-desc hidden">
+                            Analytical cookies are used to understand how visitors interact with the website. These
+                            cookies
+                            help provide information on metrics such as the number of visitors, bounce rate, traffic
+                            source,
+                            etc.
+                        </div>
+                    </div>
+
+                    <!-- Category: Performance -->
+                    <div class="cookie-category">
+                        <div class="cookie-cat-header">
+                            <span class="cat-toggle">›</span>
+                            <span class="cat-name">Performance</span>
+                            <label class="switch">
+                                <input type="checkbox" id="consent-performance">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="cookie-cat-desc hidden">
+                            Performance cookies are used to understand and analyse the key performance indexes of the
+                            website which helps in delivering a better user experience for the visitors.
+                        </div>
+                    </div>
+                </div>
+                <div class="cookie-modal-footer">
+                    <button id="cookie-modal-reject" class="cookie-btn primary blue-btn">Reject All</button>
+                    <button id="cookie-modal-save" class="cookie-btn primary blue-btn">Save My Preferences</button>
+                    <button id="cookie-modal-accept" class="cookie-btn primary blue-btn">Accept All</button>
+                </div>
+                <div class="cookie-powered">
+                    Powered by <strong>CookieYes</strong>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Contact Form Submission for Homepage
+            const contactFormMain = document.getElementById('contactFormMain');
+            if (contactFormMain) {
+                contactFormMain.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData.entries());
+                    const submitBtn = this.querySelector('.submit-btn');
+
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    // ... rest of logic if needed or just assuming it ends here in view ...
+                    // Wait, I need to see the rest of the file to replace correctly or I can just start the if block
+                });
+            }
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    this.style.display = 'none';
+                    document.getElementById('formSuccessMain').style.display = 'block';
+                } else {
+                    alert('Failed to send message. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+            }
+            });
+        </script>
+
+        <!-- Moved to end of body -->
+
+        <!-- Authentication Modal -->
+        <!-- Authentication Modal HTML -->
+        <!-- Add this at the end of body in index.html, before closing </body> tag -->
+
+        <div id="authModal" class="auth-modal">
+            <div class="auth-modal-content">
+                <span class="auth-close" onclick="closeAuthModal()">&times;</span>
+
+                <div class="auth-tabs">
+                    <div id="loginTab" class="auth-tab active" onclick="showLoginForm()">Login</div>
+                    <div id="signupTab" class="auth-tab" onclick="showSignupForm()">Sign Up</div>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginForm" class="auth-form" style="display: block;">
+                    <h2>Welcome Back</h2>
+                    <p>Don't have an account? <a href="#" onclick="showSignupForm(); return false;">Sign up</a></p>
+
+                    <form onsubmit="handleEmailLogin(event)">
+                        <div class="auth-error" id="loginError"></div>
+
+                        <div class="auth-input-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+
+                        <div class="auth-input-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+
+                        <div style="text-align: right; margin-bottom: 20px;">
+                            <a href="#" onclick="showForgotPasswordForm(); return false;"
+                                style="color: #007aff; text-decoration: none; font-size: 14px;">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="auth-btn auth-btn-primary">Log In</button>
+                    </form>
+                </div>
+
+                <!-- Forgot Password Form -->
+                <div id="forgotPasswordForm" class="auth-form" style="display: none;">
+                    <h2>Reset Password</h2>
+                    <div class="auth-error" id="forgotPasswordError"></div>
+                    <div class="auth-success" id="forgotPasswordSuccess"
+                        style="color: green; margin-bottom: 15px; display: none;"></div>
+
+                    <form onsubmit="handleForgotPassword(event)">
+                        <div class="auth-input-group">
+                            <label for="forgotEmail">Enter your email address</label>
+                            <input type="email" id="forgotEmail" required>
+                        </div>
+
+                        <button type="submit" class="auth-btn auth-btn-primary">Send Reset Link</button>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <a href="#" onclick="showLoginForm(); return false;"
+                                style="color: #666; text-decoration: none; font-size: 14px;">Back to Login</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Signup Form - B2B Professional -->
+                <div id="signupForm" class="auth-form" style="max-width: 600px; margin: 0 auto; display: none;">
+                    <h2>Sign up for an Aegisight ID</h2>
+                    <p>Already have an Aegisight account? <a href="#" onclick="showLoginForm(); return false;">Sign
+                            in</a></p>
+
+                    <form onsubmit="handleEmailSignup(event)">
+                        <div class="auth-error" id="signupError"></div>
+
+                        <!-- 2 Column Grid for Inputs -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+                            <div class="auth-input-group">
+                                <label for="signupFirstName">First Name</label>
+                                <input type="text" id="signupFirstName" required>
+                            </div>
+
+                            <div class="auth-input-group">
+                                <label for="signupLastName">Last Name</label>
+                                <input type="text" id="signupLastName" required>
+                            </div>
+
+                        </div>
+
+                        <div class="auth-input-group">
+                            <label for="signupEmail">Work Email</label>
+                            <input type="email" id="signupEmail" required>
+                        </div>
+
+                        <!-- 2 Column Grid for Company/Phone -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+                            <div class="auth-input-group">
+                                <label for="signupCompany">Company Name</label>
+                                <input type="text" id="signupCompany" required>
+                            </div>
+
+                            <div class="auth-input-group">
+                                <label for="signupPhone">Business Phone</label>
+                                <input type="tel" id="signupPhone" required>
+                            </div>
+
+                        </div>
+
+                        <!-- Full Width Dropdowns -->
+                        <div class="auth-input-group">
+                            <label for="signupJobLevel">Job Level</label>
+                            <select id="signupJobLevel" required>
+                                <option value="" disabled selected>Select Level</option>
+                                <option value="C-Suite">C-Suite / Executive</option>
+                                <option value="VP">VP / Director</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Individual Contributor">Individual Contributor</option>
+                                <option value="Student">Student / Intern</option>
+                            </select>
+                        </div>
+
+                        <div class="auth-input-group">
+                            <label for="signupDepartment">Department</label>
+                            <select id="signupDepartment" required>
+                                <option value="" disabled selected>Select Department</option>
+                                <option value="IT">IT / Engineering</option>
+                                <option value="Product">Product Management</option>
+                                <option value="Security">Security / Compliance</option>
+                                <option value="Operations">Operations</option>
+                                <option value="Sales">Sales / Marketing</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- 2 Column Grid for Function/Country -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="auth-input-group">
+                                <label for="signupFunction">Job Function</label>
+                                <select id="signupFunction" required>
+                                    <option value="" disabled selected>Select Function</option>
+                                    <option value="DevOps">DevOps</option>
+                                    <option value="Cloud Arch">Cloud Architecture</option>
+                                    <option value="Security">Cyber Security</option>
+                                    <option value="Data">Data Science</option>
+                                    <option value="Management">Management</option>
+                                </select>
+                            </div>
+
+                            <div class="auth-input-group">
+                                <label for="signupCountry">Country</label>
+                                <select id="signupCountry" required>
+                                    <option value="" disabled selected>Select Country</option>
+                                    <option value="USA">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="France">France</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="auth-input-group">
+                            <label for="signupPassword">Create Password</label>
+                            <div style="position: relative;">
+                                <input type="password" id="signupPassword" required minlength="6"
+                                    style="padding-right: 40px;">
+                                <span
+                                    style="position: absolute; right: 10px; top: 12px; color: #666; cursor: pointer;">👁️</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; font-size: 12px; color: #b0b8c4; display: flex; gap: 10px;">
+                            <input type="checkbox" required id="signupTerms" style="width: auto; margin-top: 2px;">
+                            <label for="signupTerms" style="display: inline; color: #b0b8c4; font-weight: 400;">
+                                I have read and agree to the <a href="#" style="color: var(--color-primary-blue);">Terms
+                                    of Use</a> and understand that my personal information is processed in accordance
+                                with the <a href="#" style="color: var(--color-primary-blue);">Privacy Statement</a>.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="auth-btn auth-btn-primary">Continue</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            console.log('Auth script loading...');
+            // Authentication Module for Aegisight
+
+            // ... (openAuthModal etc remains same) ...
+
+            // Handle Signup (Updated for B2B)
+            async function handleEmailSignup(event) {
+                event.preventDefault();
+                const firstName = document.getElementById('signupFirstName').value;
+                const lastName = document.getElementById('signupLastName').value;
+                const email = document.getElementById('signupEmail').value;
+                const companyName = document.getElementById('signupCompany').value;
+                const businessPhone = document.getElementById('signupPhone').value;
+                const jobLevel = document.getElementById('signupJobLevel').value;
+                const department = document.getElementById('signupDepartment').value;
+                const jobFunction = document.getElementById('signupFunction').value;
+                const country = document.getElementById('signupCountry').value;
+                const password = document.getElementById('signupPassword').value;
+
+                document.getElementById('signupError').textContent = '';
+
+                try {
+                    const response = await fetch('/api/auth/register', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            firstName, lastName, email, password,
+                            companyName, businessPhone, jobLevel, department, jobFunction, country
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        alert('Account created successfully! You are now logged in.');
+                        window.location.reload();
+                    } else {
+                        document.getElementById('signupError').textContent = data.error || 'Registration failed';
+                    }
+                } catch (err) {
+                    console.error(err);
+                    document.getElementById('signupError').textContent = 'An error occurred. Please try again.';
+                }
+            }
+            // Version: 1
+
+            // Check if modal exists immediately
+            if (document.getElementById('authModal')) {
+                console.log('Auth modal found in DOM');
+            } else {
+                console.error('Auth modal NOT found in DOM');
+            }
+
+            // Open authentication modal
+            window.openAuthModal = function () {
+                console.log('openAuthModal called');
+                const modal = document.getElementById('authModal');
+                if (!modal) {
+                    console.error('authModal element not found!');
+                    alert('Error: Login modal not found.');
+                    return;
+                }
+                modal.style.display = 'flex';
+                // Show login tab by default
+                showLoginForm();
+            }
+
+            // Close authentication modal
+            window.closeAuthModal = function () {
+                document.getElementById('authModal').style.display = 'none';
+                clearForms();
+            }
+
+            // Show login form
+            window.showLoginForm = function () {
+                document.getElementById('loginForm').style.display = 'block';
+                document.getElementById('signupForm').style.display = 'none';
+                document.getElementById('forgotPasswordForm').style.display = 'none';
+                document.getElementById('loginTab').classList.add('active');
+                document.getElementById('signupTab').classList.remove('active');
+            }
+
+            // Show signup form
+            window.showSignupForm = function () {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('signupForm').style.display = 'block';
+                document.getElementById('forgotPasswordForm').style.display = 'none';
+                document.getElementById('loginTab').classList.remove('active');
+                document.getElementById('signupTab').classList.add('active');
+            }
+
+            // Show forgot password form
+            window.showForgotPasswordForm = function () {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('signupForm').style.display = 'none';
+                document.getElementById('forgotPasswordForm').style.display = 'block';
+            }
+
+            // Handle Forgot Password
+            window.handleForgotPassword = async function (event) {
+                event.preventDefault();
+                const email = document.getElementById('forgotEmail').value;
+                const errorEl = document.getElementById('forgotPasswordError');
+                const successEl = document.getElementById('forgotPasswordSuccess');
+
+                errorEl.textContent = '';
+                successEl.style.display = 'none';
+
+                try {
+                    const response = await fetch('/api/auth/forgot-password', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        successEl.textContent = 'Reset link sent! Check your email.';
+                        successEl.style.display = 'block';
+                    } else {
+                        errorEl.textContent = data.error || 'Failed to send reset link';
+                    }
+                } catch (err) {
+                    errorEl.textContent = 'An error occurred. Please try again.';
+                }
+            }
+
+            // Clear form data
+            function clearForms() {
+                if (document.getElementById('loginEmail')) document.getElementById('loginEmail').value = '';
+                if (document.getElementById('loginPassword')) document.getElementById('loginPassword').value = '';
+                if (document.getElementById('signupEmail')) document.getElementById('signupEmail').value = '';
+                if (document.getElementById('signupPassword')) document.getElementById('signupPassword').value = '';
+                if (document.getElementById('signupFirstName')) document.getElementById('signupFirstName').value = '';
+                if (document.getElementById('signupLastName')) document.getElementById('signupLastName').value = '';
+                if (document.getElementById('loginError')) document.getElementById('loginError').textContent = '';
+                if (document.getElementById('signupError')) document.getElementById('signupError').textContent = '';
+            }
+
+            // Handle Google login
+            window.handleGoogleLogin = function () {
+                window.location.href = '/api/auth/google';
+            }
+
+            // Handle email/password login
+            window.handleEmailLogin = async function (event) {
+                event.preventDefault();
+
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                const errorEl = document.getElementById('loginError');
+
+                errorEl.textContent = '';
+
+                try {
+                    const response = await fetch('/api/auth/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password }),
+                        credentials: 'include'
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        errorEl.textContent = data.error || 'Login failed';
+                        return;
+                    }
+
+                    // Redirect to dashboard
+                    window.location.href = '/dashboard';
+                } catch (error) {
+                    console.error('Login error:', error);
+                    errorEl.textContent = 'Login failed. Please try again.';
+                }
+            }
+
+            // Handle email/password signup
+            window.handleEmailSignup = async function (event) {
+                event.preventDefault();
+
+                const email = document.getElementById('signupEmail').value;
+                const password = document.getElementById('signupPassword').value;
+                const firstName = document.getElementById('signupFirstName').value;
+                const lastName = document.getElementById('signupLastName').value;
+                const errorEl = document.getElementById('signupError');
+
+                errorEl.textContent = '';
+
+                // Validation
+                if (password.length < 6) {
+                    errorEl.textContent = 'Password must be at least 6 characters';
+                    return;
+                }
+
+                try {
+                    const response = await fetch('/api/auth/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password, firstName, lastName }),
+                        credentials: 'include'
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        errorEl.textContent = data.error || 'Registration failed';
+                        return;
+                    }
+
+                    // Redirect to dashboard
+                    window.location.href = '/dashboard';
+                } catch (error) {
+                    console.error('Signup error:', error);
+                    errorEl.textContent = 'Registration failed. Please try again.';
+                }
+            }
+
+            // Close modal on outside click
+            window.onclick = function (event) {
+                const modal = document.getElementById('authModal');
+                if (event.target === modal) {
+                    closeAuthModal();
+                }
+            };
+            console.log('Auth script loaded successfully');
+        </script>
+        <!-- XAI Floating Tooltip Container (Moved to Body Root) -->
+        <div id="xai-tooltip" class="xai-tooltip-card">
+            <div class="xai-header">
+                <i class="fas fa-brain"></i> <span id="xai-title">Signature Analysis</span>
+            </div>
+            <div class="xai-body">
+                <p id="xai-desc">Description of the signature...</p>
+                <div class="xai-factors-label">Primary Risk Factors:</div>
+                <ul id="xai-factors-list"></ul>
+            </div>
+        </div>
+</body>
+
+</html>

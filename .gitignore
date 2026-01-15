@@ -8,3 +8,5 @@ src/sentinel/dist/
 src/sentinel/node_modules/
 coverage/
 *.log
+temp_github_clone/
+downloads/

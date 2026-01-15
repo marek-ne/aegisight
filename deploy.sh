@@ -31,6 +31,7 @@ cp -r scripts "$TARGET_DIR/"
 cp -r src "$TARGET_DIR/"
 cp -r data "$TARGET_DIR/"
 cp .env "$TARGET_DIR/"
+cp key.json "$TARGET_DIR/"
 
 # Install Dependencies
 echo "Installing dependencies in $TARGET_DIR..."

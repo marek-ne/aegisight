@@ -1,0 +1,67 @@
+[
+    {
+        "slug": "temporal-synchronization-clock-drift",
+        "title": "Temporal Synchronization: Solving 'Clock Drift' in Distributed Systems",
+        "date": "January 12, 2026",
+        "category": "forensics",
+        "tags": [
+            "Distributed Systems",
+            "Time Synchronization",
+            "Lamport Timestamps",
+            "Forensics",
+            "fintech"
+        ],
+        "author": {
+            "name": "Marek Nerko",
+            "title": "Founder",
+            "bio": "A visionary leader in AI security and governance, dedicated to making artificial intelligence safe, transparent, and compliant for enterprises worldwide.",
+            "image": "/pics/team/marek-avatar.png",
+            "linkedin": "https://linkedin.com/in/mareknerko"
+        },
+        "readTime": "8 Minutes",
+        "image": "/pics/temporal-synchronization-clock-drift.png"
+    },
+    {
+        "slug": "the-great-data-lie",
+        "title": "The Great Data Lie:      Why More Logs ≠ More Truth",
+        "date": "January 07, 2026",
+        "category": "forensics",
+        "tags": [
+            "Observability",
+            "Data Engineering",
+            "Forensics",
+            "Log Normalization",
+            "iot"
+        ],
+        "author": {
+            "name": "Marek Nerko",
+            "title": "Founder",
+            "bio": "Founder of Aegisight, focusing on forensic data analysis.",
+            "image": "/pics/team/marek-avatar.png",
+            "linkedin": "https://linkedin.com/in/mareknerko"
+        },
+        "readTime": "6 Minutes",
+        "image": "/pics/data-lie1.png"
+    },
+    {
+        "title": "The Ultimate Guide to AI Forensics in 2025",
+        "date": "January 15, 2025",
+        "category": "forensics",
+        "tags": [
+            "AI Forensics",
+            "Cybersecurity",
+            "Deepfakes",
+            "Compliance",
+            "legal"
+        ],
+        "author": {
+            "name": "Marek Nerko",
+            "title": "Founder & CEO",
+            "bio": "Marek is a visionary leader in AI security and governance, dedicated to making artificial intelligence safe, transparent, and compliant for enterprises worldwide.",
+            "image": "/pics/team/marek.jpg",
+            "email": "marek@aegisight.ai",
+            "linkedin": "https://linkedin.com/in/mareknerko"
+        },
+        "slug": "guide-to-ai-forensics"
+    }
+]

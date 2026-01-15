@@ -61,10 +61,21 @@
     <!-- Replaced Roboto with Inter for a cleaner, modern B2B feel -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            }
+        }
+    </script>
+    <script src="/js/aegisight-widget.js" type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=10">
-    <script src="js/main.js?v=3" defer></script>
+    <link rel="stylesheet" href="/css/style.css?v=51">
+    <script src="js/main.js?v=44" defer></script>
     <!-- Google reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="/css/auth-modal-v2.css">
@@ -196,11 +207,152 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="nav-link">Industries</a>
+                <div class="solutions-dropdown">
+                    <button class="solutions-trigger">Industries</button>
+                    <!-- INDUSTRIES MEGA MENU -->
+                    <div class="dropdown-content mega-menu" style="min-width: 900px;">
+                        <!-- Menu Header -->
+                        <div class="mega-menu-header">
+                            <h3>Industry-Specific Intelligence</h3>
+                            <p>Precise solutions tailored to the unique failure signatures of your sector.</p>
+                        </div>
+
+                        <!-- Grid Wrapper -->
+                        <div class="mega-menu-grid">
+                            <!-- Column 1: Navigation -->
+                            <div class="mega-menu-nav no-scrollbar">
+                                <div class="nav-category">Industries</div>
+                                <button class="mega-menu-item active" data-target="panel-finance">
+                                    <i class="fas fa-landmark"></i>
+                                    <strong>Financial Services</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-telecom">
+                                    <i class="fas fa-signal"></i>
+                                    <strong>Telecommunications</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-saas">
+                                    <i class="fas fa-cloud"></i>
+                                    <strong>Enterprise SaaS</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-health">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <strong>Healthcare</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-gov">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <strong>Government</strong>
+                                </button>
+                            </div>
+
+                            <!-- Column 2: Content -->
+                            <div class="mega-menu-panels">
+                                <!-- Finance -->
+                                <div class="mega-menu-panel active" id="panel-finance">
+                                    <h4>Financial Services</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Predictive Transaction Integrity</h5>
+                                            <p>Detect micro-latencies and database locks in payment gateways to prevent
+                                                high-stakes transaction failures.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>High-Frequency Infrastructure Forensics</h5>
+                                            <p>Ensure zero-latency operations for trading platforms by correlating
+                                                network jitter with server performance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Telecom -->
+                                <div class="mega-menu-panel" id="panel-telecom">
+                                    <h4>Telecommunications</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Infrastructure State Forensics</h5>
+                                            <p>Correlate subtle configuration drift with network performance metrics to
+                                                isolate changes that will cause outages.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>5G Network Resilience</h5>
+                                            <p>Predictive monitoring of edge compute locations to prevent silent packet
+                                                drops and ensure SLA compliance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SaaS -->
+                                <div class="mega-menu-panel" id="panel-saas">
+                                    <h4>Enterprise SaaS & Cloud</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Microservice Cascade Prevention</h5>
+                                            <p>Identify resource exhaustion patterns across interdependent microservices
+                                                to stop domino-effect crashes.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Platform Availability Prediction</h5>
+                                            <p>Move from reactive 99.99% SLA monitoring to proactive failure prevention
+                                                by detecting pre-incident signatures.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Health -->
+                                <div class="mega-menu-panel" id="panel-health">
+                                    <h4>Digital Healthcare</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Data Pipeline Integrity</h5>
+                                            <p>Predict integration failures between legacy EHR and cloud systems by
+                                                detecting schema drift.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Interoperability Risk Management</h5>
+                                            <p>Ensure critical patient data flow by forensically monitoring the health
+                                                of HL7 and FHIR interface engines.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Gov -->
+                                <div class="mega-menu-panel" id="panel-gov">
+                                    <h4>Government & Defense</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Sovereign Air-Gapped Intelligence</h5>
+                                            <p>Deploy forensic AI within secure, disconnected environments. Zero data
+                                                egress, total operational sovereignty.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Legacy System Modernization</h5>
+                                            <p>Protect aging critical IT infrastructure by wrapping it in a predictive
+                                                forensic layer.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Call to Action (Dynamic based on Industry?) or Static -->
+                            <div class="mega-menu-promo">
+                                <h4>Industry Solutions</h4>
+                                <p>See how Aegisight protects your specific sector.</p>
+
+                                <a href="/contact?industry=finance" class="promo-card">
+                                    <div class="promo-icon">
+                                        <i class="fas fa-chart-pie"></i>
+                                    </div>
+                                    <div class="promo-text">
+                                        <strong>Get a Demo</strong>
+                                        <small>Tailored for your industry.</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <a href="/about" class="nav-link">About Us</a>
-                <a href="/contact" class="nav-link" onclick="window.location.href='/contact'; return false;">Contact
-                    Us</a>
-                <a href="#" class="nav-link">Blogs</a>
+
+                <a href="/blogs" class="nav-link">Blogs</a>
                 <a href="/account" class="nav-link client-login-btn">Client Login</a>
             </nav>
         </div>
@@ -250,8 +402,9 @@
                         </p>
                         <!-- Removed sub-headline as it is embedded in the logo image -->
                         <p class="hero-description">
-                            We find the critical "fingerprints" of failure in your data—from IT outages and financial
-                            fraud to supply chain disruption and health risks—so you can act before it's too late.
+                            We find the critical <strong>"AI Fingerprints"</strong> of failure hidden in your digital
+                            noise—isolating fraud, outages, and data breaches with forensic precision—so you can act
+                            before it's too late.
                         </p>
                         <a href="/contact" class="cta-button">Assess Your Risk Exposure</a>
                     </div>
@@ -259,368 +412,1015 @@
             </div>
         </section>
 
-        <!-- TRUST & COMPLIANCE STRIP -->
-        <section class="trust-strip">
-            <div class="container trust-container">
-                <div class="trust-label">Enterprise-Grade Security & Compliance</div>
-                <div class="trust-badges">
-                    <div class="trust-badge" title="SOC2 Type II Certified">
-                        <i class="fas fa-shield-alt"></i> <span>SOC2 Type II</span>
+
+        <section class="problem-agitation-section">
+            <div class="container">
+                <!-- Part 1: The Cost of Inaction -->
+                <h2 class="problem-headline"><span class="weight-light">Blind Spots.</span> <br>Fragmented Data.
+                    Inevitable Failure.</h2>
+
+                <div class="problem-grid-layout">
+                    <!-- Quadrant 1: Visual (Distributed System Sprawl) -->
+                    <div class="problem-quadrant q-1-visual">
+                        <div class="problem-visual standalone">
+                            <div class="visual-icons">
+                                <span class="p-icon"><i class="fas fa-project-diagram"></i></span>
+                                <span class="p-icon"><i class="fas fa-cloud"></i></span>
+                                <span class="p-icon active"><i class="fas fa-eye-slash"></i></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="trust-badge" title="ISO 27001 Certified">
-                        <i class="fas fa-lock"></i> <span>ISO 27001</span>
+
+                    <!-- Quadrant 2: Text (Distributed System Sprawl) -->
+                    <div class="problem-quadrant q-1-text">
+                        <div class="problem-text">
+                            <h3>Distributed System Sprawl</h3>
+                            <p>Legacy infrastructure and microservices create opaque complexity. Root causes remain
+                                hidden in a web of dependencies.</p>
+                        </div>
                     </div>
-                    <div class="trust-badge" title="GDPR Compliant">
-                        <i class="fas fa-user-shield"></i> <span>GDPR</span>
+
+                    <!-- Quadrant 3: Complete Item (Reactive Chaos) -->
+                    <div class="problem-quadrant q-2">
+                        <div class="problem-content-wrapper">
+                            <div class="problem-text">
+                                <h3>Reactive Chaos</h3>
+                                <p>Overwhelmed by false positives. Teams waste critical cycles chasing noise instead of
+                                    preventing outages.</p>
+                            </div>
+                            <div class="problem-visual mini">
+                                <div class="visual-chain">
+                                    <span class="chain-node alert"><i class="fas fa-bell"></i></span>
+                                    <span class="chain-line"></span>
+                                    <span class="chain-node unknown"><i class="fas fa-search"></i></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="trust-badge" title="HIPAA Compliant">
-                        <i class="fas fa-notes-medical"></i> <span>HIPAA</span>
+
+                    <!-- Quadrant 4: Complete Item (Physical Blind Spots) -->
+                    <div class="problem-quadrant q-3">
+                        <div class="problem-content-wrapper">
+                            <div class="problem-text">
+                                <h3>Physical Blind Spots</h3>
+                                <p>Millions of unanalyzed sensor events. Physical security breaches go undetected
+                                    without
+                                    real-time intelligence.</p>
+                            </div>
+                            <!-- Optional Visual for symmetry if needed -->
+                            <div class="problem-visual mini">
+                                <div class="visual-icons">
+                                    <span class="p-icon active"><i class="fas fa-video-slash"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part 2: What Others Get Wrong -->
+                <div class="others-wrong-container">
+                    <h3 class="wrong-headline">What Others <span class="text-highlight-red">Get Wrong</span></h3>
+                    <div class="wrong-cards-grid">
+                        <!-- Card 1 -->
+                        <div class="wrong-card">
+                            <div class="wrong-icon"><i class="fas fa-robot"></i></div>
+                            <h4>Generic Wrappers</h4>
+                            <p>Off-the-shelf AI models that hallucinate on proprietary data and lack domain-specific
+                                forensic context.</p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="wrong-card">
+                            <div class="wrong-icon"><i class="fas fa-bell-slash"></i></div>
+                            <h4>Black Box Alerts</h4>
+                            <p>Systems that flag "anomalies" without explaining <em>why</em>, leaving your analysts
+                                guessing at the root cause.</p>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="wrong-card">
+                            <div class="wrong-icon"><i class="fas fa-layer-group"></i></div>
+                            <h4>Point Solutions</h4>
+                            <p>Fragmented tools that monitor isolated layers. They miss the hidden connections between
+                                digital anomalies and physical risks.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="problem">
+        <!-- Bento Grid Security Section (RapidInnovation Style) -->
+        <section class="bento-secure-section">
             <div class="container">
-                <h2 style="text-align: center;">Siloed Data Conceals Systemic Risk.</h2>
-                <p style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center;">
-                    Reactive measures are a failure of foresight. We reject generic buffers. The Aegisight Core Engine
-                    identifies the specific 'fingerprints' of failure across your digital, physical, and human
-                    assets—allowing for surgical intervention before a crisis occurs.
-                </p>
-            </div>
-        </section>
+                <div class="bento-grid-layout">
 
-        <section class="solution" id="telemetry">
-            <div class="container" style="text-align: center;">
-                <h2>Universal Telemetry Pipeline</h2>
-                <p class="solid-data-subheadline">Non-Invasive Integration Architecture</p>
-                <p style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center; color: #666;">
-                    The Aegisight Core Engine operates on a data-agnostic Universal API framework. It is designed to
-                    ingest, normalize, and correlate disparate time-series data streams without disrupting existing
-                    operational workflows or requiring infrastructure refactoring.
-                </p>
-
-                <div class="how-it-works-grid">
-                    <div class="how-it-works-step">
-                        <div class="step-icon"
-                            style="font-size: 2.5rem; color: var(--color-primary-blue); margin-bottom: 1rem;">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>01. Digital Asset Ingestion</h3>
-                        <div class="tech-spec">
-                            <p style="margin-bottom: 0.5rem;"><strong>Protocol:</strong> REST API & Webhooks</p>
-                            <p style="margin-bottom: 0.5rem;"><strong>Integration Targets:</strong> Native connectors
-                                for ServiceNow, Jira, SAP, and Oracle.</p>
-                            <p style="margin-bottom: 0.5rem;"><strong>Data Payload:</strong> Ingests ticket velocity,
-                                system logs, CPU variance, and transaction metadata in real-time to detect
-                                "fingerprints" of IT failure.</p>
-                            <p style="margin-bottom: 0;"><strong>Security:</strong> OAuth 2.0 & TLS 1.3 Encryption.</p>
-                        </div>
-                    </div>
-                    <div class="how-it-works-step">
-                        <div class="step-icon"
-                            style="font-size: 2.5rem; color: var(--color-primary-blue); margin-bottom: 1rem;">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        <h3>02. Physical Asset Ingestion</h3>
-                        <div class="tech-spec">
-                            <p style="margin-bottom: 0.5rem;"><strong>Protocol:</strong> MQTT & SCADA Bridges</p>
-                            <p style="margin-bottom: 0.5rem;"><strong>Integration Targets:</strong> Logistics ERPs,
-                                Environmental/Weather APIs, and Industrial Control Systems.</p>
-                            <p style="margin-bottom: 0.5rem;"><strong>Data Payload:</strong> Tracks shipping manifests,
-                                raw material throughput, and ambient facility conditions to predict supply chain
-                                disruption.</p>
-                            <p style="margin-bottom: 0;"><strong>Latency:</strong> Sub-second telemetry for sensor
-                                arrays.</p>
-                        </div>
-                    </div>
-                    <div class="how-it-works-step">
-                        <div class="step-icon"
-                            style="font-size: 2.5rem; color: var(--color-primary-blue); margin-bottom: 1rem;">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
-                        <h3>03. Human Asset Ingestion</h3>
-                        <div class="tech-spec">
-                            <p style="margin-bottom: 0.5rem;"><strong>Protocol:</strong> Secure Biometric Gateways</p>
-                            <p style="margin-bottom: 0.5rem;"><strong>Integration Targets:</strong> Industrial Wearables
-                                & Bio-Safety Monitors.</p>
-                            <p style="margin-bottom: 0.5rem;"><strong>Data Payload:</strong> Processes anonymized
-                                physiological markers (HRV, Fatigue) to predict safety risks while maintaining strict
-                                HIPAA/GDPR compliance.</p>
-                            <p style="margin-bottom: 0;"><strong>Privacy:</strong> End-to-End Encryption (E2EE) with
-                                zero PII storage.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- New Security Section -->
-        <section class="security">
-            <div class="container">
-                <h2 style="text-align: center;">Your Data, Your Domain, Our Secure Engine</h2>
-                <div class="security-grid">
-                    <div class="security-col">
+                    <!-- row 1 -->
+                    <!-- 1. AI Card (Left) -->
+                    <div class="bento-card bento-white-card">
                         <h3>AI That Speaks Your Language</h3>
-                        <div class="security-feature">
-                            <!-- SVG Icon: Brain/Chip --><svg class="security-icon" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M12 8V4.8c0-1.2.9-2.2 2.2-2.2h.1c1.2 0 2.2.9 2.2 2.2V8M12 8c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2h-4zM8 12v4c0 1.1-.9 2-2 2h-.1c-1.2 0-2.2-.9-2.2-2.2V12c0-1.1.9-2 2-2H6c1.1 0 2 .9 2 2zM4.8 12H8m4-4V4.8M16 12h3.2M8 12V8m-3.2 4H8m4 4v3.2M16 12v4m0 0v3.2" />
-                            </svg>
-                            <div>
-                                <h4>Domain-Specific Training</h4>
-                                <p>We train our models on your data, your workflows, and your KPIs. The insights are
-                                    100% relevant to your specific business challenges.</p>
-                            </div>
-                        </div>
-                        <div class="security-feature">
-                            <!-- SVG Icon: Tuning/Settings --><svg class="security-icon"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.08a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-                                <circle cx="12" cy="12" r="3" />
-                            </svg>
-                            <div>
-                                <h4>Precision-Tuned</h4>
-                                <p>Our engine is optimized for your industry, from IT risk to supply chain logistics,
-                                    ensuring maximum accuracy and actionable results.</p>
-                            </div>
+                        <p>We don't train on generic internet noise. Your model learns exclusively from your historical
+                            incident data, workflows, and KPIs.</p>
+                    </div>
+
+                    <!-- 2. Cube Image (Center) -->
+                    <div class="bento-card bento-dark-image-card" style="background-image: url('/pics/yourdata4.png');">
+                        <div class="bento-overlay"></div>
+                    </div>
+
+                    <!-- 3. Headline (Right) -->
+                    <div class="bento-text-block">
+                        <h2 class="bento-headline">Your Data. Your Domain.<br><span class="text-blue">Our Secure
+                                Engine.</span></h2>
+                        <a href="#contact" class="cta-button bento-cta"
+                            style="margin-top: 1.5rem; display: inline-block;">Secure Your Engine</a>
+                    </div>
+
+                    <!-- row 2 -->
+                    <!-- 4. Vertical Image (Left) -->
+                    <div class="bento-card bento-vertical-image-card"
+                        style="background-image: url('/pics/yourdata2.png');">
+                        <div class="bento-overlay"></div>
+                    </div>
+
+                    <!-- 5. Enterprise (Center) -->
+                    <div class="bento-card bento-white-card">
+                        <div class="bento-content-center">
+                            <h3>Enterprise Ready</h3>
+                            <p>Built for scale with industry-standard security and compliance.</p>
                         </div>
                     </div>
-                    <div class="security-col">
-                        <h3>Leverage AI Without Compromise</h3>
-                        <div class="security-feature">
-                            <!-- SVG Icon: Shield/Lock --><svg class="security-icon" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                <path d="M12 11v.01" />
-                                <path d="M12 14a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2z" />
-                            </svg>
-                            <div>
-                                <h4>Secure & Private by Design</h4>
-                                <p>Your data never leaves your environment. Our platform operates within your private
-                                    cloud or on-premise, ensuring no third-party data sharing, ever.</p>
-                            </div>
-                        </div>
-                        <div class="security-feature">
-                            <!-- SVG Icon: Database/Governance --><svg class="security-icon"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <ellipse cx="12" cy="5" rx="9" ry="3" />
-                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-                            </svg>
-                            <div>
-                                <h4>Data Governance & Isolation</h4>
-                                <p>We help you isolate, protect, and govern sensitive data throughout its lifecycle,
-                                    ensuring compliance with HIPAA, GDPR, and other regulations.</p>
-                            </div>
-                        </div>
+
+                    <!-- 6. Exfil (Right) -->
+                    <div class="bento-card bento-white-card wide-card">
+                        <h3>Zero-Exfiltration</h3>
+                        <p>Raw data never leaves your VPC. Passive integration via vTaps.</p>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- NEW: Bento Box Section -->
-        <section class="bento-section">
-            <div class="container">
-                <div class="bento-header">
-                    <h2>Reactive Measures Are Obsolete.</h2>
-                    <p>
-                        From Blind Spots to Boardroom Clarity. See how the Core Engine identified specific
-                        "fingerprints"
-                        of failure across digital, physical, and human assets—allowing our partners to intervene before
-                        the crisis occurred.
-                    </p>
+        <!-- OLD_CONTENT_TO_DELETE -->
+        <!-- HOW IT WORKS SECTION (Redesigned Pipeline) -->
+        <!-- REMOVED LEGACY PIPELINE SECTION -->
+
+
+        <!-- Widget Section: White Theme & React Card Integration -->
+        <!-- Widget Section: Seamless White Scrollytelling -->
+        <section class="widget-section"
+            style="background-color: #ffffff; position: relative; z-index: 10; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+            <!-- CSS for Scrollytelling Layout -->
+            <link rel="stylesheet" href="/js/aegisight.ai---ip-scrollytelling.css?v=70">
+            <style>
+                .scrolly-wrapper {
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 0 2rem;
+                }
+
+                .scrolly-layout {
+                    display: flex;
+                    position: relative;
+                    gap: 6rem;
+                }
+
+                .content-col {
+                    flex: 1;
+                    position: relative;
+                    z-index: 20;
+                    padding-bottom: 20vh;
+                }
+
+                .visual-col {
+                    flex: 1;
+                    height: 100vh;
+                    position: sticky;
+                    top: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                /* SEAMLESS STEP STYLING (No Cards) */
+                .step-block {
+                    min-height: 90vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0;
+                    margin: 2rem 0;
+                    /* Removed border, shadow, background for seamless text */
+                    background: transparent;
+                    color: #475569;
+                }
+
+                /* HEADER: 01 —— INGESTION (Light Mode) */
+                .step-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+                    font-family: monospace;
+                    font-weight: 700;
+                    font-size: 0.875rem;
+                    color: #64748b;
+                }
+
+                .step-num {
+                    color: #94a3b8;
+                }
+
+                .step-line {
+                    width: 40px;
+                    height: 1px;
+                    background: #cbd5e1;
+                }
+
+                .step-label {
+                    color: #0f172a;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                }
+
+                /* MAIN TITLE */
+                .step-title {
+                    font-size: 3rem;
+                    font-weight: 800;
+                    color: #0f172a;
+                    margin-bottom: 2rem;
+                    line-height: 1.1;
+                    font-family: 'Montserrat', sans-serif;
+                    letter-spacing: -0.02em;
+                }
+
+                /* BODY TEXT */
+                .step-desc {
+                    font-size: 1.125rem;
+                    color: #475569;
+                    line-height: 1.7;
+                    margin-bottom: 2.5rem;
+                    max-width: 500px;
+                }
+
+                /* TECH SPECS BOX */
+                .tech-specs {
+                    background: #f8fafc;
+                    /* Subtle contrast */
+                    border: 1px solid #e2e8f0;
+                    border-left: 3px solid #06b6d4;
+                    /* Color accent */
+                    padding: 1.5rem;
+                    font-family: monospace;
+                    font-size: 0.8rem;
+                    color: #0891b2;
+                    border-radius: 0.25rem;
+                }
+
+                .tech-label {
+                    display: block;
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    color: #64748b;
+                    margin-bottom: 0.5rem;
+                    font-weight: 700;
+                    letter-spacing: 0.05em;
+                }
+
+                .visual-container {
+                    width: 100%;
+                    max-width: 640px;
+                    height: auto;
+                    aspect-ratio: 4/3;
+                    position: absolute;
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                }
+
+                .visual-container.active {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+
+                /* ANIMATION: Lift, Blur & Fade (User Spec) */
+                .step-block {
+                    /* Inactive State: Ghosted, Blurred, Pushed Down */
+                    opacity: 0.2;
+                    filter: blur(4px);
+                    transform: translateY(2rem);
+                    /* translate-y-8 */
+                    transition: all 700ms ease-out;
+                }
+
+                .step-block.active {
+                    /* Active State: Visible, Sharp, Centered */
+                    opacity: 1;
+                    filter: blur(0);
+                    transform: translateY(0);
+                }
+
+                @media (max-width: 768px) {
+                    .scrolly-layout {
+                        flex-direction: column-reverse;
+                    }
+
+                    .visual-col {
+                        height: 50vh;
+                        background: #0f172a;
+                        margin-bottom: -2rem;
+                        z-index: 30;
+                    }
+
+                    .content-col {
+                        padding-top: 2rem;
+                    }
+
+                    .step-block {
+                        min-height: auto;
+                        margin-bottom: 2rem;
+                        padding: 0;
+                        opacity: 1;
+                        filter: none;
+                        transform: none;
+                    }
+
+                    .step-title {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                /* --- INTRO SECTION CSS --- */
+                .verify-risk-intro {
+                    padding: 4rem 0 6rem 0;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+
+                .intro-kicker {
+                    display: none;
+                }
+
+                .intro-title {
+                    font-size: 3.5rem;
+                    font-weight: 800;
+                    color: #0f172a;
+                    margin-bottom: 2rem;
+                    line-height: 1.1;
+                    font-family: 'Montserrat', sans-serif;
+                }
+
+                .intro-subtext {
+                    font-size: 1.125rem;
+                    color: #475569;
+                    line-height: 1.8;
+                    margin-bottom: 4rem;
+                }
+
+                /* TIMELINE (Desktop: Horizontal) */
+                /* TIMELINE (Desktop: Horizontal) */
+                /* TIMELINE (Desktop: Horizontal) */
+                .process-timeline {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    position: relative;
+                    margin-top: 3rem;
+                    padding: 0 2rem;
+                }
+
+                /* Connecting Line (Desktop) */
+                .timeline-track {
+                    display: block !important;
+                    position: absolute;
+                    top: 24px;
+                    left: 2rem;
+                    right: 2rem;
+                    height: 4px;
+                    background: #0f172a !important;
+                    z-index: 0;
+                    pointer-events: none;
+                    transform: translateY(-50%);
+                }
+
+                .process-timeline::before {
+                    display: none !important;
+                }
+
+                .timeline-step {
+                    position: relative;
+                    z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 0 10px;
+                    margin-top: 0 !important;
+                }
+
+                .t-circle {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background: #fff;
+                    color: #64748b;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 700;
+                    font-family: monospace;
+                    border: 2px solid #e2e8f0;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .t-label {
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    color: #64748b;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                }
+
+                /* TIMELINE (Mobile: Vertical Stack) */
+                @media (max-width: 768px) {
+                    .process-timeline {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        padding-left: 2rem;
+                        gap: 2rem;
+                    }
+
+                    /* Vertical Line Mobile */
+                    .timeline-track {
+                        width: 4px;
+                        height: calc(100% - 48px);
+                        left: 44px;
+                        /* Center of 48px circle */
+                        top: 24px;
+                        right: auto;
+                    }
+
+                    .timeline-step {
+                        flex-direction: row;
+                        padding: 0;
+                        gap: 1.5rem;
+                    }
+
+                    .intro-title {
+                        font-size: 2.5rem;
+                    }
+                }
+            </style>
+
+            <div class="scrolly-wrapper">
+
+                <!-- NEW SECTION: HOW WE VERIFY RISK (Intro) -->
+                <div class="verify-risk-intro">
+                    <div class="intro-header">
+                        <h2 class="intro-title">The Forensic Architecture</h2>
+                        <p class="intro-subtext">
+                            A deterministic framework that functions as a Verified Registry for your enterprise. We
+                            replace statistical guessing with 'Physics of Failure' logic. By filtering agnostic data
+                            streams through a rigorous five-stage process, we eliminate noise and codify every event
+                            into a non-repudiable forensic record.
+                        </p>
+                    </div>
+
+                    <!-- TIMELINE VISUAL (Horizontal Desktop / Vertical Mobile) -->
+                    <div class="process-timeline">
+                        <div class="timeline-track"></div>
+                        <div class="timeline-step">
+                            <div class="t-circle">01</div>
+                            <span class="t-label">INGESTION</span>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="t-circle">02</div>
+                            <span class="t-label">DETECTION</span>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="t-circle">03</div>
+                            <span class="t-label">VALIDATION</span>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="t-circle">04</div>
+                            <span class="t-label">OUTPUT</span>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="t-circle">05</div>
+                            <span class="t-label">INTEGRATION</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bento-grid">
-                    <!-- Tile 1: Large (Digital) -->
-                    <div class="bento-tile tile-large">
-                        <div class="tile-visual">
-                            <!-- Icon for IT Risk -->
-                            <img src="pics/icon_digital_risk.png" alt="IT Risk Icon" width="512" height="512"
-                                loading="lazy">
+                <div class="scrolly-layout">
+
+                    <!-- Scrolling Content (Left) -->
+                    <div class="content-col">
+
+                        <!-- Step 1 -->
+                        <div class="step-block" data-visual="visual-ingestion" data-mount="mount-ingestion">
+                            <div class="step-header">
+                                <span class="step-num">01</span>
+                                <div class="step-line"></div>
+                                <span class="step-label">INGESTION</span>
+                            </div>
+                            <h2 class="step-title">The Universal Forensic Pipeline</h2>
+                            <p class="step-desc">
+                                Agnostic ingestion of enterprise ecosystems. Deployed securely within your
+                                infrastructure
+                                (On-Prem or Cloud), we harmonize fragmented data streams into a single, conflict-free
+                                timeline, ensuring absolute data sovereignty.
+                            </p>
+                            <div class="tech-specs">
+                                <span class="tech-label">TECHNICAL SPECS</span>
+                                Deployment: On-Prem / Cloud | Input: Agnostic Data Streams
+                            </div>
                         </div>
-                        <div class="tile-content">
-                            <span class="tile-tag">Digital Pillar</span>
-                            <h3>IT Risk Intercepted</h3>
-                            <p>Predicted a Tier-1 Service Outage 48 hours in advance by correlating ticket volume with
-                                CPU variance.</p>
+
+                        <!-- Step 2 -->
+                        <div class="step-block" data-visual="visual-fingerprint" data-mount="mount-fingerprint">
+                            <div class="step-header">
+                                <span class="step-num">02</span>
+                                <div class="step-line"></div>
+                                <span class="step-label">DETECTION</span>
+                            </div>
+                            <h2 class="step-title">Synthesizing Multi-Domain Tensors</h2>
+                            <p class="step-desc">
+                                Identifies the subtle precursors of risk within complex data streams. By isolating
+                                'Silent
+                                Drift' (Latent Concept Drift), the system detects emerging failures before they escalate
+                                into critical liabilities.
+                            </p>
+                            <div class="tech-specs">
+                                <span class="tech-label">TECHNICAL SPECS</span>
+                                Status: Silent Drift Detected | Metric: Similarity > 0.75
+                            </div>
                         </div>
+
+                        <!-- Step 3 -->
+                        <div class="step-block" data-visual="visual-physics" data-mount="mount-physics">
+                            <div class="step-header">
+                                <span class="step-num">03</span>
+                                <div class="step-line"></div>
+                                <span class="step-label">VALIDATION</span>
+                            </div>
+                            <h2 class="step-title">The Symbolic Logic Gate</h2>
+                            <p class="step-desc">
+                                Transforms probabilistic alerts into deterministic facts. A 'Hard Logic' verification
+                                layer
+                                filters out statistical noise, ensuring that only verified anomalies are promoted to a
+                                Signature.
+                            </p>
+                            <div class="tech-specs">
+                                <span class="tech-label">TECHNICAL SPECS</span>
+                                Threshold: Confidence > 85% | Method: Deterministic Hardening
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="step-block" data-visual="visual-signature" data-mount="mount-signature">
+                            <div class="step-header">
+                                <span class="step-num">04</span>
+                                <div class="step-line"></div>
+                                <span class="step-label">OUTPUT</span>
+                            </div>
+                            <h2 class="step-title">The Verified Signature</h2>
+                            <p class="step-desc">
+                                The definitive forensic record. Using Explainable AI (XAI), we generate a 'Digital Death
+                                Certificate' that codifies the Root Cause and Blast Radius with deterministic certainty.
+                            </p>
+                            <div class="tech-specs">
+                                <span class="tech-label">TECHNICAL SPECS</span>
+                                Output: Digital Death Certificate | Certainty: Deterministic
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="step-block" data-visual="visual-output" data-mount="mount-output">
+                            <div class="step-header">
+                                <span class="step-num">05</span>
+                                <div class="step-line"></div>
+                                <span class="step-label">INTEGRATION</span>
+                            </div>
+                            <h2 class="step-title">Adaptive Integration</h2>
+                            <p class="step-desc">
+                                Delivers forensic intelligence directly to your governance ecosystem. We map the
+                                Verified
+                                Signature to your native workflows, enabling precise, human-validated decision making
+                                without business interruption.
+                            </p>
+                            <div class="tech-specs">
+                                <span class="tech-label">TECHNICAL SPECS</span>
+                                Output: Universal API Schema | Control: Human-in-the-Loop Governance
+                            </div>
+                        </div>
+
                     </div>
 
-                    <!-- Tile 2: Medium (Physical) -->
-                    <div class="bento-tile tile-medium">
-                        <div class="tile-visual">
-                            <!-- Icon for Supply Chain -->
-                            <img src="pics/icon_logistics.png" alt="Supply Chain Icon" width="512" height="512"
-                                loading="lazy">
-                        </div>
-                        <div class="tile-content">
-                            <span class="tile-tag">Physical Pillar</span>
-                            <h3>Logistics Bottleneck</h3>
-                            <p>Forecasted a 14-day raw material delay, allowing for automated vendor rerouting via SAP
-                                integration.</p>
-                        </div>
+                    <!-- Sticky Visuals (Right) -->
+                    <div class="visual-col">
+                        <!-- Containers for React Mounts -->
+                        <div id="mount-ingestion" class="visual-container"></div>
+                        <div id="mount-fingerprint" class="visual-container"></div>
+                        <div id="mount-physics" class="visual-container"></div>
+                        <div id="mount-signature" class="visual-container"></div>
+                        <div id="mount-output" class="visual-container"></div>
                     </div>
 
-                    <!-- Tile 3: Medium (Human) -->
-                    <div class="bento-tile tile-medium">
-                        <div class="tile-visual">
-                            <!-- Icon for Bio-Safety -->
-                            <img src="pics/icon_human_safety.png" alt="Bio-Safety Icon" width="512" height="512"
-                                loading="lazy">
-                        </div>
-                        <div class="tile-content">
-                            <span class="tile-tag">Human Pillar</span>
-                            <h3>Bio-Safety Alert</h3>
-                            <p>Flagged critical fatigue markers in shift operators, preventing potential injury and
-                                ensuring compliance.</p>
-                        </div>
-                    </div>
-
-                    <!-- Tile 4: Small (Correlation) -->
-                    <div class="bento-tile tile-small">
-                        <div class="tile-visual">
-                            <!-- Icon for Correlation -->
-                            <img src="pics/icon_correlation.png" alt="Cross-Domain Correlation Icon" width="512"
-                                height="512" loading="lazy">
-                        </div>
-                        <div class="tile-content">
-                            <span class="tile-tag">The "Aha!" Moment</span>
-                            <h3>Cross-Domain Correlation</h3>
-                            <p>The "Single Pane of Glass". Connecting a logistics delay directly to financial liquidity
-                                risk.</p>
-                        </div>
-                    </div>
                 </div>
+            </div> <!-- Close scrolly-wrapper -->
 
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="#archive" class="cta-button">View the Crisis Prevention Archive</a>
-                </div>
-            </div>
+            <!-- React Bundle Loader -->
+            <script src="/js/scrolly-bundle.js?v=70"></script>
+
+            <!-- Intersection Observer Logic -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const steps = document.querySelectorAll('.step-block');
+                    const visualContainers = document.querySelectorAll('.visual-container');
+
+                    const observerOptions = {
+                        root: null,
+                        rootMargin: '-40% 0px -40% 0px',
+                        threshold: 0
+                    };
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const targetStep = entry.target;
+                                const visualId = targetStep.getAttribute('data-visual');
+                                const mountId = targetStep.getAttribute('data-mount');
+
+                                // 1. Toggle Active State on Text Steps (Blur/Focus Animation)
+                                steps.forEach(s => s.classList.remove('active'));
+                                targetStep.classList.add('active');
+
+                                // 2. Scroll Snap/Lock Effect (0.1s delay)
+                                setTimeout(() => {
+                                    targetStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }, 100);
+
+                                // 3. Hide all visual containers
+                                visualContainers.forEach(v => v.classList.remove('active'));
+
+                                // 4. Show target visual container
+                                const targetContainer = document.getElementById(mountId);
+                                if (targetContainer) {
+                                    targetContainer.classList.add('active');
+
+                                    // 5. Mount/Restart Animation via Global API
+                                    if (window.AegisightWidget && window.AegisightWidget.mount) {
+                                        window.AegisightWidget.mount(visualId, mountId);
+                                    }
+                                }
+                            }
+                        });
+                    }, observerOptions);
+
+                    steps.forEach(step => observer.observe(step));
+                });
+            </script>
         </section>
 
         <section class="product-family" id="solutions"> <!-- Added ID for scrolling -->
-            <div class="container">
-                <h2 style="text-align: center;">One Core Engine. A Family of Solutions.</h2>
-                <p style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center;">
-                    The true power of our platform is its scalability. We build the core engine once and deploy it
-                    across your entire business as a family of targeted solutions.
-                </p>
-                <div class="product-family-layout">
-                    <nav class="pf-nav">
-                        <div class="pf-nav-item active" data-target="pf-digital">Digital Protection</div>
-                        <div class="pf-nav-item" data-target="pf-physical">Physical Protection</div>
-                        <div class="pf-nav-item" data-target="pf-human">Human Protection</div>
-                    </nav>
-                    <div class="pf-content">
-                        <!-- Digital Panel -->
-                        <div class="pf-content-panel active" id="pf-digital">
-                            <div class="pf-panel-grid">
-                                <div class="pf-text-content">
-                                    <div style="margin-bottom: 2rem;">
-                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">IT Risk
-                                            Intelligence</h3>
-                                        <p>Integrates with ServiceNow and Jira to analyze ticket velocity and system
-                                            logs. We predict major P1 outages and identify servers at risk of failure
-                                            before they impact operations.</p>
+            <div class="intro-container"> <!-- Spacer for scale effect -->
+                <div class="inner-black">
+                    <div class="container">
+                        <h2 style="text-align: center; color: #fff;">One Core Engine. <span
+                                style="color: var(--color-primary-blue);">Infinite
+                                Signatures.</span></h2>
+                        <p style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center; color: #94a3b8;">
+                            We don't just "monitor" data. The <strong>Universal Forensic Pipeline</strong> constantly
+                            scans for
+                            micro-deviations—<strong>"AI Fingerprints"</strong>—and matches them against our global
+                            library of
+                            <strong>Verified Signatures</strong> to predict failure with mathematical certainty.
+                        </p>
+                        <div class="product-family-layout">
+                            <nav class="pf-nav">
+                                <div class="pf-nav-item active" data-target="pf-digital">
+                                    <i class="fas fa-server" style="margin-right: 0.5rem;"></i> Digital Asset Protection
+                                </div>
+                                <div class="pf-nav-item" data-target="pf-physical">
+                                    <i class="fas fa-truck-fast" style="margin-right: 0.5rem;"></i> Physical Asset
+                                    Protection
+                                </div>
+                                <div class="pf-nav-item" data-target="pf-human">
+                                    <i class="fas fa-user-shield" style="margin-right: 0.5rem;"></i> Human Asset
+                                    Protection
+                                </div>
+                            </nav>
+                            <div class="pf-content">
+                                <!-- Digital Panel -->
+                                <div class="pf-content-panel active" id="pf-digital">
+                                    <div class="panel-header">
+                                        <h3>Digital Asset Intelligence</h3>
+                                        <p>Real-time correlation of IT logs and transaction data to predict system
+                                            failures.</p>
                                     </div>
-                                    <div>
-                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Financial
-                                            Fraud Sentinel</h3>
-                                        <p>Connects to your ERP to monitor transactions in real-time. Our engine detects
-                                            the subtle "fingerprints" of fraudulent activity and compliance breaches
-                                            before settlement.</p>
+                                    <div class="risk-report-container">
+                                        <table class="risk-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fingerprint Type</th>
+                                                    <th>Probability</th>
+                                                    <th>Verified Signature</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="risk-row high">
+                                                    <td>
+                                                        <div class="fp-name">Silent Strain</div>
+                                                        <div class="fp-meta">CPU Heat vs. Ticket Vol</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-red">94.2%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-red" style="width: 94.2%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Silent Strain Signature"
+                                                            data-xai-desc="Correlation detected between hardware anomalies and service request latency."
+                                                            data-xai-factors='["CPU Temp > 85°C (Weight: 0.8)", "Ticket Vol < 10/hr (Weight: 0.6)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-SER-85EF1B89
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge alert">CRITICAL</span></td>
+                                                </tr>
+                                                <tr class="risk-row medium">
+                                                    <td>
+                                                        <div class="fp-name">Memory Leak (Slow)</div>
+                                                        <div class="fp-meta">Heap Dump Pattern B</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-orange">78.5%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-orange" style="width: 78.5%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Memory Pattern B"
+                                                            data-xai-desc="Slow, linear increase in heap usage matching known 'Garbage Collection Failure' pattern."
+                                                            data-xai-factors='["Heap Usage > 80% (0.9)", "GC Freq < 20ms (0.4)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-MEM-77AF2C01
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge warning">WARNING</span></td>
+                                                </tr>
+                                                <tr class="risk-row low">
+                                                    <td>
+                                                        <div class="fp-name">Auth Spike</div>
+                                                        <div class="fp-meta">Geo-IP Variance</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-blue">12.0%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-blue" style="width: 12%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Geo-IP Variance"
+                                                            data-xai-desc="Login attempts from >3 distinct countries within 1 hour."
+                                                            data-xai-factors='["Distinct IPs: 4 (0.7)", "Time Window: 60m (0.3)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-SEC-009D4E22
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge safe">MONITORING</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                                <div class="chart-visual-container">
-                                    <div class="chart-bar-container"
-                                        title="Chart showing a high 'Predicted' risk bar next to a low 'Mitigated' risk bar.">
-                                        <div class="bar-label">
-                                            <div class="chart-bar" style="height: 180px;">
-                                                <div class="bar-fill" style="height: 100%;"></div>
-                                            </div>
-                                            Predicted Risk
-                                        </div>
-                                        <div class="bar-label">
-                                            <div class="chart-bar" style="height: 40px;">
-                                                <div class="bar-fill" style="height: 100%;"></div>
-                                            </div>
-                                            Mitigated Risk
-                                        </div>
+
+                                <!-- Physical Panel -->
+                                <div class="pf-content-panel" id="pf-physical">
+                                    <div class="panel-header">
+                                        <h3>Physical Supply Chain</h3>
+                                        <p>Predictive analysis of logistics, inventory, and vendor solvency data.</p>
+                                    </div>
+                                    <div class="risk-report-container">
+                                        <table class="risk-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fingerprint Type</th>
+                                                    <th>Probability</th>
+                                                    <th>Verified Signature</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="risk-row high">
+                                                    <td>
+                                                        <div class="fp-name">Supply Fracture</div>
+                                                        <div class="fp-meta">Shipment Delay Cycle</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-red">89.8%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-red" style="width: 89.8%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Supply Chain Fracture"
+                                                            data-xai-desc="Vendor displaying 'death spiral' metrics: delayed shipments + early payment requests."
+                                                            data-xai-factors='["Shipment Delay > 5 Days (0.85)", "Payment Terms Change (0.5)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-SUP-92CA2D11
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge alert">CRITICAL</span></td>
+                                                </tr>
+                                                <tr class="risk-row medium">
+                                                    <td>
+                                                        <div class="fp-name">Vendor Insolvency</div>
+                                                        <div class="fp-meta">Credit/Payment drift</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-orange">65.3%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-orange" style="width: 65.3%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Insolvency Risk"
+                                                            data-xai-desc="Public credit score drop correlated with AP divergence."
+                                                            data-xai-factors='["Credit Score < 600 (0.6)", "AP Variance > 15% (0.5)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-VEN-33BA1F55
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge warning">review</span></td>
+                                                </tr>
+                                                <tr class="risk-row low">
+                                                    <td>
+                                                        <div class="fp-name">Route Congestion</div>
+                                                        <div class="fp-meta">Weather/Traffic API</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-blue">24.1%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-blue" style="width: 24.1%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Logistics Delay"
+                                                            data-xai-desc="Projected 4h delay due to severe weather event in transit corridor."
+                                                            data-xai-factors='["Storm Severity: High (0.4)", "Route Redundance: Low (0.2)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-LOG-11EE5B77
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge safe">OPTIMIZED</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Physical Panel -->
-                        <div class="pf-content-panel" id="pf-physical">
-                            <div class="pf-panel-grid">
-                                <div class="pf-text-content">
-                                    <div style="margin-bottom: 2rem;">
-                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Supply
-                                            Chain Forecaster</h3>
-                                        <p>Integrates with SAP to analyze logistics and inventory levels. We forecast
-                                            supplier failures and shipping delays, allowing you to re-route shipments
-                                            with precision.</p>
-                                    </div>
-                                    <div>
-                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Project
-                                            Timeline Risk</h3>
-                                        <p>Analyzes critical path data to forecast delays in complex engineering
-                                            projects. Identify bottlenecks weeks in advance to ensure on-time delivery.
+
+                                <!-- Human Panel -->
+                                <div class="pf-content-panel" id="pf-human">
+                                    <div class="panel-header">
+                                        <h3>Human Bio-Safety</h3>
+                                        <p>Biometric monitoring for industrial safety and compliance (GDPR Compliant).
                                         </p>
                                     </div>
-                                </div>
-                                <div class="chart-visual-container">
-                                    <div class="chart-flow-container"
-                                        title="Flow diagram showing 'Supplier' -> 'Aegisight AI' -> 'Risk Alert'.">
-                                        <div class="flow-node">Supplier</div>
-                                        <div class="flow-arrow">→</div>
-                                        <div class="flow-node" style="border-color: var(--color-primary-blue);">
-                                            Aegisight AI</div>
-                                        <div class="flow-arrow">→</div>
-                                        <div class="flow-node alert">Alert</div>
+                                    <div class="risk-report-container">
+                                        <table class="risk-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fingerprint Type</th>
+                                                    <th>Probability</th>
+                                                    <th>Verified Signature</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="risk-row high">
+                                                    <td>
+                                                        <div class="fp-name">Cognitive Drift</div>
+                                                        <div class="fp-meta">Micro-movement variance</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-red">91.5%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-red" style="width: 91.5%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Cognitive Fatigue"
+                                                            data-xai-desc="Operator biometrics showing loss of focus patterns."
+                                                            data-xai-factors='["Eye Movement Lag > 200ms (0.9)", "Postural Sway (0.7)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-BIO-44AB7C90
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge alert">Safety Stop</span></td>
+                                                </tr>
+                                                <tr class="risk-row medium">
+                                                    <td>
+                                                        <div class="fp-name">Heat Stress</div>
+                                                        <div class="fp-meta">Core Temp / HR rate</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-orange">72.0%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-orange" style="width: 72%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Thermal Stress"
+                                                            data-xai-desc="Elevated heart rate combined with high ambient temperature."
+                                                            data-xai-factors='["Heart Rate > 110bpm (0.6)", "Ambient Temp > 35°C (0.5)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-HET-22CD9E88
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge warning">Cool Down</span></td>
+                                                </tr>
+                                                <tr class="risk-row low">
+                                                    <td>
+                                                        <div class="fp-name">Shift Compliance</div>
+                                                        <div class="fp-meta">Hours/Break ratio</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="prob-cell text-blue">0.0%</div>
+                                                        <div class="prob-bar-track">
+                                                            <div class="prob-bar-fill bg-blue" style="width: 1%;"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="sig-badge" data-xai-title="Shift Adherence"
+                                                            data-xai-desc="Worker is fully compliant with mandatory break schedules."
+                                                            data-xai-factors='["Break Time: 15m (1.0)", "Shift Length: 4h (1.0)"]'>
+                                                            <i class="fas fa-fingerprint"></i> SIG-SFT-66FA1A33
+                                                        </span>
+                                                    </td>
+                                                    <td><span class="status-badge safe">Verified</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
-                        <!-- Human Panel -->
-                        <div class="pf-content-panel" id="pf-human">
-                            <div class="pf-panel-grid">
-                                <div class="pf-text-content">
-                                    <div style="margin-bottom: 2rem;">
-                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Industrial
-                                            Bio-Safety</h3>
-                                        <p>Uses data from industrial wearables to monitor worker safety in real-time.
-                                            Predict potential accidents and ensure compliance with safety regulations
-                                            without compromising privacy.</p>
-                                    </div>
-                                    <div>
-                                        <h3 style="color: var(--color-primary-blue); margin-bottom: 0.5rem;">Pension
-                                            Solvency Risk</h3>
-                                        <p>Analyzes actuarial data and market trends to forecast funding needs. Move
-                                            beyond reactive recalculations to proactively identify solvency issues.</p>
-                                    </div>
-                                </div>
-                                <div class="chart-visual-container">
-                                    <div class="chart-pulse-container" title="A heart-rate style 'pulse' line graph.">
-                                        <svg class="pulse-line" viewBox="0 0 100 50">
-                                            <path
-                                                d="M 0 25 H 20 L 25 15 L 30 35 L 35 25 H 65 L 70 10 L 75 40 L 80 25 H 100">
-                                            </path>
-                                        </svg>
-                                        <div class="pulse-overlay"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- TRUST & COMPLIANCE STRIP (Moved) -->
+        <section class="trust-strip">
+            <div class="container trust-container">
+                <div class="trust-label">Built for Enterprise Compliance</div>
+                <div class="trust-badges">
+                    <div class="trust-badge" title="SOC2 Ready Architecture">
+                        <i class="fas fa-shield-alt"></i> <span>SOC2 Ready Architecture</span>
+                    </div>
+                    <div class="trust-badge" title="ISO 27001 Aligned">
+                        <i class="fas fa-lock"></i> <span>ISO Aligned</span>
+                    </div>
+                    <div class="trust-badge" title="GDPR Ready">
+                        <i class="fas fa-user-shield"></i> <span>GDPR Ready</span>
+                    </div>
+                    <div class="trust-badge" title="HIPAA Ready">
+                        <i class="fas fa-notes-medical"></i> <span>HIPAA Ready</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED BY SECTION (Moved) -->
+        <section class="trusted-by">
+            <div class="container" style="text-align: center;">
+                <p class="trusted-label">SEAMLESS INTEGRATIONS WITH</p>
+                <div class="marquee-container">
+                    <div class="marquee-track">
+                        <!-- Set 1 -->
+                        <div class="integration-pill"><i class="fas fa-ticket"></i> ServiceNow</div>
+                        <div class="integration-pill"><i class="fas fa-cubes"></i> SAP</div>
+                        <div class="integration-pill"><i class="fab fa-jira"></i> Jira</div>
+                        <div class="integration-pill"><i class="fas fa-database"></i> Oracle</div>
+                        <div class="integration-pill"><i class="fab fa-salesforce"></i> Salesforce</div>
+                        <div class="integration-pill"><i class="fab fa-aws"></i> AWS</div>
+                        <div class="integration-pill"><i class="fab fa-google"></i> Google Cloud</div>
+                        <div class="integration-pill"><i class="fab fa-microsoft"></i> Azure</div>
+
+                        <!-- Set 2 (Duplicate for Loop) -->
+                        <div class="integration-pill"><i class="fas fa-ticket"></i> ServiceNow</div>
+                        <div class="integration-pill"><i class="fas fa-cubes"></i> SAP</div>
+                        <div class="integration-pill"><i class="fab fa-jira"></i> Jira</div>
+                        <div class="integration-pill"><i class="fas fa-database"></i> Oracle</div>
+                        <div class="integration-pill"><i class="fab fa-salesforce"></i> Salesforce</div>
+                        <div class="integration-pill"><i class="fab fa-aws"></i> AWS</div>
+                        <div class="integration-pill"><i class="fab fa-google"></i> Google Cloud</div>
+                        <div class="integration-pill"><i class="fab fa-microsoft"></i> Azure</div>
                     </div>
                 </div>
             </div>
@@ -663,32 +1463,32 @@
                 </div>
 
                 <div class="contact-right">
-                    <form id="contactFormMain" class="contact-form">
+                    <form id="contactForm" class="contact-form">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="firstNameMain">First Name <span class="required">*</span></label>
-                                <input type="text" id="firstNameMain" name="firstName" required>
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required>
                             </div>
                             <div class="form-group">
-                                <label for="lastNameMain">Last Name <span class="required">*</span></label>
-                                <input type="text" id="lastNameMain" name="lastName" required>
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="emailMain">Email <span class="required">*</span></label>
-                            <input type="email" id="emailMain" name="email" required>
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phoneMain">Phone</label>
-                            <input type="tel" id="phoneMain" name="phone">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
                         </div>
 
                         <div class="form-group">
-                            <label for="requirementMain">Tell us a bit about your requirement <span
+                            <label for="requirement">Tell us a bit about your requirement <span
                                     class="required">*</span></label>
-                            <textarea id="requirementMain" name="requirement" rows="4" required></textarea>
+                            <textarea id="requirement" name="requirement" rows="4" required></textarea>
                         </div>
 
                         <div class="form-group">
@@ -710,7 +1510,8 @@
                         </div>
 
                         <div class="form-group captcha-group">
-                            <div class="g-recaptcha" data-sitekey="6Lfk9RUsAAAAAGAR5zgFA348xiF_9om0tKwugnMh"></div>
+                            <div class="g-recaptcha" data-sitekey="6Lf0ahYsAAAAAJFUapiAPPYFCIOeoCy4PqwmsKmm"
+                                data-theme="dark"></div>
                         </div>
 
                         <button type="submit" class="submit-btn">Submit</button>
@@ -718,7 +1519,7 @@
                                 style="color: var(--color-primary-blue); text-decoration: underline;">Privacy Policy</a>
                             and consent to receive marketing emails.</p>
                     </form>
-                    <div id="formSuccessMain" class="form-success" style="display: none;">
+                    <div id="formSuccess" class="form-success" style="display: none;">
                         <i class="fas fa-check-circle"></i>
                         <h3>Message Sent!</h3>
                         <p>Thank you for reaching out. We'll get back to you shortly.</p>
@@ -842,44 +1643,45 @@
             </div>
         </div>
 
-        <script src="/js/main.js"></script>
-
         <script>
             // Contact Form Submission for Homepage
-            document.getElementById('contactFormMain').addEventListener('submit', async function (e) {
-                e.preventDefault();
+            const contactFormMain = document.getElementById('contactFormMain');
+            if (contactFormMain) {
+                contactFormMain.addEventListener('submit', async function (e) {
+                    e.preventDefault();
 
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData.entries());
-                const submitBtn = this.querySelector('.submit-btn');
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData.entries());
+                    const submitBtn = this.querySelector('.submit-btn');
 
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
 
-                try {
-                    const response = await fetch('/api/contact', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    });
+                    try {
+                        const response = await fetch('/api/contact', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
 
-                    if (response.ok) {
-                        this.style.display = 'none';
-                        document.getElementById('formSuccessMain').style.display = 'block';
-                    } else {
-                        alert('Failed to send message. Please try again.');
+                        if (response.ok) {
+                            this.style.display = 'none';
+                            document.getElementById('formSuccessMain').style.display = 'block';
+                        } else {
+                            alert('Failed to send message. Please try again.');
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Submit';
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('An error occurred. Please try again.');
                         submitBtn.disabled = false;
                         submitBtn.textContent = 'Submit';
                     }
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('An error occurred. Please try again.');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit';
-                }
-            });
+                });
+            }
         </script>
 
         <!-- Moved to end of body -->
@@ -1300,6 +2102,17 @@
             };
             console.log('Auth script loaded successfully');
         </script>
+        <!-- XAI Floating Tooltip Container (Moved to Body Root) -->
+        <div id="xai-tooltip" class="xai-tooltip-card">
+            <div class="xai-header">
+                <i class="fas fa-brain"></i> <span id="xai-title">Signature Analysis</span>
+            </div>
+            <div class="xai-body">
+                <p id="xai-desc">Description of the signature...</p>
+                <div class="xai-factors-label">Primary Risk Factors:</div>
+                <ul id="xai-factors-list"></ul>
+            </div>
+        </div>
 </body>
 
 </html>

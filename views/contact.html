@@ -149,7 +149,7 @@
                 </div>
                 <a href="#" class="nav-link">Industries</a>
                 <a href="/about" class="nav-link">About Us</a>
-                <a href="#" class="nav-link">Blogs</a>
+                <a href="/blogs" class="nav-link">Blogs</a>
                 <a href="/contact" class="nav-link active">Contact Us</a>
                 <a href="/account" class="nav-link client-login-btn">Client Login</a>
             </nav>
@@ -257,44 +257,7 @@
     </footer>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-
-            // Fix for multiple checkboxes: explicitly get all values for 'pillars'
-            data.pillars = formData.getAll('pillars');
-            const submitBtn = this.querySelector('.submit-btn');
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-
-            try {
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (response.ok) {
-                    this.style.display = 'none';
-                    document.getElementById('formSuccess').style.display = 'block';
-                } else {
-                    const result = await response.json();
-                    alert(result.error || 'Failed to send message. Please try again.');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit';
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit';
-            }
-        });
+        // Form logic is now handled in js/main.js
     </script>
 </body>
 

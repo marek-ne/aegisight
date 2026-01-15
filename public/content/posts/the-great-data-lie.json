@@ -1,0 +1,21 @@
+{
+    "slug": "the-great-data-lie",
+    "title": "The Great Data Lie: Why More Logs ≠ More Truth",
+    "date": "January 05, 2026",
+    "category": "Forensic Data Hygiene",
+    "tags": [
+        "Observability",
+        "Data Engineering",
+        "Forensics",
+        "Log Normalization"
+    ],
+    "author": {
+        "name": "Marek Nerko",
+        "title": "Founder",
+        "bio": "Founder of Aegisight, focusing on forensic data analysis.",
+        "image": "/pics/team/marek-avatar.png",
+        "linkedin": "https://linkedin.com/in/mareknerko"
+    },
+    "readTime": "6 Minutes",
+    "image": "/pics/data-lie1.png"
+}

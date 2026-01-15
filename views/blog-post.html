@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Dynamic Title will be set via JS -->
+    <title>Aegisight Blog | Loading...</title>
+
+    <!-- Standard Assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=52">
+    <script src="/js/main.js?v=44" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <style>
+        /* --- RESET & BASICS --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a2b44;
+            background: #f8fafc;
+        }
+
+        /* --- LAYOUT STRUCTURE --- */
+        .blog-page-content_section {
+            width: 100%;
+            position: relative;
+        }
+
+        .padding-common {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .padding-section-medium {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .container-common-80rem {
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .pillar_post--grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* --- SIDEBAR COLUMN --- */
+        .pillar_post--grid-item-one {
+            height: 100%;
+        }
+
+        /* --- STICKY WRAPPER --- */
+        .blog_item-one-wrapper {
+            position: sticky;
+            top: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            /* Hide Scrollbar Visuals */
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            padding-right: 0;
+        }
+
+        /* Hide Scrollbar for Chrome/Safari/Opera */
+        .blog_item-one-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* --- COMMON CARD STYLES --- */
+        .sidebar-card {
+            background: white;
+            padding: 2rem;
+            /* Increased padding for bio look */
+            border-radius: 16px;
+            /* Slightly rounder */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            width: 100%;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        /* --- 1. UNIFIED BIO-TOGGLE CARD --- */
+        .unified-bio-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            background: #ffffff;
+            /* Example has white/light bg */
+        }
+
+        /* Toggle Wrapper */
+        .toggle-section {
+            display: flex;
+            justify-content: flex-start;
+            /* Left aligned as per screenshot */
+            margin-bottom: 0.5rem;
+        }
+
+        /* Icon Toggle Switch (Pill) */
+        .icon-toggle {
+            width: 52px;
+            height: 28px;
+            background: #0f172a;
+            /* Dark by default in screenshot example */
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+
+        .toggle-thumb {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(2px);
+        }
+
+        .toggle-icon {
+            width: 14px;
+            height: 14px;
+            fill: #1e293b;
+        }
+
+        .icon-sun {
+            display: block;
+        }
+
+        .icon-moon {
+            display: none;
+        }
+
+        /* Bio Header Text */
+        .bio-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        /* Profile Row */
+        .bio-profile-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bio-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: #eee;
+            /* Fallback color */
+            background-size: cover;
+            /* Dynamic Image will be set via JS */
+        }
+
+        .bio-info {
+            flex: 1;
+        }
+
+        .bio-name {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1rem;
+        }
+
+        .bio-title {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* LinkedIn Icon Fake */
+        .linkedin-icon {
+            width: 24px;
+            height: 24px;
+            background: #0077b5;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        /* Bio Text */
+        .bio-text {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* --- 2. TOC CARD --- */
+        .toc-wrapper h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            color: #1e293b;
+        }
+
+        #toc-list {
+            list-style: none;
+        }
+
+        #toc-list li {
+            margin: 0;
+            padding: 0;
+            border-radius: 6px;
+        }
+
+        #toc-list ol {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            list-style: none;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        #toc-list li.is-expanded>ol {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 5px;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.4rem 0.5rem;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.5;
+            white-space: normal;
+        }
+
+        #toc-list ol .toc-link {
+            font-size: 13px;
+            font-weight: 400;
+            color: #94a3b8;
+        }
+
+        .toc-link:hover {
+            color: #1e293b;
+        }
+
+        .toc-link.active-link {
+            color: #007aff !important;
+            font-weight: 700 !important;
+        }
+
+        li.is-active-item {
+            background-color: rgba(0, 122, 255, 0.08);
+        }
+
+        /* --- 4. CATEGORY CARD --- */
+        .category-wrapper h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .categories {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* SHARED PILL STYLING (Tags & Categories) */
+        .category-item,
+        .tag {
+            background: rgba(0, 122, 255, 0.08);
+            /* Aegisight Blue Light */
+            color: #007aff;
+            /* Aegisight Blue */
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+            display: inline-block;
+            line-height: 1.4;
+        }
+
+        .category-item {
+            display: inline-block;
+            /* Behave like tags */
+            width: fit-content;
+            /* Shrink to text */
+            text-align: left;
+        }
+
+        /* .tag:hover handled in shared block below */
+
+        .category-item:hover,
+        .tag:hover {
+            background: rgba(0, 122, 255, 0.15);
+            transform: translateY(-1px);
+        }
+
+        /* --- 3. TAGS CARD --- */
+        .tags-wrapper h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+
+        /* --- CONTENT COLUMN --- */
+        #blog-rich-text {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        #blog-rich-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #0f172a;
+        }
+
+        #blog-rich-text h2 {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        #blog-rich-text h3 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            color: #334155;
+        }
+
+        #blog-rich-text p {
+            margin-bottom: 1.5rem;
+            color: #475569;
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 65ch;
+            /* Optimize reading width */
+        }
+
+        .spacer {
+            height: 100vh;
+        }
+
+        /* --- DARK MODE --- */
+        body.dark-mode {
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .sidebar-card,
+        body.dark-mode #blog-rich-text {
+            background: #1e293b;
+            border-color: #334155;
+            box-shadow: none;
+        }
+
+        /* STRICT WHITE TEXT RULES */
+        body.dark-mode #blog-rich-text h1,
+        body.dark-mode #blog-rich-text h2,
+        body.dark-mode #blog-rich-text h3 {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode #blog-rich-text p,
+        body.dark-mode .bio-name,
+        body.dark-mode #blog-rich-text p,
+        body.dark-mode .bio-name,
+        body.dark-mode .bio-label,
+        body.dark-mode .bio-text,
+        body.dark-mode .toc-wrapper h3,
+        body.dark-mode .tags-wrapper h3,
+        body.dark-mode .category-wrapper h3 {
+            color: #ffffff !important;
+        }
+
+        /* Unified Blue for Dark Mode Pills */
+        body.dark-mode .category-item,
+        body.dark-mode .tag {
+            background: rgba(0, 122, 255, 0.2);
+            color: #60a5fa !important;
+            /* Lighter blue for readability on dark */
+        }
+
+        body.dark-mode .category-item:hover,
+        body.dark-mode .tag:hover {
+            background: rgba(0, 122, 255, 0.3);
+        }
+
+        /* Muted elements can stay slightly gray if needed, but per user request "white" */
+        body.dark-mode .bio-title {
+            color: #cbd5e1 !important;
+            /* Slight distinction */
+        }
+
+        body.dark-mode .toc-link {
+            color: #cbd5e1 !important;
+        }
+
+        body.dark-mode .toc-link:hover,
+        body.dark-mode .toc-link.active-link {
+            color: #ffffff !important;
+        }
+
+        /* Toggle Colors */
+        body.dark-mode .icon-toggle {
+            background: #e2e8f0;
+            border: 1px solid #475569;
+        }
+
+        body.dark-mode .toggle-thumb {
+            transform: translateX(22px);
+            background: #0f172a;
+        }
+
+        body.dark-mode .toggle-icon {
+            fill: white;
+        }
+
+        body.dark-mode .icon-sun {
+            display: none;
+        }
+
+        body.dark-mode .icon-moon {
+            display: block;
+        }
+
+        body.dark-mode .toc-wrapper h3 {
+            border-bottom-color: #334155;
+        }
+
+        body.dark-mode li.is-active-item {
+            background-color: rgba(0, 122, 255, 0.25);
+            /* Increased contrast */
+        }
+
+        /* --- HERO SECTION STYLES --- */
+        .blog-page-hero_section {
+            background-color: #050511;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            /* Clear Fixed Header */
+            padding-top: 140px;
+            /* Standard Padding (No Overlap) */
+            padding-bottom: 4rem;
+        }
+
+        /* --- MAIN CONTENT OVERLAP REMOVED --- */
+        .blog-page-content_section .container-common-80rem {
+            margin-top: 0;
+            /* Reset */
+            position: relative;
+            z-index: 10;
+        }
+
+        .blog-page-hero_background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .blog-page-hero_wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-page-hero_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Left Content */
+        .heading-style-h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .style-button-wrapper-2 {
+            margin-bottom: 2.5rem;
+        }
+
+        .rounded-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #007aff 0%, #00a99d 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rounded-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.5);
+        }
+
+        /* Social Icons */
+        .social-link-wrapper.is-hero {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon-circle {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+
+        .social-icon-circle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        /* Right Image Card */
+        .blog-page-hero_img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .blog-page-hero_grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* --- STICKY BOTTOM BUTTONS --- */
+        .sticky-bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            /* Closer to bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            /* Match Main Header Style */
+            background: rgba(13, 27, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 122, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 122, 255, 0.15);
+
+            padding: 0.6rem 0.8rem 0.6rem 1.2rem;
+            /* Adjusted padding */
+            border-radius: 50px;
+            z-index: 1000;
+        }
+
+        .sticky-btn-primary {
+            /* Match Main Site CTA Gradient */
+            background: linear-gradient(135deg, #007aff 0%, #00a99d 100%);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+        }
+
+        .sticky-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.5);
+        }
+
+        .sticky-btn-secondary {
+            background: white;
+            color: #1e293b;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s;
+            white-space: nowrap;
+        }
+
+        .sticky-btn-secondary:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        .sticky-scroll-top {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+        }
+
+        .sticky-scroll-top:hover {
+            transform: translateY(-3px);
+            background: #f8fafc;
+        }
+
+        .arrow-up-icon {
+            width: 20px;
+            height: 20px;
+            fill: #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-bottom-nav {
+                width: 90%;
+                justify-content: space-between;
+                padding: 0.6rem;
+            }
+
+            .sticky-btn-primary,
+            .sticky-btn-secondary {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+    <!-- Blog Bottom Section Styles -->
+    <style>
+        .blog-bottom {
+            background-color: #f9fafb;
+            /* Light background per screenshot */
+            padding-bottom: 6rem;
+        }
+
+        .heading-style-h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .text-align-center {
+            text-align: center;
+        }
+
+        .margin-bottom-large {
+            margin-bottom: 3rem;
+        }
+
+        /* Blog Grid */
+        .blog-list-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* Blog Card */
+        .blog-card-link {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            /* group: card; removed invalid property */
+            /* For shared hover */
+        }
+
+        .blog-card-image-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card-link:hover .blog-card-image {
+            transform: scale(1.05);
+        }
+
+        .blog-card-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .blog-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #1e293b;
+            margin: 0;
+            flex: 1;
+        }
+
+        .blog-card-arrow {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            transition: transform 0.2s;
+        }
+
+        .blog-card-link:hover .blog-card-arrow {
+            transform: translate(3px, -3px);
+        }
+
+        /* Dark Mode Support for New Section */
+        body.dark-mode .blog-bottom {
+            background-color: #0b1120;
+            /* Darker than main content */
+            border-top-color: #007aff;
+        }
+
+        body.dark-mode .blog-bottom .heading-style-h2 {
+            color: #f8fafc;
+        }
+
+        body.dark-mode .blog-card-title {
+            color: #e2e8f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .blog-list-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <a href="/" class="hero-logo-container" style="text-decoration: none;">
+                <img src="/pics/as-2-icon.png" alt="Aegisight AI Logo" class="nav-icon" width="48" height="48">
+                <span class="logo-text">Aegisight <span class="text-blue">AI</span></span>
+            </a>
+            <nav>
+                <div class="solutions-dropdown">
+                    <button class="solutions-trigger">Capabilities</button>
+                    <div class="dropdown-content mega-menu">
+                        <div class="mega-menu-header">
+                            <h3>Our Solutions</h3>
+                            <p>Full-spectrum predictive defense across your digital, physical, and human infrastructure.
+                            </p>
+                        </div>
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-nav no-scrollbar">
+                                <div class="nav-category">Core Capabilities</div>
+                                <button class="mega-menu-item active" data-target="panel-digital">
+                                    <i class="fas fa-shield-alt"></i> <strong>Digital Protection</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-physical">
+                                    <i class="fas fa-truck-loading"></i> <strong>Physical Protection</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-human">
+                                    <i class="fas fa-user-shield"></i> <strong>Human Protection</strong>
+                                </button>
+                            </div>
+                            <div class="mega-menu-panels">
+                                <div class="mega-menu-panel active" id="panel-digital">
+                                    <h4>Digital Protection Solutions</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>IT Risk Intelligence</h5>
+                                            <p>Predict major outages with 98% accuracy.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Financial Fraud Sentinel</h5>
+                                            <p>Detect anomalies in real-time.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mega-menu-panel" id="panel-physical">
+                                    <h4>Physical Protection Solutions</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Supply Chain Guardian</h5>
+                                            <p>Predict logistics delays.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Infrastructure Integrity</h5>
+                                            <p>Predict maintenance needs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mega-menu-panel" id="panel-human">
+                                    <h4>Human Protection Solutions</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Insider Threat Detection</h5>
+                                            <p>Identify behavioral anomalies.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Workforce Safety AI</h5>
+                                            <p>Predict safety incidents.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="solutions-dropdown">
+                    <button class="solutions-trigger">Industries</button>
+                    <!-- INDUSTRIES MEGA MENU -->
+                    <div class="dropdown-content mega-menu" style="min-width: 900px;">
+                        <!-- Menu Header -->
+                        <div class="mega-menu-header">
+                            <h3>Industry-Specific Intelligence</h3>
+                            <p>Precise solutions tailored to the unique failure signatures of your sector.</p>
+                        </div>
+
+                        <!-- Grid Wrapper -->
+                        <div class="mega-menu-grid">
+                            <!-- Column 1: Navigation -->
+                            <div class="mega-menu-nav no-scrollbar">
+                                <div class="nav-category">Industries</div>
+                                <button class="mega-menu-item active" data-target="panel-finance">
+                                    <i class="fas fa-landmark"></i>
+                                    <strong>Financial Services</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-telecom">
+                                    <i class="fas fa-signal"></i>
+                                    <strong>Telecommunications</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-saas">
+                                    <i class="fas fa-cloud"></i>
+                                    <strong>Enterprise SaaS</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-health">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <strong>Healthcare</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-gov">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <strong>Government</strong>
+                                </button>
+                            </div>
+
+                            <!-- Column 2: Content -->
+                            <div class="mega-menu-panels">
+                                <!-- Finance -->
+                                <div class="mega-menu-panel active" id="panel-finance">
+                                    <h4>Financial Services</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Predictive Transaction Integrity</h5>
+                                            <p>Detect micro-latencies and database locks in payment gateways to prevent
+                                                high-stakes transaction failures.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>High-Frequency Infrastructure Forensics</h5>
+                                            <p>Ensure zero-latency operations for trading platforms by correlating
+                                                network jitter with server performance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Telecom -->
+                                <div class="mega-menu-panel" id="panel-telecom">
+                                    <h4>Telecommunications</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Infrastructure State Forensics</h5>
+                                            <p>Correlate subtle configuration drift with network performance metrics to
+                                                isolate changes that will cause outages.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>5G Network Resilience</h5>
+                                            <p>Predictive monitoring of edge compute locations to prevent silent packet
+                                                drops and ensure SLA compliance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SaaS -->
+                                <div class="mega-menu-panel" id="panel-saas">
+                                    <h4>Enterprise SaaS & Cloud</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Microservice Cascade Prevention</h5>
+                                            <p>Identify resource exhaustion patterns across interdependent microservices
+                                                to stop domino-effect crashes.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Platform Availability Prediction</h5>
+                                            <p>Move from reactive 99.99% SLA monitoring to proactive failure prevention
+                                                by detecting pre-incident signatures.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Health -->
+                                <div class="mega-menu-panel" id="panel-health">
+                                    <h4>Digital Healthcare</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Data Pipeline Integrity</h5>
+                                            <p>Predict integration failures between legacy EHR and cloud systems by
+                                                detecting schema drift.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Interoperability Risk Management</h5>
+                                            <p>Ensure critical patient data flow by forensically monitoring the health
+                                                of HL7 and FHIR interface engines.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Gov -->
+                                <div class="mega-menu-panel" id="panel-gov">
+                                    <h4>Government & Defense</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Sovereign Air-Gapped Intelligence</h5>
+                                            <p>Deploy forensic AI within secure, disconnected environments. Zero data
+                                                egress, total operational sovereignty.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Legacy System Modernization</h5>
+                                            <p>Protect aging critical IT infrastructure by wrapping it in a predictive
+                                                forensic layer.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Call to Action (Dynamic based on Industry?) or Static -->
+                            <div class="mega-menu-promo">
+                                <h4>Industry Solutions</h4>
+                                <p>See how Aegisight protects your specific sector.</p>
+
+                                <a href="/contact?industry=finance" class="promo-card">
+                                    <div class="promo-icon">
+                                        <i class="fas fa-chart-pie"></i>
+                                    </div>
+                                    <div class="promo-text">
+                                        <strong>Get a Demo</strong>
+                                        <small>Tailored for your industry.</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/about" class="nav-link">About Us</a>
+                <a href="/blogs" class="nav-link">Blogs</a>
+                <a href="/account" class="nav-link client-login-btn">Client Login</a>
+            </nav>
+        </div>
+        <a href="/contact" class="cta-button">Contact Us</a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="blog-hero" class="blog-page-hero_section">
+        <!-- Background Asset Placeholder -->
+        <div class="blog-page-hero_background"
+            style="background: radial-gradient(circle at 80% 20%, #1e1b4b 0%, #050511 60%);"></div>
+
+        <div class="padding-common padding-section-medium">
+            <div class="container-common-80rem">
+                <div class="blog-page-hero_wrapper">
+                    <div class="blog-page-hero_grid">
+
+                        <!-- Left: Content -->
+                        <div class="blog-page-hero_grid-item">
+                            <h1 class="heading-style-h1" id="postTitle">
+                                Loading Title...
+                            </h1>
+
+                            <div class="style-button-wrapper-2">
+                                <a href="/contact" class="rounded-button btn-uniform-height">
+                                    Talk to our consultant
+                                </a>
+                            </div>
+
+                            <div class="social-link-wrapper is-hero">
+                                <!-- Twitter -->
+                                <a id="share-twitter" href="#" target="_blank" class="social-icon-circle">
+                                    <svg class="social-svg" viewBox="0 0 24 24">
+                                        <path
+                                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <!-- Facebook -->
+                                <a id="share-facebook" href="#" target="_blank" class="social-icon-circle">
+                                    <svg class="social-svg" viewBox="0 0 24 24">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <!-- LinkedIn -->
+                                <a id="share-linkedin" href="#" target="_blank" class="social-icon-circle">
+                                    <svg class="social-svg" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right: Image -->
+                        <div class="blog-page-hero_grid-item">
+                            <!-- Using a placeholder or potentially one of the uploaded images if suitable. 
+                                 Using a gradient block fallback or generic image for now. -->
+                            <img src="/assets/images/placeholder_hero.png" alt="Hero Image" class="blog-page-hero_img"
+                                style="background: linear-gradient(135deg, #4f46e5 0%, #7e22ce 100%); min-height: 300px; display: block;">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT SECTION -->
+    <section class="blog-page-content_section">
+        <div class="padding-common padding-section-medium">
+            <div class="container-common-80rem">
+                <!-- GRID -->
+                <div class="pillar_post--grid">
+
+                    <!-- SIDEBAR COLUMN -->
+                    <div class="pillar_post--grid-item-one">
+                        <div class="blog_item-one-wrapper">
+
+                            <!-- 1. UNIFIED BIO-TOGGLE CARD -->
+                            <div class="sidebar-card unified-bio-card">
+                                <!-- Toggle -->
+                                <div class="toggle-section">
+                                    <div class="icon-toggle" id="theme-toggle">
+                                        <div class="toggle-thumb">
+                                            <svg class="toggle-icon icon-sun" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.29 1.29c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.29 1.29c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41l-1.29-1.29zm1.41-13.78c-.39-.39-1.02-.39-1.41 0l-1.29 1.29c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.29-1.29c.39-.39.39-1.02 0-1.41zM7.28 17.28c-.39-.39-1.02-.39-1.41 0l-1.29 1.29c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.29-1.29z" />
+                                            </svg>
+                                            <svg class="toggle-icon icon-moon" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bio Header -->
+                                <h3 class="bio-label">Author's Bio</h3>
+
+                                <!-- Profile -->
+                                <div class="bio-profile-row">
+                                    <div class="bio-avatar" id="authorImgLarge"></div>
+                                    <div class="bio-info">
+                                        <div class="bio-name" id="authorNameLarge">Loading...</div>
+                                        <div class="bio-title" id="authorTitle">Loading...</div>
+                                    </div>
+                                    <a id="authorLinkedIn" class="linkedin-icon" href="#">in</a>
+                                </div>
+
+                                <!-- Text -->
+                                <p class="bio-text" id="authorBioMobile">
+                                    Loading author bio...
+                                </p>
+                            </div>
+
+                            <!-- 2. TOC WRAPPER -->
+                            <div class="sidebar-card toc-wrapper">
+                                <h3>Table Of Contents</h3>
+                                <nav id="toc-container">
+                                    <ol id="toc-list"></ol>
+                                </nav>
+                            </div>
+
+                            <!-- 3. TAGS WRAPPER -->
+                            <div class="sidebar-card tags-wrapper">
+                                <h3>Tags</h3>
+                                <div class="tags" id="postTagsSidebar">
+                                    <!-- Dynamic API Tags -->
+                                </div>
+                            </div>
+
+                            <!-- 4. DYNAMIC CATEGORY WRAPPER -->
+                            <div class="sidebar-card category-wrapper">
+                                <h3>Category</h3>
+                                <div class="categories" id="postCategorySidebar">
+                                    <!-- Dynamic Content -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CONTENT COLUMN -->
+                    <div class="pillar_post--grid-item-two">
+                        <article id="blog-rich-text">
+                            <!-- Dynamic Content -->
+                            <p>Loading Content...</p>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-bottom">
+        <div class="padding-common padding-section-medium">
+            <div class="container-common-80rem">
+                <div class="text-align-center margin-bottom-large">
+                    <h2 class="heading-style-h2">Our Latest Blogs</h2>
+                </div>
+
+                <div class="blog-list-grid">
+                    <!-- Card 1 -->
+                    <a href="#" class="blog-card-link">
+                        <div class="blog-card-image-wrapper">
+                            <!-- Placeholder gradient to match 'tech' vibe of screenshot -->
+                            <img src="/assets/images/placeholder_card1.jpg"
+                                style="background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); object-fit: cover;"
+                                alt="AI Transformation" class="blog-card-image">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title">AI-Powered Sales Automation vs Traditional Methods: What Works
+                                Better in 2025?</h3>
+                            <div class="blog-card-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="#" class="blog-card-link">
+                        <div class="blog-card-image-wrapper">
+                            <img src="/assets/images/placeholder_card2.jpg"
+                                style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); object-fit: cover;"
+                                alt="AI SDR" class="blog-card-image">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title">What is an AI SDR? The Complete Guide to AI Sales Development
+                                Representatives in 2025</h3>
+                            <div class="blog-card-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="#" class="blog-card-link">
+                        <div class="blog-card-image-wrapper">
+                            <img src="/assets/images/placeholder_card3.jpg"
+                                style="background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); object-fit: cover;"
+                                alt="Sales Outreach" class="blog-card-image">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title">AI in Sales Outreach: Smarter Follow-Up Strategies That Boost
+                                Conversions in 2025</h3>
+                            <div class="blog-card-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <!-- CONTACT SECTION -->
+    <section class="contact-page"
+        style="background-color: #0d1b2a; background-image: radial-gradient(circle at 15% 50%, rgba(0, 122, 255, 0.08) 0%, transparent 25%), radial-gradient(circle at 85% 30%, rgba(0, 169, 157, 0.08) 0%, transparent 25%); color: white; border-top: 1px solid #1e293b;">
+        <div class="contact-header">
+            <h1>Connect with us <span class="text-white">to bring your vision to life.</span></h1>
+            <a href="mailto:sales@aegisight.ai" class="contact-email">sales@aegisight.ai</a>
+
+            <div class="trust-badges-row">
+                <div class="trust-badge"><i class="fas fa-file-contract"></i> NDA-Secured Confidentiality</div>
+                <div class="trust-badge"><i class="fas fa-user-check"></i> Free consultation</div>
+                <div class="trust-badge"><i class="fas fa-handshake"></i> Zero Obligation Meeting</div>
+                <div class="trust-badge"><i class="fas fa-shield-alt"></i> Tailored Strategy Discussion</div>
+            </div>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-left">
+                <img src="/pics/form-logo.png" alt="Real People. Real Solutions." class="contact-hero-img">
+                <div class="contact-hero-text">
+                    <h2>Real People.<br>Real Solutions.</h2>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requirement">Tell us a bit about your requirement <span
+                                class="required">*</span></label>
+                        <textarea id="requirement" name="requirement" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pillar of Interest</label>
+                        <div class="pillar-checkboxes">
+                            <label class="pillar-checkbox">
+                                <input type="checkbox" name="pillars" value="Digital Protection">
+                                <span class="checkbox-label">Digital Protection</span>
+                            </label>
+                            <label class="pillar-checkbox">
+                                <input type="checkbox" name="pillars" value="Physical Protection">
+                                <span class="checkbox-label">Physical Protection</span>
+                            </label>
+                            <label class="pillar-checkbox">
+                                <input type="checkbox" name="pillars" value="Human Protection">
+                                <span class="checkbox-label">Human Protection</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group captcha-group">
+                        <div class="g-recaptcha" data-sitekey="6Lf0ahYsAAAAAJFUapiAPPYFCIOeoCy4PqwmsKmm"
+                            data-theme="dark"></div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" style="width: 100%;">Submit</button>
+                    <p class="form-footer">By clicking 'Submit', you agree to our <a href="/privacy" target="_blank"
+                            style="color: var(--color-primary-blue); text-decoration: underline;">Privacy Policy</a> and
+                        consent to receive marketing emails.</p>
+                </form>
+                <div id="formSuccess" class="form-success" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for reaching out. Our team will get back to you shortly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2025 Aegisight AI. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    <div class="sticky-bottom-nav">
+        <a href="/schedule" class="sticky-btn-primary">Schedule a Call</a>
+        <div class="sticky-scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <svg class="arrow-up-icon" viewBox="0 0 24 24">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" transform="rotate(-90 12 12)">
+                </path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Dependencies -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/blog-post.js"></script>
+
+</body>
+
+</html>

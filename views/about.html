@@ -50,8 +50,10 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=10">
-    <script src="js/main.js?v=3" defer></script>
+    <link rel="stylesheet" href="/css/style.css?v=32">
+    <script src="/js/main.js?v=44" defer></script>
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -162,10 +164,152 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="nav-link">Industries</a>
+                <div class="solutions-dropdown">
+                    <button class="solutions-trigger">Industries</button>
+                    <!-- INDUSTRIES MEGA MENU -->
+                    <div class="dropdown-content mega-menu" style="min-width: 900px;">
+                        <!-- Menu Header -->
+                        <div class="mega-menu-header">
+                            <h3>Industry-Specific Intelligence</h3>
+                            <p>Precise solutions tailored to the unique failure signatures of your sector.</p>
+                        </div>
+
+                        <!-- Grid Wrapper -->
+                        <div class="mega-menu-grid">
+                            <!-- Column 1: Navigation -->
+                            <div class="mega-menu-nav no-scrollbar">
+                                <div class="nav-category">Industries</div>
+                                <button class="mega-menu-item active" data-target="panel-finance">
+                                    <i class="fas fa-landmark"></i>
+                                    <strong>Financial Services</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-telecom">
+                                    <i class="fas fa-signal"></i>
+                                    <strong>Telecommunications</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-saas">
+                                    <i class="fas fa-cloud"></i>
+                                    <strong>Enterprise SaaS</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-health">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <strong>Healthcare</strong>
+                                </button>
+                                <button class="mega-menu-item" data-target="panel-gov">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <strong>Government</strong>
+                                </button>
+                            </div>
+
+                            <!-- Column 2: Content -->
+                            <div class="mega-menu-panels">
+                                <!-- Finance -->
+                                <div class="mega-menu-panel active" id="panel-finance">
+                                    <h4>Financial Services</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Predictive Transaction Integrity</h5>
+                                            <p>Detect micro-latencies and database locks in payment gateways to prevent
+                                                high-stakes transaction failures.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>High-Frequency Infrastructure Forensics</h5>
+                                            <p>Ensure zero-latency operations for trading platforms by correlating
+                                                network jitter with server performance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Telecom -->
+                                <div class="mega-menu-panel" id="panel-telecom">
+                                    <h4>Telecommunications</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Infrastructure State Forensics</h5>
+                                            <p>Correlate subtle configuration drift with network performance metrics to
+                                                isolate changes that will cause outages.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>5G Network Resilience</h5>
+                                            <p>Predictive monitoring of edge compute locations to prevent silent packet
+                                                drops and ensure SLA compliance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SaaS -->
+                                <div class="mega-menu-panel" id="panel-saas">
+                                    <h4>Enterprise SaaS & Cloud</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Microservice Cascade Prevention</h5>
+                                            <p>Identify resource exhaustion patterns across interdependent microservices
+                                                to stop domino-effect crashes.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Platform Availability Prediction</h5>
+                                            <p>Move from reactive 99.99% SLA monitoring to proactive failure prevention
+                                                by detecting pre-incident signatures.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Health -->
+                                <div class="mega-menu-panel" id="panel-health">
+                                    <h4>Digital Healthcare</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Data Pipeline Integrity</h5>
+                                            <p>Predict integration failures between legacy EHR and cloud systems by
+                                                detecting schema drift.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Interoperability Risk Management</h5>
+                                            <p>Ensure critical patient data flow by forensically monitoring the health
+                                                of HL7 and FHIR interface engines.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Gov -->
+                                <div class="mega-menu-panel" id="panel-gov">
+                                    <h4>Government & Defense</h4>
+                                    <div class="solution-grid">
+                                        <div class="solution-card">
+                                            <h5>Sovereign Air-Gapped Intelligence</h5>
+                                            <p>Deploy forensic AI within secure, disconnected environments. Zero data
+                                                egress, total operational sovereignty.</p>
+                                        </div>
+                                        <div class="solution-card">
+                                            <h5>Legacy System Modernization</h5>
+                                            <p>Protect aging critical IT infrastructure by wrapping it in a predictive
+                                                forensic layer.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Call to Action (Dynamic based on Industry?) or Static -->
+                            <div class="mega-menu-promo">
+                                <h4>Industry Solutions</h4>
+                                <p>See how Aegisight protects your specific sector.</p>
+
+                                <a href="/contact?industry=finance" class="promo-card">
+                                    <div class="promo-icon">
+                                        <i class="fas fa-chart-pie"></i>
+                                    </div>
+                                    <div class="promo-text">
+                                        <strong>Get a Demo</strong>
+                                        <small>Tailored for your industry.</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <a href="/about" class="nav-link active">About Us</a>
-                <a href="/contact" class="nav-link">Contact Us</a>
-                <a href="#" class="nav-link">Blogs</a>
+
+                <a href="/blogs" class="nav-link">Blogs</a>
                 <a href="/account" class="nav-link client-login-btn">Client Login</a>
             </nav>
         </div>
@@ -179,12 +323,10 @@
                 <div class="mit-badge">
                     <i class="fas fa-university"></i> Born from MIT Professional Education
                 </div>
-                <h1>Who We Are? <br>We're your <span class="highlight-red">Risk Intelligence</span> solution.</h1>
-                <p style="max-width: 700px; margin: 0 auto; color: #cbd5e1; font-size: 1.2rem; line-height: 1.6;">
-                    We are a passionate group from MIT Professional Education working to solve the unpredictability of
-                    enterprise risk.
-                    We transform disparate operational data into a "Single Source of Truth," enabling leaders to
-                    intervene surgically before a problem occurs.
+                <h1>Architects of <span class="highlight-red">Resilience</span>.</h1>
+                <p class="about-hero-subhead">
+                    Born from MIT Professional Education, we transform disparate operational data into a "Single Source
+                    of Truth," enabling leaders to intervene surgically before a problem occurs.
                 </p>
             </div>
         </section>
@@ -197,9 +339,10 @@
                         <div class="mv-content">
                             <h3>Our Vision</h3>
                             <p style="color: #cbd5e1; line-height: 1.6;">
-                                A future where the "Unforeseen Event" is extinct. Organizations operate with total
-                                situational awareness,
-                                protecting their capital, their supply lines, and their people with equal precision.
+                                To transition the global enterprise from reactive crisis management to
+                                <strong>Predictive Risk Orchestration</strong>. We verify the world's data through a
+                                <strong>Universal Forensic Pipeline</strong> that acts as the central nervous system of
+                                your business.
                             </p>
                         </div>
                     </div>
@@ -207,11 +350,127 @@
                         <div class="mv-content">
                             <h3>Our Mission</h3>
                             <p style="color: #cbd5e1; line-height: 1.6;">
-                                To prevent catastrophic enterprise failure by transforming disparate operational data
-                                into a
-                                "Single Source of Truth," enabling leaders to intervene surgically before a problem
-                                occurs.
+                                To identify the <strong>AI Fingerprints</strong> of failure before they manifest. We
+                                transform raw signal into <strong>Verified Signatures</strong>—providing the specific
+                                "What, Why, and When" needed to ensure operational resilience.
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Team Accordion Section -->
+        <section class="section team-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">The Force Behind the Vision: <span class="highlight-red">Meet Our
+                            Leadership</span></h2>
+                    <p class="section-subtitle">With decades of expertise at MIT and beyond, we are bridging the gap
+                        between academic theory and enterprise execution.</p>
+                </div>
+
+                <div class="team-gallery-container">
+                    <!-- Team Accordion Wrapper -->
+                    <div class="team-gallery">
+                        <!-- Member 1: Marek Nerko -->
+                        <div class="team-card active" data-id="1">
+                            <div class="team-card-image"
+                                style="background-image: url('/pics/team-placeholder-1.jpg'); background-color: #334155;">
+                            </div>
+                            <div class="team-card-overlay">
+                                <div class="team-info-collapsed">
+                                    <h3>Marek Nerko</h3>
+                                    <span>Founder</span>
+                                </div>
+                                <div class="team-info-expanded">
+                                    <blockquote>"Technology should improve how people experience the world, not just
+                                        automate it. We are building the immune system for the modern enterprise."
+                                    </blockquote>
+                                    <h3>Marek Nerko</h3>
+                                    <span class="role">Founder</span>
+                                    <a href="#" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 2: Michaeline Albright -->
+                        <div class="team-card" data-id="2">
+                            <div class="team-card-image"
+                                style="background-image: url('/pics/team-placeholder-2.jpg'); background-color: #475569;">
+                            </div>
+                            <div class="team-card-overlay">
+                                <div class="team-info-collapsed">
+                                    <h3>Michaeline Albright</h3>
+                                    <span>Research</span>
+                                </div>
+                                <div class="team-info-expanded">
+                                    <blockquote>"Data without context is noise. We turn noise into signal, and signal
+                                        into survival."</blockquote>
+                                    <h3>Michaeline Albright</h3>
+                                    <span class="role">Head of Research</span>
+                                    <a href="#" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 3: Neelesh Apps -->
+                        <div class="team-card" data-id="3">
+                            <div class="team-card-image"
+                                style="background-image: url('/pics/team-placeholder-3.jpg'); background-color: #64748b;">
+                            </div>
+                            <div class="team-card-overlay">
+                                <div class="team-info-collapsed">
+                                    <h3>Neelesh Apps</h3>
+                                    <span>Engineering</span>
+                                </div>
+                                <div class="team-info-expanded">
+                                    <blockquote>"Building resilient systems requires predicting failure before it
+                                        happens."</blockquote>
+                                    <h3>Neelesh Apps</h3>
+                                    <span class="role">Head of Engineering</span>
+                                    <a href="#" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 4: Daniela Alvia -->
+                        <div class="team-card" data-id="4">
+                            <div class="team-card-image"
+                                style="background-image: url('/pics/team-placeholder-4.jpg'); background-color: #94a3b8;">
+                            </div>
+                            <div class="team-card-overlay">
+                                <div class="team-info-collapsed">
+                                    <h3>Daniela Alvia</h3>
+                                    <span>Legal</span>
+                                </div>
+                                <div class="team-info-expanded">
+                                    <blockquote>"Compliance isn't just a checkpoint; it's the foundation of trust in
+                                        AI."</blockquote>
+                                    <h3>Daniela Alvia</h3>
+                                    <span class="role">Head of Legal</span>
+                                    <a href="#" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 5: Pramoth Chandrasekar -->
+                        <div class="team-card" data-id="5">
+                            <div class="team-card-image"
+                                style="background-image: url('/pics/team-placeholder-1.jpg'); background-color: #334155;">
+                            </div>
+                            <div class="team-card-overlay">
+                                <div class="team-info-collapsed">
+                                    <h3>Pramoth Chandrasekar</h3>
+                                    <span>Engineering</span>
+                                </div>
+                                <div class="team-info-expanded">
+                                    <blockquote>"Precision in code translates to precision in protection."</blockquote>
+                                    <h3>Pramoth Chandrasekar</h3>
+                                    <span class="role">Engineering Lead</span>
+                                    <a href="#" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -221,13 +480,15 @@
         <!-- Product Strategy -->
         <section class="section" style="background: rgba(255,255,255,0.02);">
             <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">The "One Platform" Architecture</h2>
-                    <p class="section-subtitle">We do not sell seven different tools; we sell one Core Prediction Engine
-                        that powers three distinct pillars of protection.</p>
+                <div class="section-header" style="text-align: left; margin-bottom: 3rem;">
+                    <h2 class="section-title" style="margin-left: 0;">The "One Platform" Architecture</h2>
+                    <p class="section-subtitle" style="margin-left: 0; max-width: 800px;">The <strong>Universal Forensic
+                            Pipeline</strong>. We do not sell seven
+                        different tools; we sell one proprietary engine hunting for <strong>AI Fingerprints</strong>
+                        across three distinct pillars.</p>
                 </div>
 
-                <div class="bento-grid">
+                <div class="bento-grid-layout">
                     <div class="bento-item">
                         <div class="bento-icon"><i class="fas fa-shield-alt text-blue"></i></div>
                         <h3>Digital Asset Protection</h3>
@@ -248,48 +509,149 @@
         </section>
 
         <!-- Roadmap -->
-        <section class="roadmap-section">
+        <!-- Implementation Assurance Protocol (Formerly Roadmap) -->
+        <section class="protocol-section">
             <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">Execution Roadmap</h2>
-                    <p class="section-subtitle">Our "Crawl, Walk, Run" approach to strategic expansion.</p>
+                <div class="section-header" style="text-align: left; margin-bottom: 4rem;">
+                    <h2 class="section-title" style="margin-left: 0;">What To Expect From Us</h2>
+                    <p class="section-subtitle" style="margin-left: 0; max-width: 800px;">
+                        <strong>The Implementation Assurance Protocol</strong>. We strictly adhere to this verified
+                        timeline to ensure Security, Verification, and Value.
+                    </p>
                 </div>
 
-                <div class="roadmap-steps">
+                <div class="protocol-timeline">
                     <!-- Step 1 -->
-                    <div class="step-card">
-                        <div class="step-marker">1</div>
-                        <h3 class="step-title">Crawl: The Foundation</h3>
-                        <p class="step-desc">
-                            <strong>Objective:</strong> Develop, Test, and Validate the Core AI Engine.<br>
-                            <strong>Focus:</strong> Ingesting historical datasets to train the model to recognize
-                            failure patterns ("fingerprints").<br>
-                            <strong>Key Metric:</strong> Prediction Accuracy > 85%.
-                        </p>
+                    <div class="protocol-step">
+                        <div class="protocol-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="protocol-content">
+                            <h3>Forensic Calibration</h3>
+                            <p><strong>Trust through Isolation.</strong> We don't just "turn it on." We map your data
+                                schema to our <strong>Universal Forensic Pipeline</strong> in a sandboxed, air-gapped
+                                environment to ensure 100% integrity before any live connection.</p>
+                        </div>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="step-card">
-                        <div class="step-marker">2</div>
-                        <h3 class="step-title">Walk: Market Entry</h3>
-                        <p class="step-desc">
-                            <strong>Objective:</strong> Launch Beachhead Market.<br>
-                            <strong>Focus:</strong> IT Risk Plug-in (Digital) and Supply Chain Plug-in (Physical).
-                            Validating value with structured, high-volume data.<br>
-                            <strong>Key Metric:</strong> Reduction in downtime for pilot customers.
-                        </p>
+                    <div class="protocol-step">
+                        <div class="protocol-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <div class="protocol-content">
+                            <h3>Historical Validation</h3>
+                            <p><strong>Proof through Backtesting.</strong> We run our engine on your <em>past</em> data
+                                to identify <strong>"Ghost Fingerprints"</strong>—catastrophic failures we <em>would
+                                    have</em> predicted. We prove mathematical accuracy before deployment.</p>
+                        </div>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="step-card">
-                        <div class="step-marker">3</div>
-                        <h3 class="step-title">Run: Strategic Expansion</h3>
-                        <p class="step-desc">
-                            <strong>Objective:</strong> Expansion into Future Verticals.<br>
-                            <strong>Focus:</strong> Complex, high-regulation markets like Industrial Bio-Safety and
-                            Financial Solvency.<br>
-                            <strong>Key Metric:</strong> Multi-pillar adoption.
-                        </p>
+                    <div class="protocol-step">
+                        <div class="protocol-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="protocol-content">
+                            <h3>Active Sovereignty</h3>
+                            <p><strong>Control through Orchestration.</strong> Assessment complete. We switch to live
+                                orchestration, delivering <strong>Verified Signatures</strong> directly to your security
+                                operations center. You maintain total data sovereignty.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section class="section contact-embedded" style="padding-top: 2rem;">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">Connect with us <span class="text-white">to bring your vision to
+                            life.</span></h2>
+                    <a href="mailto:sales@aegisight.ai" class="contact-email">sales@aegisight.ai</a>
+
+                    <div class="trust-badges-row"
+                        style="margin-top: 2rem; justify-content: center; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <div class="trust-badge"><i class="fas fa-file-contract"></i> NDA-Secured Confidentiality</div>
+                        <div class="trust-badge"><i class="fas fa-user-check"></i> Free consultation</div>
+                        <div class="trust-badge"><i class="fas fa-handshake"></i> Zero Obligation Meeting</div>
+                        <div class="trust-badge"><i class="fas fa-shield-alt"></i> Tailored Strategy Discussion</div>
+                    </div>
+                </div>
+
+                <div class="contact-container">
+                    <div class="contact-left">
+                        <img src="/pics/form-logo.png" alt="Real People. Real Solutions." class="contact-hero-img">
+                        <div class="contact-hero-text">
+                            <h2>Real People.<br>Real Solutions.</h2>
+                        </div>
+                    </div>
+
+                    <div class="contact-right">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="requirement">Tell us a bit about your requirement <span
+                                        class="required">*</span></label>
+                                <textarea id="requirement" name="requirement" rows="4" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Pillar of Interest</label>
+                                <div class="pillar-checkboxes">
+                                    <label class="pillar-checkbox">
+                                        <input type="checkbox" name="pillars" value="Digital Protection">
+                                        <span class="checkbox-label">Digital Protection</span>
+                                    </label>
+                                    <label class="pillar-checkbox">
+                                        <input type="checkbox" name="pillars" value="Physical Protection">
+                                        <span class="checkbox-label">Physical Protection</span>
+                                    </label>
+                                    <label class="pillar-checkbox">
+                                        <input type="checkbox" name="pillars" value="Human Protection">
+                                        <span class="checkbox-label">Human Protection</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group captcha-group">
+                                <div class="g-recaptcha" data-sitekey="6Lf0ahYsAAAAAJFUapiAPPYFCIOeoCy4PqwmsKmm"
+                                    data-theme="dark"></div>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Submit</button>
+                            <p class="form-footer">By clicking 'Submit', you agree to our <a href="/privacy"
+                                    target="_blank"
+                                    style="color: var(--color-primary-blue); text-decoration: underline;">Privacy
+                                    Policy</a> and
+                                consent to receive marketing emails.</p>
+                        </form>
+                        <div id="formSuccess" class="form-success" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for reaching out. Our team will get back to you shortly.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -301,7 +663,7 @@
         <div class="container footer-content"
             style="display: flex; justify-content: space-between; align-items: center;">
             <div class="footer-left">
-                <p>&copy; 2025 Aegisight AI. All rights reserved.</p>
+                <p>&copy; 2026 Aegisight AI. All rights reserved.</p>
             </div>
             <div class="footer-right">
                 <a href="/privacy" style="margin-left: 20px; color: #64748b; text-decoration: none;">Privacy Policy</a>
@@ -349,8 +711,6 @@
             </div>
         </div>
     </div>
-
-    <script src="/js/main.js"></script>
 </body>
 
 </html>

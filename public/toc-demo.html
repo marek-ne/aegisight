@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Structured ToC Demo</title>
+    <style>
+        /* --- RESET & BASICS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a2b44;
+            background: #f8fafc;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* --- LAYOUT STRUCTURE --- */
+        .blog-page-content_section {
+            width: 100%;
+            position: relative;
+        }
+
+        .padding-common {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .padding-section-medium {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .container-common-80rem {
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .pillar_post--grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* --- SIDEBAR COLUMN --- */
+        .pillar_post--grid-item-one {
+            height: 100%;
+        }
+
+        /* --- STICKY WRAPPER --- */
+        .blog_item-one-wrapper {
+            position: sticky;
+            top: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            /* Hide Scrollbar Visuals */
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            padding-right: 0;
+        }
+
+        /* Hide Scrollbar for Chrome/Safari/Opera */
+        .blog_item-one-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* --- COMMON CARD STYLES --- */
+        .sidebar-card {
+            background: white;
+            padding: 2rem;
+            /* Increased padding for bio look */
+            border-radius: 16px;
+            /* Slightly rounder */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            width: 100%;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        /* --- 1. UNIFIED BIO-TOGGLE CARD --- */
+        .unified-bio-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            background: #ffffff;
+            /* Example has white/light bg */
+        }
+
+        /* Toggle Wrapper */
+        .toggle-section {
+            display: flex;
+            justify-content: flex-start;
+            /* Left aligned as per screenshot */
+            margin-bottom: 0.5rem;
+        }
+
+        /* Icon Toggle Switch (Pill) */
+        .icon-toggle {
+            width: 52px;
+            height: 28px;
+            background: #0f172a;
+            /* Dark by default in screenshot example */
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+
+        .toggle-thumb {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(2px);
+        }
+
+        .toggle-icon {
+            width: 14px;
+            height: 14px;
+            fill: #1e293b;
+        }
+
+        .icon-sun {
+            display: block;
+        }
+
+        .icon-moon {
+            display: none;
+        }
+
+        /* Bio Header Text */
+        .bio-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        /* Profile Row */
+        .bio-profile-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bio-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-image: url('https://ui-avatars.com/api/?name=Marek+Nerko&background=0D8ABC&color=fff');
+            background-size: cover;
+        }
+
+        .bio-info {
+            flex: 1;
+        }
+
+        .bio-name {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1rem;
+        }
+
+        .bio-title {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* LinkedIn Icon Fake */
+        .linkedin-icon {
+            width: 24px;
+            height: 24px;
+            background: #0077b5;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Bio Text */
+        .bio-text {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* --- 2. TOC CARD --- */
+        .toc-wrapper h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            color: #1e293b;
+        }
+
+        #toc-list {
+            list-style: none;
+        }
+
+        #toc-list li {
+            margin: 0;
+            padding: 0;
+            border-radius: 6px;
+        }
+
+        #toc-list ol {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            list-style: none;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        #toc-list li.is-expanded>ol {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 5px;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.4rem 0.5rem;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.5;
+            white-space: normal;
+        }
+
+        #toc-list ol .toc-link {
+            font-size: 13px;
+            font-weight: 400;
+            color: #94a3b8;
+        }
+
+        .toc-link:hover {
+            color: #1e293b;
+        }
+
+        .toc-link.active-link {
+            color: #007aff !important;
+            font-weight: 700 !important;
+        }
+
+        li.is-active-item {
+            background-color: rgba(0, 122, 255, 0.08);
+        }
+
+        /* --- 4. CATEGORY CARD --- */
+        .category-wrapper h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .categories {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* SHARED PILL STYLING (Tags & Categories) */
+        .category-item,
+        .tag {
+            background: rgba(0, 122, 255, 0.08);
+            /* Aegisight Blue Light */
+            color: #007aff;
+            /* Aegisight Blue */
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+            display: inline-block;
+            line-height: 1.4;
+        }
+
+        .category-item {
+            display: inline-block;
+            /* Behave like tags */
+            width: fit-content;
+            /* Shrink to text */
+            text-align: left;
+        }
+
+        .tag:hover {
+            /* Hover state handled in shared block */
+        }
+
+        .category-item:hover,
+        .tag:hover {
+            background: rgba(0, 122, 255, 0.15);
+            transform: translateY(-1px);
+        }
+
+        /* --- 3. TAGS CARD --- */
+        .tags-wrapper h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+
+        /* --- CONTENT COLUMN --- */
+        #blog-rich-text {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        #blog-rich-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #0f172a;
+        }
+
+        #blog-rich-text h2 {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        #blog-rich-text h3 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            color: #334155;
+        }
+
+        #blog-rich-text p {
+            margin-bottom: 1.5rem;
+            color: #475569;
+        }
+
+        .spacer {
+            height: 100vh;
+        }
+
+        /* --- DARK MODE --- */
+        body.dark-mode {
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .sidebar-card,
+        body.dark-mode #blog-rich-text {
+            background: #1e293b;
+            border-color: #334155;
+            box-shadow: none;
+        }
+
+        /* STRICT WHITE TEXT RULES */
+        body.dark-mode #blog-rich-text h1,
+        body.dark-mode #blog-rich-text h2,
+        body.dark-mode #blog-rich-text h3 {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode #blog-rich-text p,
+        body.dark-mode .bio-name,
+        body.dark-mode #blog-rich-text p,
+        body.dark-mode .bio-name,
+        body.dark-mode .bio-label,
+        body.dark-mode .bio-text,
+        body.dark-mode .toc-wrapper h3,
+        body.dark-mode .tags-wrapper h3,
+        body.dark-mode .category-wrapper h3 {
+            color: #ffffff !important;
+        }
+
+        /* Unified Blue for Dark Mode Pills */
+        body.dark-mode .category-item,
+        body.dark-mode .tag {
+            background: rgba(0, 122, 255, 0.2);
+            color: #60a5fa !important;
+            /* Lighter blue for readability on dark */
+        }
+
+        body.dark-mode .category-item:hover,
+        body.dark-mode .tag:hover {
+            background: rgba(0, 122, 255, 0.3);
+        }
+
+        /* Muted elements can stay slightly gray if needed, but per user request "white" */
+        body.dark-mode .bio-title {
+            color: #cbd5e1 !important;
+            /* Slight distinction */
+        }
+
+        body.dark-mode .toc-link {
+            color: #cbd5e1 !important;
+        }
+
+        body.dark-mode .toc-link:hover,
+        body.dark-mode .toc-link.active-link {
+            color: #ffffff !important;
+        }
+
+        /* Toggle Colors */
+        body.dark-mode .icon-toggle {
+            background: #e2e8f0;
+            border: 1px solid #475569;
+        }
+
+        body.dark-mode .toggle-thumb {
+            transform: translateX(22px);
+            background: #0f172a;
+        }
+
+        body.dark-mode .toggle-icon {
+            fill: white;
+        }
+
+        body.dark-mode .icon-sun {
+            display: none;
+        }
+
+        body.dark-mode .icon-moon {
+            display: block;
+        }
+
+        body.dark-mode .toc-wrapper h3 {
+            border-bottom-color: #334155;
+        }
+
+        body.dark-mode li.is-active-item {
+            background-color: rgba(0, 122, 255, 0.25);
+            /* Increased contrast */
+        }
+
+        /* --- HERO SECTION STYLES --- */
+        .blog-page-hero_section {
+            background-color: #050511;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            /* Standard Padding (No Overlap) */
+            padding-bottom: 4rem;
+        }
+
+        /* --- MAIN CONTENT OVERLAP REMOVED --- */
+        .blog-page-content_section .container-common-80rem {
+            margin-top: 0;
+            /* Reset */
+            position: relative;
+            z-index: 10;
+        }
+
+        .blog-page-hero_background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .blog-page-hero_wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-page-hero_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Left Content */
+        .heading-style-h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .style-button-wrapper-2 {
+            margin-bottom: 2.5rem;
+        }
+
+        .rounded-button {
+            display: inline-block;
+            background-color: #e11d48;
+            /* Vibrant Red/Pink */
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .rounded-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(225, 29, 72, 0.4);
+        }
+
+        /* Social Icons */
+        .social-link-wrapper.is-hero {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon-circle {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+
+        .social-icon-circle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        /* Right Image Card */
+        .blog-page-hero_img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .blog-page-hero_grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* --- STICKY BOTTOM BUTTONS --- */
+        .sticky-bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            /* Closer to bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            /* Match Main Header Style */
+            background: rgba(13, 27, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 122, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 122, 255, 0.15);
+
+            padding: 0.6rem 0.8rem 0.6rem 1.2rem;
+            /* Adjusted padding */
+            border-radius: 50px;
+            z-index: 1000;
+        }
+
+        .sticky-btn-primary {
+            /* Match Main Site CTA Gradient */
+            background: linear-gradient(135deg, #007aff 0%, #00a99d 100%);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+        }
+
+        .sticky-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.5);
+        }
+
+        .sticky-btn-secondary {
+            background: white;
+            color: #1e293b;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s;
+            white-space: nowrap;
+        }
+
+        .sticky-btn-secondary:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        .sticky-scroll-top {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+        }
+
+        .sticky-scroll-top:hover {
+            transform: translateY(-3px);
+            background: #f8fafc;
+        }
+
+        .arrow-up-icon {
+            width: 20px;
+            height: 20px;
+            fill: #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-bottom-nav {
+                width: 90%;
+                justify-content: space-between;
+                padding: 0.6rem;
+            }
+
+            .sticky-btn-primary,
+            .sticky-btn-secondary {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <section id="blog-hero" class="blog-page-hero_section">
+        <!-- Background Asset Placeholder -->
+        <div class="blog-page-hero_background"
+            style="background: radial-gradient(circle at 80% 20%, #1e1b4b 0%, #050511 60%);"></div>
+
+        <div class="padding-common padding-section-medium">
+            <div class="container-common-80rem">
+                <div class="blog-page-hero_wrapper">
+                    <div class="blog-page-hero_grid">
+
+                        <!-- Left: Content -->
+                        <div class="blog-page-hero_grid-item">
+                            <h1 class="heading-style-h1">
+                                AI-Powered Sales Automation vs Traditional Methods: What Works Better in 2025?
+                            </h1>
+
+                            <div class="style-button-wrapper-2">
+                                <a href="/contact" class="rounded-button btn-uniform-height">
+                                    Talk to our consultant
+                                </a>
+                            </div>
+
+                            <div class="social-link-wrapper is-hero">
+                                <!-- Twitter -->
+                                <div class="social-icon-circle">
+                                    <svg class="social-svg" viewBox="0 0 24 24">
+                                        <path
+                                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <!-- Facebook -->
+                                <div class="social-icon-circle">
+                                    <svg class="social-svg" viewBox="0 0 24 24">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <!-- LinkedIn -->
+                                <div class="social-icon-circle">
+                                    <svg class="social-svg" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Image -->
+                        <div class="blog-page-hero_grid-item">
+                            <!-- Using a placeholder or potentially one of the uploaded images if suitable. 
+                                 Using a gradient block fallback or generic image for now. -->
+                            <img src="/assets/images/placeholder_hero.png" alt="AI-Powered Sales Automation"
+                                class="blog-page-hero_img"
+                                style="background: linear-gradient(135deg, #4f46e5 0%, #7e22ce 100%); min-height: 300px; display: block;">
+                            <!-- Note: Invalid src fallback to style implemented via 'style' attribute for demo -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT SECTION -->
+    <section class="blog-page-content_section">
+        <div class="padding-common padding-section-medium">
+            <div class="container-common-80rem">
+                <!-- GRID -->
+                <div class="pillar_post--grid">
+
+                    <!-- SIDEBAR COLUMN -->
+                    <div class="pillar_post--grid-item-one">
+                        <div class="blog_item-one-wrapper">
+
+                            <!-- 1. UNIFIED BIO-TOGGLE CARD -->
+                            <div class="sidebar-card unified-bio-card">
+                                <!-- Toggle -->
+                                <div class="toggle-section">
+                                    <div class="icon-toggle" id="theme-toggle">
+                                        <div class="toggle-thumb">
+                                            <svg class="toggle-icon icon-sun" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.29 1.29c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.29 1.29c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41l-1.29-1.29zm1.41-13.78c-.39-.39-1.02-.39-1.41 0l-1.29 1.29c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.29-1.29c.39-.39.39-1.02 0-1.41zM7.28 17.28c-.39-.39-1.02-.39-1.41 0l-1.29 1.29c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.29-1.29z" />
+                                            </svg>
+                                            <svg class="toggle-icon icon-moon" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bio Header -->
+                                <h3 class="bio-label">Author's Bio</h3>
+
+                                <!-- Profile -->
+                                <div class="bio-profile-row">
+                                    <div class="bio-avatar"></div>
+                                    <div class="bio-info">
+                                        <div class="bio-name">Marek Nerko</div>
+                                        <div class="bio-title">Founder & CEO</div>
+                                    </div>
+                                    <div class="linkedin-icon">in</div>
+                                </div>
+
+                                <!-- Text -->
+                                <p class="bio-text">
+                                    Marek helps businesses harness the power of AI to automate, optimize, and scale like
+                                    never before. His expertise spans cutting-edge AI applications for enterprise
+                                    forensics.
+                                </p>
+                            </div>
+
+                            <!-- 2. TOC WRAPPER -->
+                            <div class="sidebar-card toc-wrapper">
+                                <h3>Table Of Contents</h3>
+                                <nav id="toc-container">
+                                    <ol id="toc-list"></ol>
+                                </nav>
+                            </div>
+
+                            <!-- 3. TAGS WRAPPER -->
+                            <div class="sidebar-card tags-wrapper">
+                                <h3>Tags</h3>
+                                <div class="tags">
+                                    <span class="tag">AI Forensics</span>
+                                    <span class="tag">Cybersecurity</span>
+                                    <span class="tag">Compliance</span>
+                                </div>
+                            </div>
+
+                            <!-- 4. DYNAMIC CATEGORY WRAPPER -->
+                            <div class="sidebar-card category-wrapper">
+                                <h3>Category</h3>
+                                <div class="categories" id="category-list">
+                                    <!-- Dynamic Content -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CONTENT COLUMN -->
+                    <div class="pillar_post--grid-item-two">
+                        <article id="blog-rich-text">
+                            <h1>The Ultimate Guide to AI Forensics in 2025</h1>
+                            <p><strong>Introduction:</strong> As AI systems become more autonomous, understanding their
+                                decision-making processes is critical...</p>
+
+                            <h2>The Black Box Problem</h2>
+                            <p>Modern neural networks, particularly Large Language Models (LLMs), operate with billions
+                                of parameters. When a model hallucinates...</p>
+
+                            <h2>Key Forensic Methodologies</h2>
+                            <p>To address the black box problem, organizations need robust forensic methodologies...</p>
+
+                            <h3>Feature Contribution Analysis</h3>
+                            <p>By mapping output tokens back to specific neuron activations...</p>
+
+                            <h3>Counterfactual Testing</h3>
+                            <p>What if the input had been slightly different?...</p>
+
+                            <h2>Regulatory Compliance & The EU AI Act</h2>
+                            <p>New regulations mandate explainability...</p>
+
+                            <h2>Conclusion</h2>
+                            <p>The future of AI adoption rests on trust...</p>
+
+                            <div class="spacer"></div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: OUR LATEST BLOGS -->
+    <style>
+        /* Blog Bottom Section Styles */
+        .blog-bottom {
+            background-color: #f9fafb;
+            /* Light background per screenshot */
+            padding-bottom: 6rem;
+        }
+
+        .heading-style-h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .text-align-center {
+            text-align: center;
+        }
+
+        .margin-bottom-large {
+            margin-bottom: 3rem;
+        }
+
+        /* Blog Grid */
+        .blog-list-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* Blog Card */
+        .blog-card-link {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            group: card;
+            /* For shared hover */
+        }
+
+        .blog-card-image-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card-link:hover .blog-card-image {
+            transform: scale(1.05);
+        }
+
+        .blog-card-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .blog-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #1e293b;
+            margin: 0;
+            flex: 1;
+        }
+
+        .blog-card-arrow {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            transition: transform 0.2s;
+        }
+
+        .blog-card-link:hover .blog-card-arrow {
+            transform: translate(3px, -3px);
+        }
+
+        /* Dark Mode Support for New Section */
+        body.dark-mode .blog-bottom {
+            background-color: #0b1120;
+            /* Darker than main content */
+            border-top-color: #007aff;
+        }
+
+        body.dark-mode .blog-bottom .heading-style-h2 {
+            color: #f8fafc;
+        }
+
+        body.dark-mode .blog-card-title {
+            color: #e2e8f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .blog-list-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+
+    <section class="blog-bottom">
+        <div class="padding-common padding-section-medium">
+            <div class="container-common-80rem">
+                <div class="text-align-center margin-bottom-large">
+                    <h2 class="heading-style-h2">Our Latest Blogs</h2>
+                </div>
+
+                <div class="blog-list-grid">
+                    <!-- Card 1 -->
+                    <a href="#" class="blog-card-link">
+                        <div class="blog-card-image-wrapper">
+                            <!-- Placeholder gradient to match 'tech' vibe of screenshot -->
+                            <img src="/assets/images/placeholder_card1.jpg"
+                                style="background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); object-fit: cover;"
+                                alt="AI Transformation" class="blog-card-image">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title">AI-Powered Sales Automation vs Traditional Methods: What Works
+                                Better in 2025?</h3>
+                            <div class="blog-card-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="#" class="blog-card-link">
+                        <div class="blog-card-image-wrapper">
+                            <img src="/assets/images/placeholder_card2.jpg"
+                                style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); object-fit: cover;"
+                                alt="AI SDR" class="blog-card-image">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title">What is an AI SDR? The Complete Guide to AI Sales Development
+                                Representatives in 2025</h3>
+                            <div class="blog-card-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="#" class="blog-card-link">
+                        <div class="blog-card-image-wrapper">
+                            <img src="/assets/images/placeholder_card3.jpg"
+                                style="background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); object-fit: cover;"
+                                alt="Sales Outreach" class="blog-card-image">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title">AI in Sales Outreach: Smarter Follow-Up Strategies That Boost
+                                Conversions in 2025</h3>
+                            <div class="blog-card-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STICKY BOTTOM NAV -->
+    <div class="sticky-bottom-nav">
+        <a href="/schedule" class="sticky-btn-primary">Schedule a Call</a>
+        <div class="sticky-scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <svg class="arrow-up-icon" viewBox="0 0 24 24">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" transform="rotate(-90 12 12)">
+                </path>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Logic
+        const toggle = document.getElementById('theme-toggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // 1. Dynamic Category Generation
+        const PREDEFINED_CATEGORIES = [
+            "Ai Agent Workflows",
+            "AI Digital Transformation"
+        ];
+
+        function generateCategories() {
+            const container = document.getElementById('category-list');
+            PREDEFINED_CATEGORIES.forEach(cat => {
+                const a = document.createElement('a');
+                a.href = '#';
+                a.className = 'category-item';
+                a.textContent = cat;
+                container.appendChild(a);
+            });
+        }
+
+        generateCategories();
+
+        // ToC Logic
+        function generateToC() {
+            const tocList = document.getElementById('toc-list');
+            const content = document.getElementById('blog-rich-text');
+            const headings = content.querySelectorAll('h2, h3');
+
+            let h2Count = 0;
+            let h3Count = 0;
+            let lastH2Li = null;
+
+            headings.forEach((heading, index) => {
+                const id = `section-${index}`;
+                if (!heading.id) heading.id = id;
+
+                let numbering = '';
+                if (heading.tagName === 'H2') {
+                    h2Count++;
+                    h3Count = 0;
+                    numbering = `${h2Count}. `;
+                } else if (heading.tagName === 'H3') {
+                    h3Count++;
+                    numbering = `${h2Count}.${h3Count}. `;
+                }
+
+                if (!heading.innerText.startsWith(numbering.trim())) {
+                    heading.innerText = numbering + heading.innerText;
+                }
+
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${heading.id}`;
+                a.textContent = heading.innerText;
+                a.classList.add('toc-link');
+
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetElement = document.getElementById(heading.id);
+                    const offset = window.innerHeight * 0.20;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = targetElement.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+
+                li.appendChild(a);
+
+                if (heading.tagName === 'H2') {
+                    tocList.appendChild(li);
+                    lastH2Li = li;
+                } else if (heading.tagName === 'H3' && lastH2Li) {
+                    let subOl = lastH2Li.querySelector('ol');
+                    if (!subOl) {
+                        subOl = document.createElement('ol');
+                        lastH2Li.appendChild(subOl);
+                    }
+                    subOl.appendChild(li);
+                }
+            });
+
+            const observerOptions = {
+                rootMargin: "-20% 0px -70% 0px",
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+
+                        document.querySelectorAll('.is-active-item').forEach(li =>
+                            li.classList.remove('is-active-item'));
+                        document.querySelectorAll('.toc-link').forEach(link =>
+                            link.classList.remove('active-link'));
+                        document.querySelectorAll('#toc-list li').forEach(li =>
+                            li.classList.remove('is-expanded'));
+
+                        const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active-link');
+
+                            const immediateLi = activeLink.closest('li');
+                            if (immediateLi) immediateLi.classList.add('is-active-item');
+
+                            let parentLi = immediateLi;
+                            if (parentLi.parentElement.tagName === 'OL' && parentLi.parentElement.id !== 'toc-list') {
+                                const h2Li = parentLi.parentElement.closest('li');
+                                if (h2Li) h2Li.classList.add('is-expanded');
+                            } else {
+                                parentLi.classList.add('is-expanded');
+                            }
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            headings.forEach(h => observer.observe(h));
+        }
+
+        generateToC();
+    </script>
+</body>
+
+</html>

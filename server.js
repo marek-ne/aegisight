@@ -34,7 +34,8 @@ app.use(helmet({
                 "https://www.google.com/recaptcha/",
                 "https://www.gstatic.com/recaptcha/",
                 "https://accounts.google.com",
-                "https://cdn.jsdelivr.net"
+                "https://cdn.jsdelivr.net",
+                "https://cdn.tailwindcss.com"
             ],
             imgSrc: ["'self'", "data:", "https:", "https://*.google-analytics.com", "https://*.googletagmanager.com", "https://*.googleusercontent.com"],
             connectSrc: [
@@ -88,7 +89,7 @@ app.use('/api', require('./routes/api'));
 
 // Serve Sentinel Onboarding App
 app.use('/onboarding', express.static(path.join(__dirname, 'public', 'onboarding')));
-app.get('/onboarding/*', (req, res) => {
+app.get(/\/onboarding\/.*/, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'onboarding', 'index.html'));
 });
 
@@ -98,8 +99,101 @@ app.get('/dashboard', (req, res) => {
 });
 
 // Existing routes
+app.get('/widget-isolation', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'widget-isolation.html'));
+});
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+// Blogs Page
+app.get('/blogs', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'blogs.html'));
+});
+
+// Category/Tag Route (Serves same view, client-side filters)
+app.get('/blog-categories/:tag', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'blogs.html'));
+});
+
+// Load Shared Parser
+const { parseTxtPost } = require('./src/utils/postParser');
+
+// API: List all blog posts (Optimized)
+app.get('/api/posts', (req, res) => {
+    const postsDir = path.join(__dirname, 'public', 'content', 'posts');
+    const indexPath = path.join(postsDir, 'all-posts.json');
+
+    // Fast Path: Read pre-built index
+    if (fs.existsSync(indexPath)) {
+        try {
+            const allPosts = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+            return res.json(allPosts);
+        } catch (err) {
+            console.error('Error reading posts index:', err);
+            // Fallthrough to directory scan if index is corrupt
+        }
+    }
+
+    // Fallback: Scan Directory (Slow, Legacy)
+    console.warn('Warning: all-posts.json not found, falling back to directory scan');
+    fs.readdir(postsDir, (err, files) => {
+        if (err) {
+            console.error('Error reading posts directory:', err);
+            return res.status(500).json({ error: 'Failed to fetch posts' });
+        }
+
+        const posts = [];
+        files.filter(f => f.endsWith('.txt')).forEach(file => {
+            const slug = file.replace('.txt', '');
+            const parsed = parseTxtPost(path.join(postsDir, file), slug);
+            if (parsed) posts.push(parsed.meta);
+        });
+
+        // Sort by date (newest first)
+        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        res.json(posts);
+    });
+});
+
+// API: Get Single Post (Content + Meta)
+app.get('/api/post/:slug', (req, res) => {
+    const slug = req.params.slug;
+    const postsDir = path.join(__dirname, 'public', 'content', 'posts');
+
+    // 1. Try JSON + HTML pair
+    const jsonPath = path.join(postsDir, `${slug}.json`);
+    const htmlPath = path.join(postsDir, `${slug}.html`);
+
+    if (fs.existsSync(jsonPath)) {
+        try {
+            const meta = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+            let content = '';
+            if (fs.existsSync(htmlPath)) {
+                content = fs.readFileSync(htmlPath, 'utf8');
+            }
+            return res.json({ meta, content });
+        } catch (err) {
+            return res.status(500).json({ error: 'Error reading post files' });
+        }
+    }
+
+    // 2. Try TXT file (using shared parser)
+    const txtPath = path.join(postsDir, `${slug}.txt`);
+    if (fs.existsSync(txtPath)) {
+        const parsed = parseTxtPost(txtPath, slug);
+        if (parsed) {
+            return res.json({ meta: parsed.meta, content: parsed.html });
+        }
+    }
+
+    res.status(404).json({ error: 'Post not found' });
+});
+
+
+app.get('/post/:slug', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'blog-post.html'));
 });
 
 app.get('/about', (req, res) => {
